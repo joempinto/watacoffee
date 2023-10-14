@@ -9,8 +9,7 @@ namespace WPC_1
 
 
         private void buttonEntra_Click(object sender, EventArgs e)
-        {
-            // textBoxUsuari.Text = "Pinto el maquina";
+        {            
             usuari_Menu frm3 = new usuari_Menu();
             frm3.ShowDialog();
 
