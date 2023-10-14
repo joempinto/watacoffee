@@ -77,7 +77,6 @@
             labelEmail.Size = new Size(59, 28);
             labelEmail.TabIndex = 2;
             labelEmail.Text = "Email";
-
             // 
             // labelPassword
             // 
@@ -99,7 +98,6 @@
             textBoxEmail.Name = "textBoxEmail";
             textBoxEmail.Size = new Size(292, 39);
             textBoxEmail.TabIndex = 4;
-            textBoxEmail.TextChanged += textBox1_TextChanged;
             // 
             // textBoxPassword
             // 
@@ -125,7 +123,7 @@
             buttonEntra.TabIndex = 6;
             buttonEntra.Text = "ENTRA";
             buttonEntra.UseVisualStyleBackColor = false;
-            buttonEntra.Click += button1_Click;
+            buttonEntra.Click += buttonEntra_Click;
             // 
             // labelDonaAlta
             // 
@@ -163,7 +161,7 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Benvingut/da a WPC?";
-            WindowState = FormWindowState.Maximized;            
+            WindowState = FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)pictureCoffee).EndInit();
             ResumeLayout(false);
             PerformLayout();
