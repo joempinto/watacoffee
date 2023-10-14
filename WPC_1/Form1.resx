@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="pictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureCoffee.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABqIAAAaiCAYAAABJl+liAAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhb/EIyKKhSlELLbQVAZFRSw1CiIohKgQj8LdjYlCdg27ERtLwTZg4dF4FTbW2lrYCoLgAWJrY6Vo
@@ -8784,7 +8784,7 @@
         AAAAT548+S+Qb6rmr96R5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="groupBoxMain.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAA2oAAATYCAIAAADh7KOsAAABgmlDQ1BJQ0MgcHJvZmlsZQAAKM+VkUso
         RFEcxn8z3iILs5CkuxhWlJAsGUqKmsYog4V775ih5t6Z7h3ZWCpbZeGx8VrYWLO1sFVKeZRsbayIjXT9

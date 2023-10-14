@@ -12,6 +12,9 @@ namespace WPC_1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+            //Application.Run(new admin_Menu());
+           //Application.Run(new usuari_Menu());
+            //Application.Run(new Form4());
         }
     }
 }

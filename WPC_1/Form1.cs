@@ -7,19 +7,21 @@ namespace WPC_1
             InitializeComponent();
         }
 
-        private void groupBox1_Enter(object sender, EventArgs e)
+
+        private void buttonEntra_Click(object sender, EventArgs e)
         {
+            // textBoxUsuari.Text = "Pinto el maquina";
+            usuari_Menu frm3 = new usuari_Menu();
+            frm3.ShowDialog();
 
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void labelDonaAlta_Click(object sender, EventArgs e)
+        {
+            register_Menu frm2 = new register_Menu();
+            frm2.ShowDialog();
         }
 
-        private void labelSinscrit_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

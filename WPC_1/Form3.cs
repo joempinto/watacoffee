@@ -10,14 +10,19 @@ using System.Windows.Forms;
 
 namespace WPC_1
 {
-    public partial class Form3 : Form
+    public partial class usuari_Menu : Form
     {
-        public Form3()
+        public usuari_Menu()
         {
             InitializeComponent();
         }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
         {
 
         }

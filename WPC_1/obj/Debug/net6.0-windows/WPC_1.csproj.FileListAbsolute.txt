@@ -16,3 +16,5 @@ C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.genruntim
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\ref\WPC_1.dll
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Properties.Resources.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.admin_Menu.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.usuari_Menu.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.register_Menu.resources

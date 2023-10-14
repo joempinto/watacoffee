@@ -29,163 +29,155 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            pictureBox1 = new PictureBox();
-            textBoxUsuari = new TextBox();
-            textBoxContrasenya = new TextBox();
-            labelUsuari = new Label();
-            labelContrasenya = new Label();
+            pictureCoffee = new PictureBox();
+            labelTitle = new Label();
+            labelEmail = new Label();
+            labelPassword = new Label();
+            textBoxEmail = new TextBox();
+            textBoxPassword = new TextBox();
             buttonEntra = new Button();
-            labelSinscrit = new Label();
-            label1 = new Label();
-            groupBoxMain = new GroupBox();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            groupBoxMain.SuspendLayout();
+            labelDonaAlta = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureCoffee).BeginInit();
             SuspendLayout();
             // 
-            // pictureBox1
+            // pictureCoffee
             // 
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(80, 112);
-            pictureBox1.Margin = new Padding(4, 5, 4, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(383, 398);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
+            pictureCoffee.Anchor = AnchorStyles.None;
+            pictureCoffee.BackColor = Color.Transparent;
+            pictureCoffee.Image = (Image)resources.GetObject("pictureCoffee.Image");
+            pictureCoffee.Location = new Point(96, 139);
+            pictureCoffee.Name = "pictureCoffee";
+            pictureCoffee.Size = new Size(390, 378);
+            pictureCoffee.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureCoffee.TabIndex = 0;
+            pictureCoffee.TabStop = false;
             // 
-            // textBoxUsuari
+            // labelTitle
             // 
-            textBoxUsuari.Location = new Point(596, 178);
-            textBoxUsuari.Margin = new Padding(4, 5, 4, 5);
-            textBoxUsuari.Name = "textBoxUsuari";
-            textBoxUsuari.Size = new Size(303, 39);
-            textBoxUsuari.TabIndex = 1;
+            labelTitle.Anchor = AnchorStyles.None;
+            labelTitle.AutoSize = true;
+            labelTitle.BackColor = Color.Transparent;
+            labelTitle.Font = new Font("Segoe UI Black", 28F, FontStyle.Italic, GraphicsUnit.Point);
+            labelTitle.ForeColor = Color.FromArgb(107, 55, 35);
+            labelTitle.Location = new Point(242, 30);
+            labelTitle.Name = "labelTitle";
+            labelTitle.Size = new Size(522, 74);
+            labelTitle.TabIndex = 1;
+            labelTitle.Text = "Who Pays Coffee?";
             // 
-            // textBoxContrasenya
+            // labelEmail
             // 
-            textBoxContrasenya.Location = new Point(596, 302);
-            textBoxContrasenya.Margin = new Padding(4, 5, 4, 5);
-            textBoxContrasenya.Name = "textBoxContrasenya";
-            textBoxContrasenya.Size = new Size(303, 39);
-            textBoxContrasenya.TabIndex = 2;
+            labelEmail.Anchor = AnchorStyles.None;
+            labelEmail.AutoSize = true;
+            labelEmail.BackColor = Color.Transparent;
+            labelEmail.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelEmail.ForeColor = Color.FromArgb(107, 55, 35);
+            labelEmail.Location = new Point(544, 177);
+            labelEmail.Name = "labelEmail";
+            labelEmail.Size = new Size(59, 28);
+            labelEmail.TabIndex = 2;
+            labelEmail.Text = "Email";
+
             // 
-            // labelUsuari
+            // labelPassword
             // 
-            labelUsuari.AutoSize = true;
-            labelUsuari.BackColor = Color.Transparent;
-            labelUsuari.Location = new Point(597, 145);
-            labelUsuari.Margin = new Padding(4, 0, 4, 0);
-            labelUsuari.Name = "labelUsuari";
-            labelUsuari.Size = new Size(80, 32);
-            labelUsuari.TabIndex = 3;
-            labelUsuari.Text = "Usuari";
+            labelPassword.Anchor = AnchorStyles.None;
+            labelPassword.AutoSize = true;
+            labelPassword.BackColor = Color.Transparent;
+            labelPassword.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            labelPassword.ForeColor = Color.FromArgb(107, 55, 35);
+            labelPassword.Location = new Point(544, 279);
+            labelPassword.Name = "labelPassword";
+            labelPassword.Size = new Size(120, 28);
+            labelPassword.TabIndex = 3;
+            labelPassword.Text = "Contrasenya";
             // 
-            // labelContrasenya
+            // textBoxEmail
             // 
-            labelContrasenya.AutoSize = true;
-            labelContrasenya.BackColor = Color.Transparent;
-            labelContrasenya.Location = new Point(596, 268);
-            labelContrasenya.Margin = new Padding(4, 0, 4, 0);
-            labelContrasenya.Name = "labelContrasenya";
-            labelContrasenya.Size = new Size(146, 32);
-            labelContrasenya.TabIndex = 4;
-            labelContrasenya.Text = "Contrasenya";
+            textBoxEmail.Anchor = AnchorStyles.None;
+            textBoxEmail.Location = new Point(544, 208);
+            textBoxEmail.Name = "textBoxEmail";
+            textBoxEmail.Size = new Size(292, 39);
+            textBoxEmail.TabIndex = 4;
+            textBoxEmail.TextChanged += textBox1_TextChanged;
+            // 
+            // textBoxPassword
+            // 
+            textBoxPassword.Anchor = AnchorStyles.None;
+            textBoxPassword.Location = new Point(544, 310);
+            textBoxPassword.Name = "textBoxPassword";
+            textBoxPassword.Size = new Size(292, 39);
+            textBoxPassword.TabIndex = 5;
+            textBoxPassword.UseSystemPasswordChar = true;
             // 
             // buttonEntra
             // 
-            buttonEntra.BackColor = Color.Sienna;
+            buttonEntra.Anchor = AnchorStyles.None;
+            buttonEntra.BackColor = Color.FromArgb(107, 55, 35);
             buttonEntra.BackgroundImageLayout = ImageLayout.None;
-            buttonEntra.FlatAppearance.BorderColor = Color.FromArgb(128, 64, 0);
-            buttonEntra.FlatAppearance.BorderSize = 4;
+            buttonEntra.FlatAppearance.BorderColor = Color.FromArgb(107, 55, 35);
             buttonEntra.FlatStyle = FlatStyle.Popup;
-            buttonEntra.Font = new Font("Segoe UI Historic", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonEntra.Location = new Point(673, 378);
-            buttonEntra.Margin = new Padding(4, 5, 4, 5);
+            buttonEntra.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonEntra.ForeColor = Color.FromArgb(64, 0, 0);
+            buttonEntra.Location = new Point(594, 367);
             buttonEntra.Name = "buttonEntra";
-            buttonEntra.Size = new Size(166, 67);
-            buttonEntra.TabIndex = 5;
+            buttonEntra.Size = new Size(207, 60);
+            buttonEntra.TabIndex = 6;
             buttonEntra.Text = "ENTRA";
             buttonEntra.UseVisualStyleBackColor = false;
+            buttonEntra.Click += button1_Click;
             // 
-            // labelSinscrit
+            // labelDonaAlta
             // 
-            labelSinscrit.AutoSize = true;
-            labelSinscrit.BackColor = Color.Transparent;
-            labelSinscrit.ForeColor = SystemColors.ActiveCaptionText;
-            labelSinscrit.Location = new Point(514, 518);
-            labelSinscrit.Margin = new Padding(4, 0, 4, 0);
-            labelSinscrit.Name = "labelSinscrit";
-            labelSinscrit.Size = new Size(262, 32);
-            labelSinscrit.TabIndex = 6;
-            labelSinscrit.Text = "Si no estàs registrat/da,";
-            labelSinscrit.Click += labelSinscrit_Click;
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            label1.Location = new Point(779, 518);
-            label1.Name = "label1";
-            label1.Size = new Size(170, 32);
-            label1.TabIndex = 7;
-            label1.Text = "Dona't d'alta!";
-            // 
-            // groupBoxMain
-            // 
-            groupBoxMain.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            groupBoxMain.AutoSize = true;
-            groupBoxMain.AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            groupBoxMain.BackgroundImage = (Image)resources.GetObject("groupBoxMain.BackgroundImage");
-            groupBoxMain.Controls.Add(label1);
-            groupBoxMain.Controls.Add(labelSinscrit);
-            groupBoxMain.Controls.Add(buttonEntra);
-            groupBoxMain.Controls.Add(labelContrasenya);
-            groupBoxMain.Controls.Add(labelUsuari);
-            groupBoxMain.Controls.Add(textBoxContrasenya);
-            groupBoxMain.Controls.Add(textBoxUsuari);
-            groupBoxMain.Controls.Add(pictureBox1);
-            groupBoxMain.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            groupBoxMain.ForeColor = SystemColors.ControlLight;
-            groupBoxMain.Location = new Point(150, 93);
-            groupBoxMain.Margin = new Padding(4, 5, 4, 5);
-            groupBoxMain.Name = "groupBoxMain";
-            groupBoxMain.Padding = new Padding(4, 5, 4, 5);
-            groupBoxMain.Size = new Size(956, 587);
-            groupBoxMain.TabIndex = 0;
-            groupBoxMain.TabStop = false;
-            groupBoxMain.Text = "Benvingut/da !";
-            groupBoxMain.Enter += groupBox1_Enter;
+            labelDonaAlta.Anchor = AnchorStyles.None;
+            labelDonaAlta.AutoSize = true;
+            labelDonaAlta.BackColor = Color.Transparent;
+            labelDonaAlta.Cursor = Cursors.Hand;
+            labelDonaAlta.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelDonaAlta.ForeColor = Color.FromArgb(107, 55, 35);
+            labelDonaAlta.Location = new Point(617, 474);
+            labelDonaAlta.Name = "labelDonaAlta";
+            labelDonaAlta.Size = new Size(164, 30);
+            labelDonaAlta.TabIndex = 7;
+            labelDonaAlta.Text = "Donar-se d'alta";
+            labelDonaAlta.Click += labelDonaAlta_Click;
             // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(13F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1143, 702);
-            Controls.Add(groupBoxMain);
-            Margin = new Padding(4, 5, 4, 5);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(957, 635);
+            Controls.Add(labelDonaAlta);
+            Controls.Add(buttonEntra);
+            Controls.Add(textBoxPassword);
+            Controls.Add(textBoxEmail);
+            Controls.Add(labelPassword);
+            Controls.Add(labelEmail);
+            Controls.Add(labelTitle);
+            Controls.Add(pictureCoffee);
+            Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ForeColor = Color.Black;
+            ImeMode = ImeMode.On;
+            Margin = new Padding(5, 6, 5, 6);
             Name = "Form1";
-            Text = "Who Pays Coffee";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            groupBoxMain.ResumeLayout(false);
-            groupBoxMain.PerformLayout();
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Benvingut/da a WPC?";
+            WindowState = FormWindowState.Maximized;            
+            ((System.ComponentModel.ISupportInitialize)pictureCoffee).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private PictureBox pictureBox1;
-        private TextBox textBoxUsuari;
-        private TextBox textBoxContrasenya;
-        private Label labelUsuari;
-        private Label labelContrasenya;
+        private PictureBox pictureCoffee;
+        private Label labelTitle;
+        private Label labelEmail;
+        private Label labelPassword;
+        private TextBox textBoxEmail;
+        private TextBox textBoxPassword;
         private Button buttonEntra;
-        private Label labelSinscrit;
-        private Label label1;
-        private GroupBox groupBoxMain;
+        private Label labelDonaAlta;
     }
 }
