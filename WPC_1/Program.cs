@@ -14,7 +14,7 @@ namespace WPC_1
             Application.Run(new Form1());
             //Application.Run(new admin_Menu());
            //Application.Run(new usuari_Menu());
-            //Application.Run(new Form4());
+            //Application.Run(new register_Menu());
         }
     }
 }

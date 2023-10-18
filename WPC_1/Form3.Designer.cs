@@ -174,6 +174,7 @@
             Name = "usuari_Menu";
             Text = "Usuari";
             WindowState = FormWindowState.Maximized;
+            Load += usuari_Menu_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

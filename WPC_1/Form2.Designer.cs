@@ -40,6 +40,7 @@
             op1ToolStripMenuItem = new ToolStripMenuItem();
             op2ToolStripMenuItem = new ToolStripMenuItem();
             op3ToolStripMenuItem = new ToolStripMenuItem();
+            logoutToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -143,14 +144,14 @@
             menuStrip1.Location = new Point(14, 59);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(81, 57);
+            menuStrip1.Size = new Size(261, 57);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
             // 
             // op1ToolStripMenuItem
             // 
-            op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { op2ToolStripMenuItem, op3ToolStripMenuItem });
+            op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { op2ToolStripMenuItem, op3ToolStripMenuItem, logoutToolStripMenuItem });
             op1ToolStripMenuItem.Image = Properties.Resources.main_coffee;
             op1ToolStripMenuItem.Name = "op1ToolStripMenuItem";
             op1ToolStripMenuItem.Size = new Size(73, 53);
@@ -161,13 +162,19 @@
             // 
             op2ToolStripMenuItem.Name = "op2ToolStripMenuItem";
             op2ToolStripMenuItem.Size = new Size(270, 34);
-            op2ToolStripMenuItem.Text = "op2";
+            op2ToolStripMenuItem.Text = "Inici";
             // 
             // op3ToolStripMenuItem
             // 
             op3ToolStripMenuItem.Name = "op3ToolStripMenuItem";
             op3ToolStripMenuItem.Size = new Size(270, 34);
-            op3ToolStripMenuItem.Text = "op3";
+            op3ToolStripMenuItem.Text = "Delete";
+            // 
+            // logoutToolStripMenuItem
+            // 
+            logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            logoutToolStripMenuItem.Size = new Size(270, 34);
+            logoutToolStripMenuItem.Text = "Logout";
             // 
             // admin_Menu
             // 
@@ -210,5 +217,6 @@
         private ToolStripMenuItem op1ToolStripMenuItem;
         private ToolStripMenuItem op2ToolStripMenuItem;
         private ToolStripMenuItem op3ToolStripMenuItem;
+        private ToolStripMenuItem logoutToolStripMenuItem;
     }
 }
