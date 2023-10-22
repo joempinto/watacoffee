@@ -15,7 +15,7 @@ namespace WPC_1.register
 
 
 
-        public RegisterHttpResponse(in string head, in string token, in string email, in string name)
+        public RegisterHttpResponse(string head, string token, string email, string name)
         {
             Head = head;
             Token = token;

@@ -167,10 +167,10 @@
             button1.TabIndex = 18;
             button1.Text = "Finalitza";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // label8
             // 
-            label8.Anchor = AnchorStyles.None;
             label8.AutoSize = true;
             label8.BackColor = Color.Transparent;
             label8.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
@@ -183,7 +183,6 @@
             // 
             // label6
             // 
-            label6.Anchor = AnchorStyles.None;
             label6.AutoSize = true;
             label6.BackColor = Color.Transparent;
             label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Xml.Linq;
 
 namespace WPC_1
 {
@@ -20,6 +22,11 @@ namespace WPC_1
             this.head = head;
             this.token = token;
         }
-        
+
+        public override string ToString()
+        {
+            return "Head: " + head + "\n Token: " + token + "\n Email: " + email + "\n Name: " + nom;
+        }
+
     }
 }

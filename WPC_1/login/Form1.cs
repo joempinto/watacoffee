@@ -4,6 +4,7 @@ using System.Net.Http.Json;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
 using System.Net.Sockets;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WPC_1.login;
 using WPC_1.register;
@@ -52,7 +53,7 @@ namespace WPC_1
             }
         }
 
-        public async void doLogin(LoginUser loginUser)
+        async void doLogin(LoginUser loginUser)
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/p/login";
@@ -71,21 +72,21 @@ namespace WPC_1
                 // Si la resposta es SUCCESS
 
                 // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token i Prefix)
-
+                
                 var loginHttpResponse = await response.Content.ReadFromJsonAsync<LoginHttpResponse>();
-                                    
+                
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
 
                 if (loginHttpResponse is not null)
                 {
-                    AppInformation.usuari = new User(loginHttpResponse.head, loginHttpResponse.token,
-                        loginHttpResponse.name, loginHttpResponse.email);
+                    AppInformation.usuari = new User(loginHttpResponse.Head, loginHttpResponse.Token,
+                        loginHttpResponse.Name, loginHttpResponse.Email);
                     //MessageBox.Show(AppInformation.usuari.head + AppInformation.usuari.token +  AppInformation.usuari.nom + AppInformation.usuari.email);
 
                     // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
-                    if (loginHttpResponse.head == "CBS")
+                    if (loginHttpResponse.Head == "CBS")
                     {
-                        usuari_Menu usuariMenu = new usuari_Menu();                       
+                        usuari_Menu usuariMenu = new usuari_Menu();                        
                         usuariMenu.Show();
                     }
                     else

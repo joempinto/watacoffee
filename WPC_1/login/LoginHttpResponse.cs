@@ -10,21 +10,21 @@ namespace WPC_1.login
 {
     internal class LoginHttpResponse
     {
-        public string email { get; set; } 
-        public string token { get; set; }
-        public string head { get; set; }
-        public string name { get; set; }
-        public LoginHttpResponse(in string head, in string token, in string email, in string name)
+        public string Email { get; set; } 
+        public string Token { get; set; }
+        public string Head { get; set; }
+        public string Name { get; set; }
+        public LoginHttpResponse(string head, string token, string email, string name)
         {
-            this.email = email;
-            this.token = token;
-            this.head = head;
-            this.name=name;
+            this.Email = email;
+            this.Token = token;
+            this.Head = head;
+            this.Name = name;
         }
 
         public override string ToString()
         {
-            return "Head: " + head + ". Token: " + token + ". Email: " + email + ". Name: " + name;
+            return "Head: " + Head + ". Token: " + Token + ". Email: " + Email + ". Name: " + Name;
         }
     }
 }
