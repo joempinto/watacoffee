@@ -123,7 +123,7 @@
             buttonEntra.TabIndex = 6;
             buttonEntra.Text = "ENTRA";
             buttonEntra.UseVisualStyleBackColor = false;
-            buttonEntra.Click += buttonEntra_Click;
+            buttonEntra.Click += buttonEntra_ClickAsync;
             // 
             // labelDonaAlta
             // 
@@ -176,6 +176,5 @@
         private TextBox textBoxEmail;
         private TextBox textBoxPassword;
         private Button buttonEntra;
-        private Label labelDonaAlta;
-    }
+        private Label labelDonaAlta;}
 }

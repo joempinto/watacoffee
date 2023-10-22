@@ -3,6 +3,7 @@ using System.Net.Http;
 using System.Net.Http.Json;
 using System.Net.Mail;
 using System.Net.NetworkInformation;
+using System.Net.Sockets;
 using System.Windows.Forms;
 using WPC_1.login;
 using WPC_1.register;
@@ -17,17 +18,17 @@ namespace WPC_1
             InitializeComponent();
         }
 
-        private void buttonEntra_Click(object sender, EventArgs e)
+        private void buttonEntra_ClickAsync(object sender, EventArgs e)
         {
             // Agafem el text que lusuari ha introduit als camps de text
             string email = textBoxEmail.Text;
             string password = textBoxPassword.Text;
 
             MessageBoxButtons button = MessageBoxButtons.OK;
-            MessageBoxIcon icon = MessageBoxIcon.Warning;
+            MessageBoxIcon icon = MessageBoxIcon.Warning;                   
 
             // Validació de email i password: No estan empty i que email es valid
-            if (string.IsNullOrEmpty(email) )
+            if (string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Email no pot estar buit", "Error", button, icon);
             }
@@ -38,14 +39,16 @@ namespace WPC_1
             else if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Contrasenya no pot estar buida", "Error", button, icon);
-            } 
+            }
             else
             {
+
                 // Creem user amb les dades introduides (email i password)
                 LoginUser loginUser = new LoginUser(email, password);
 
-                // Fem login amb el server
+                //fem login
                 doLogin(loginUser);
+                
             }
         }
 
@@ -53,11 +56,10 @@ namespace WPC_1
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/p/login";
-            using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LoginUser>(url, loginUser);
-            //var loginHttpResponse = await response.Content.ReadFromJsonAsync<LoginHttpResponse>();
+            using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LoginUser>(url, loginUser);           
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
-            if (!response.IsSuccessStatusCode)
+           if (!response.IsSuccessStatusCode)
             {
                 // Si la resposta es NO SUCCESS, mostrem error
                 MessageBoxButtons button = MessageBoxButtons.OK;
@@ -69,7 +71,7 @@ namespace WPC_1
                 // Si la resposta es SUCCESS
 
                 // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token i Prefix)
-               
+
                 var loginHttpResponse = await response.Content.ReadFromJsonAsync<LoginHttpResponse>();
                                     
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
@@ -78,11 +80,12 @@ namespace WPC_1
                 {
                     AppInformation.usuari = new User(loginHttpResponse.head, loginHttpResponse.token,
                         loginHttpResponse.name, loginHttpResponse.email);
+                    //MessageBox.Show(AppInformation.usuari.head + AppInformation.usuari.token +  AppInformation.usuari.nom + AppInformation.usuari.email);
 
                     // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
                     if (loginHttpResponse.head == "CBS")
                     {
-                        usuari_Menu usuariMenu = new usuari_Menu();
+                        usuari_Menu usuariMenu = new usuari_Menu();                       
                         usuariMenu.Show();
                     }
                     else
@@ -92,7 +95,7 @@ namespace WPC_1
                     }
 
                     // Tanquem el Formulari
-                    this.Close();
+                   // this.Close();
                 }
                 else
                 {
@@ -122,9 +125,11 @@ namespace WPC_1
             //Obrim el Form4
             register_Menu frm2 = new register_Menu();
             frm2.ShowDialog();
-            // Tanquem el Form1
-            //this.Close();
+            //Tanquem el Form1
+           // this.Close();
 
         }
     }
 }
+
+ 

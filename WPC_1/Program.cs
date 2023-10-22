@@ -1,3 +1,5 @@
+using System.Windows;
+
 namespace WPC_1
 {
     internal static class Program
@@ -12,9 +14,7 @@ namespace WPC_1
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
-            //Application.Run(new admin_Menu());
-           //Application.Run(new usuari_Menu());
-            //Application.Run(new register_Menu());
+       
         }
     }
 }

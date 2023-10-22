@@ -8,13 +8,13 @@ namespace WPC_1.login
 {
     public struct LoginUser
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        public string email { get; set; }
+        public string password { get; set; }
 
-        public LoginUser(in string Email, in string Password)
+        public LoginUser(in string email, in string password)
         {
-            this.Email = Email;
-            this.Password = Password;
+            this.email = email;
+            this.password = password;
         }
     }
 
