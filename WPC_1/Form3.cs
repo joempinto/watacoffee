@@ -98,7 +98,7 @@ namespace WPC_1
             //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
 
             // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
-            string header = String.Concat("Authorization",AppInformation.usuari.Head,AppInformation.usuari.Token);
+            string header = String.Concat(AppInformation.usuari.Head,AppInformation.usuari.Token);
             DeleteInfo deleteUser = new DeleteInfo(header);
             //fem logout
             doDelete(deleteUser);
@@ -111,7 +111,7 @@ namespace WPC_1
             string url = "http://localhost:8080/coffee/api/auth/delete";
             MessageBox.Show(deleteUser.Authorization);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(deleteUser.Authorization);
-            using HttpResponseMessage response = await httpClient.PostAsJsonAsync<DeleteInfo>(url, deleteUser);
+            using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.

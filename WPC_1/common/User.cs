@@ -25,7 +25,7 @@ namespace WPC_1
 
         public override string ToString()
         {
-            return "Head: " + Head + "\n Token: " + Token + "\n Email: " + Email + "\n Name: " + Username;
+            return "Head: " + Head + "\nToken: " + Token + "\nEmail: " + Email + "\nUsername: " + Username;
         }
 
     }
