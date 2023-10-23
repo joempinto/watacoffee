@@ -201,6 +201,7 @@
             button2.TabIndex = 21;
             button2.Text = "Esborra";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // usuari_Menu
             // 

@@ -8,6 +8,8 @@ using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using WPC_1.login;
 using WPC_1.register;
+using WPC_1.delete;
+using WPC_1.logout;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WPC_1
@@ -65,7 +67,7 @@ namespace WPC_1
                 // Si la resposta es NO SUCCESS, mostrem error
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Warning;
-                MessageBox.Show("Usuari desconegut", "Error", button, icon);
+                MessageBox.Show("Usuari desconegut o no trobat.", "Error", button, icon);
             }
             else
             {
@@ -127,7 +129,7 @@ namespace WPC_1
             register_Menu frm2 = new register_Menu();
             frm2.ShowDialog();
             //Tanquem el Form1
-           // this.Close();
+            this.Hide();
 
         }
     }

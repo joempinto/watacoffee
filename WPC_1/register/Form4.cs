@@ -92,7 +92,7 @@ namespace WPC_1
                     if (registerHttpResponse is not null)
                     {
                         AppInformation.usuari = new User(registerHttpResponse.Head, registerHttpResponse.Token, 
-                            registerHttpResponse.Name, registerHttpResponse.Email);
+                            registerHttpResponse.Username, registerHttpResponse.Email);
                             
                         // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
                         if (registerHttpResponse?.Head == "CBS")

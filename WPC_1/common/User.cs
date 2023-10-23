@@ -10,22 +10,22 @@ namespace WPC_1
 {
     internal class User
     {
-        public string nom { get; set; }
-        public string email { get; set; }
-        public string head { get; set; }
-        public string token { get; set; }
+        public string Username{ get; set; }
+        public string Email { get; set; }
+        public string Head { get; set; }
+        public string Token { get; set; }
 
         public User(in string head, in string token, in string nom, in string email)
         {
-            this.nom = nom;
-            this.email = email;           
-            this.head = head;
-            this.token = token;
+            this.Username = nom;
+            this.Email = email;           
+            this.Head = head;
+            this.Token = token;
         }
 
         public override string ToString()
         {
-            return "Head: " + head + "\n Token: " + token + "\n Email: " + email + "\n Name: " + nom;
+            return "Head: " + Head + "\n Token: " + Token + "\n Email: " + Email + "\n Name: " + Username;
         }
 
     }
