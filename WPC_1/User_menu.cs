@@ -1,4 +1,7 @@
-﻿using Microsoft.Win32;
+﻿/*
+ * created by JMPinto
+ */
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -41,7 +44,7 @@ namespace WPC_1
 
         private void usuari_Menu_Load(object sender, EventArgs e)
         {
-            MessageBox.Show(AppInformation.usuari.ToString());
+           //MessageBox.Show(AppInformation.usuari.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e) //LOGOUT BUTTON
@@ -60,7 +63,7 @@ namespace WPC_1
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/logout";
-            MessageBox.Show(logoutUser.Authorization);
+            //MessageBox.Show(logoutUser.Authorization);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutUser.Authorization);
             using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LogoutInfo>(url, logoutUser);
 
@@ -83,7 +86,7 @@ namespace WPC_1
                 MessageBox.Show("Logout correcte! " + resposta, "Info");
                 
                 //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
-                Form1 inici = new Form1();
+                Login_inici inici = new Login_inici();
                 inici.ShowDialog();
                 
 
@@ -109,7 +112,7 @@ namespace WPC_1
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/delete";
-            MessageBox.Show(deleteUser.Authorization);
+            //MessageBox.Show(deleteUser.Authorization);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(deleteUser.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 
@@ -132,7 +135,7 @@ namespace WPC_1
                 MessageBox.Show("DELETE correcte! " + resposta, "Info");
 
                 //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
-                Form1 inici = new Form1();
+                Login_inici inici = new Login_inici();
                 inici.ShowDialog();
 
                 // Tanquem el Formulari

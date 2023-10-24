@@ -1,3 +1,7 @@
+/*
+ * created by JMPinto
+ */
+
 using System.Drawing;
 using System.Net.Http;
 using System.Net.Http.Json;
@@ -14,9 +18,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WPC_1
 {
-    public partial class Form1 : Form
+    public partial class Login_inici : Form
     {
-        public Form1()
+        public Login_inici()
         {
             InitializeComponent();
         }

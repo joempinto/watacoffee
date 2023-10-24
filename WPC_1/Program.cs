@@ -1,3 +1,6 @@
+/*
+ * created by JMPinto
+ */
 using System.Windows;
 
 namespace WPC_1
@@ -13,7 +16,7 @@ namespace WPC_1
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form1());
+            Application.Run(new Login_inici());
        
         }
     }

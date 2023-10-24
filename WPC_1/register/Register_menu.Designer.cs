@@ -1,4 +1,8 @@
-﻿namespace WPC_1
+﻿/*
+ * created by JMPinto
+ */
+
+namespace WPC_1
 {
     partial class register_Menu
     {

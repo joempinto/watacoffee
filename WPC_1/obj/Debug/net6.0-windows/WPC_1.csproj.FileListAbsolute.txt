@@ -3,7 +3,6 @@ C:\Users\goodp\source\repos\WPC_1\WPC_1\bin\Debug\net6.0-windows\WPC_1.deps.json
 C:\Users\goodp\source\repos\WPC_1\WPC_1\bin\Debug\net6.0-windows\WPC_1.runtimeconfig.json
 C:\Users\goodp\source\repos\WPC_1\WPC_1\bin\Debug\net6.0-windows\WPC_1.dll
 C:\Users\goodp\source\repos\WPC_1\WPC_1\bin\Debug\net6.0-windows\WPC_1.pdb
-C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Form1.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.csproj.GenerateResource.cache
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.AssemblyInfoInputs.cache
@@ -18,3 +17,4 @@ C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Propertie
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.admin_Menu.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.usuari_Menu.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.register_Menu.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Login_inici.resources
