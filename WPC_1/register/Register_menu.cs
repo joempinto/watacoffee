@@ -73,14 +73,14 @@ namespace WPC_1
                 string url = "http://localhost:8080/coffee/api/auth/p/register";
                 using HttpResponseMessage response = await httpClient.PostAsJsonAsync<RegisterUser>(url, registerUser);
 
-                // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
+                // Primer mirem si la resposta del server: Si NO és SUCCESS mostrem error.
                 if (!response.IsSuccessStatusCode)
                 {
                     // Si la resposta es NO SUCCESS, mostrem error
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
-                    MessageBox.Show("Registre no realitzat. Torna-ho a intentar", "Error", button, icon);
-                    MessageBox.Show("Registre no realitzat. Torna-ho a intentar", "Error", button, icon);
+                    //MessageBox.Show("Registre no realitzat. Torna-ho a intentar", "Error", button, icon);
+                    MessageBox.Show("Registre no realitzat. Torna-ho a intentar\n"+response.ToString(), "Error", button, icon);
                 }
                 else
                 {
@@ -94,9 +94,9 @@ namespace WPC_1
 
                     if (registerHttpResponse is not null)
                     {
-                        AppInformation.usuari = new User(registerHttpResponse.Head, registerHttpResponse.Token, 
+                        AppInformation.usuari = new User(registerHttpResponse.Head, registerHttpResponse.Token,
                             registerHttpResponse.Username, registerHttpResponse.Email);
-                            
+
                         // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
                         if (registerHttpResponse?.Head == "CBS")
                         {
@@ -111,12 +111,12 @@ namespace WPC_1
 
                         // Tanquem el Formulari
                         //this.Close();
-                        
+
                     }
                     else
                     {
-                        MessageBox.Show("Torna a intentar el registre", "Token no rebut",button, icon);
-                    }                
+                        MessageBox.Show("Torna a intentar el registre", "Token no rebut", button, icon);
+                    }
                 }
             }
 
@@ -132,6 +132,11 @@ namespace WPC_1
             {
                 return false;
             }
-        }        
+        }
+
+        private void labelDonaAlta_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

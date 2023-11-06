@@ -106,6 +106,7 @@
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox3.TabIndex = 12;
             pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
             // 
             // pictureBox2
             // 
@@ -222,6 +223,7 @@
             Controls.Add(pictureBox1);
             Controls.Add(label4);
             Controls.Add(pictureBox4);
+            Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "usuari_Menu";
             Text = "Usuari";

@@ -77,7 +77,7 @@ namespace WPC_1
             {
                 // Si la resposta es SUCCESS
 
-                // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token i Prefix)
+                // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)
                 
                 var loginHttpResponse = await response.Content.ReadFromJsonAsync<LoginHttpResponse>();
                 

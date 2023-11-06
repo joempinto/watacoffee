@@ -18,3 +18,5 @@ C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.admin_Men
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.usuari_Menu.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.register_Menu.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Login_inici.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.CanviContrasenya.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Usuari_Config.resources

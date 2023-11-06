@@ -20,6 +20,16 @@ namespace WPC_1.login
             this.password = password;
         }
     }
+    public struct LoginAdmin
+    {
+        public string username { get; set; }
+        public string password { get; set; }
 
+        public LoginAdmin(in string username, in string password)
+        {
+            this.username = username;
+            this.password = password;
+        }
+    }
 
 }

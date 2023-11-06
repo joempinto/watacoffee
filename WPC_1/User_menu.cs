@@ -44,7 +44,7 @@ namespace WPC_1
 
         private void usuari_Menu_Load(object sender, EventArgs e)
         {
-           //MessageBox.Show(AppInformation.usuari.ToString());
+            //MessageBox.Show(AppInformation.usuari.ToString());
         }
 
         private void button1_Click(object sender, EventArgs e) //LOGOUT BUTTON
@@ -84,11 +84,11 @@ namespace WPC_1
                 //String message = await reader.ReadToEndAsync();
                 var resposta = await response.Content.ReadAsStringAsync();
                 MessageBox.Show("Logout correcte! " + resposta, "Info");
-                
+
                 //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
                 Login_inici inici = new Login_inici();
                 inici.ShowDialog();
-                
+
 
                 // Tanquem el Formulari
                 this.Close();
@@ -101,7 +101,7 @@ namespace WPC_1
             //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
 
             // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
-            string header = String.Concat(AppInformation.usuari.Head,AppInformation.usuari.Token);
+            string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
             DeleteInfo deleteUser = new DeleteInfo(header);
             //fem logout
             doDelete(deleteUser);
@@ -120,7 +120,7 @@ namespace WPC_1
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
             if (!response.IsSuccessStatusCode)
             {
-                
+
                 // Si la resposta es NO SUCCESS, mostrem error
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Warning;
@@ -141,6 +141,12 @@ namespace WPC_1
                 // Tanquem el Formulari
                 this.Close();
             }
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            CanviContrasenya modPass = new CanviContrasenya();
+            modPass.Show();
         }
     }
 }
