@@ -47,7 +47,7 @@ namespace WPC_1
             label3 = new Label();
             buttonConfirmaRegister = new Button();
             label7 = new Label();
-            labelDonaAlta = new Label();
+            labelCancelAltaUser = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
@@ -204,20 +204,20 @@ namespace WPC_1
             label7.TabIndex = 21;
             label7.Text = "contrasenya";
             // 
-            // labelDonaAlta
+            // labelCancelAltaUser
             // 
-            labelDonaAlta.Anchor = AnchorStyles.None;
-            labelDonaAlta.AutoSize = true;
-            labelDonaAlta.BackColor = Color.Transparent;
-            labelDonaAlta.Cursor = Cursors.Hand;
-            labelDonaAlta.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            labelDonaAlta.ForeColor = Color.FromArgb(107, 55, 35);
-            labelDonaAlta.Location = new Point(461, 655);
-            labelDonaAlta.Name = "labelDonaAlta";
-            labelDonaAlta.Size = new Size(109, 30);
-            labelDonaAlta.TabIndex = 22;
-            labelDonaAlta.Text = "Cancel.lar";
-            labelDonaAlta.Click += labelDonaAlta_Click;
+            labelCancelAltaUser.Anchor = AnchorStyles.None;
+            labelCancelAltaUser.AutoSize = true;
+            labelCancelAltaUser.BackColor = Color.Transparent;
+            labelCancelAltaUser.Cursor = Cursors.Hand;
+            labelCancelAltaUser.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelCancelAltaUser.ForeColor = Color.FromArgb(107, 55, 35);
+            labelCancelAltaUser.Location = new Point(461, 655);
+            labelCancelAltaUser.Name = "labelCancelAltaUser";
+            labelCancelAltaUser.Size = new Size(109, 30);
+            labelCancelAltaUser.TabIndex = 22;
+            labelCancelAltaUser.Text = "Cancel.lar";
+            labelCancelAltaUser.Click += labelCancelAltaUser_Click;
             // 
             // register_Menu
             // 
@@ -225,7 +225,7 @@ namespace WPC_1
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(973, 688);
-            Controls.Add(labelDonaAlta);
+            Controls.Add(labelCancelAltaUser);
             Controls.Add(label7);
             Controls.Add(buttonConfirmaRegister);
             Controls.Add(registerPassword2);
@@ -267,6 +267,6 @@ namespace WPC_1
         private Label label3;
         private Button buttonConfirmaRegister;
         private Label label7;
-        private Label labelDonaAlta;
+        private Label labelCancelAltaUser;
     }
 }

@@ -8,6 +8,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using WPC_1.login;
+using WPC_1.register;
+using WPC_1.delete;
+using WPC_1.logout;
+using System.Net.Http.Json;
+using System.Net.Http.Headers;
 
 namespace WPC_1.login
 {
@@ -29,5 +35,44 @@ namespace WPC_1.login
         {
             return "Head: " + Head + ". Token: " + Token + ". Email: " + Email + ". Name: " + Name;
         }
+    }
+    internal class LoginHttpResponseAdmin
+    {        
+        public string Token { get; set; }
+        public string Head { get; set; }
+        public string Username { get; set; }
+        public LoginHttpResponseAdmin(string head, string token, string username)
+        {            
+            this.Token = token;
+            this.Head = head;
+            this.Username = username;
+        }
+
+        public override string ToString()
+        {
+            return "Head: " + Head + ". Token: " + Token + ". Username: " + Username;
+        }
+    }
+
+    public class LoginHttpResponseArrayUsers<UserLlista>
+    {
+        public List<UserLlista> User { get; set; }
+
+        public LoginHttpResponseArrayUsers(in List<UserLlista> user)
+        {
+            this.User= user;
+        }
+              
+        /*public override string ToString(in Array[] user)
+        {
+            for (int i=0; i < User.Length; i++)
+            {
+                if (User[i] != null)
+                {
+                    return ". Email: " + user[] + ". Name: " + User[i].Username;
+                }
+            }
+            return "fin";
+        }*/
     }
 }

@@ -71,6 +71,7 @@
             label1.Size = new Size(98, 32);
             label1.TabIndex = 1;
             label1.Text = "Usuaris";
+            label1.Click += label1_Click;
             // 
             // pictureBox3
             // 
@@ -119,7 +120,6 @@
             label4.Size = new Size(111, 28);
             label4.TabIndex = 7;
             label4.Text = "userAdmin";
-            label4.Click += label4_Click;
             // 
             // label2
             // 
@@ -144,7 +144,7 @@
             menuStrip1.Location = new Point(14, 59);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(261, 57);
+            menuStrip1.Size = new Size(81, 57);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             menuStrip1.ItemClicked += menuStrip1_ItemClicked;
@@ -161,20 +161,21 @@
             // op2ToolStripMenuItem
             // 
             op2ToolStripMenuItem.Name = "op2ToolStripMenuItem";
-            op2ToolStripMenuItem.Size = new Size(270, 34);
+            op2ToolStripMenuItem.Size = new Size(171, 34);
             op2ToolStripMenuItem.Text = "Inici";
             // 
             // op3ToolStripMenuItem
             // 
             op3ToolStripMenuItem.Name = "op3ToolStripMenuItem";
-            op3ToolStripMenuItem.Size = new Size(270, 34);
+            op3ToolStripMenuItem.Size = new Size(171, 34);
             op3ToolStripMenuItem.Text = "Delete";
             // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(270, 34);
+            logoutToolStripMenuItem.Size = new Size(171, 34);
             logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
             // 
             // admin_Menu
             // 

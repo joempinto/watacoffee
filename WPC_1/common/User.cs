@@ -32,4 +32,40 @@ namespace WPC_1
         }
 
     }
+
+    internal class Admin
+    {
+        public string Username { get; set; }        
+        public string Head { get; set; }
+        public string Token { get; set; }
+
+        public Admin(in string head, in string token, in string nom)
+        {
+            this.Username = nom;
+            this.Head = head;
+            this.Token = token;
+        }
+
+        public override string ToString()
+        {
+            return "Head: " + Head + "\nToken: " + Token + "\nUsername: " + Username;
+        }
+    }
+
+    internal class UserLlista
+    {
+        public string name { get; set; }
+        public string email { get; set; }
+
+        public UserLlista(in string name, in string email)
+        {
+            this.name = name;
+            this.email = email;
+        }
+
+        public override string ToString()
+        {
+            return "\nEmail: " + email + "\nName: " + name;
+        }
+    }
 }

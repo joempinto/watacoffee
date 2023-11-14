@@ -12,6 +12,8 @@ namespace WPC_1
     static class AppInformation
     {
         public static User? usuari = null;
+        public static Admin? administrador = null;       
+        public static List<UserLlista>? uLlista = null;
     }
 
 }

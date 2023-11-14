@@ -39,23 +39,85 @@ namespace WPC_1
             {
                 MessageBox.Show("Email no pot estar buit", "Error", button, icon);
             }
-            else if (!isEmailValid(email))
+            //Definir si té '@' és que el format de email NO és correcte
+            //Si no té '@' s'entèn que s'ha introduït un USERNAME, és a dir, un login de ADMIN
+            else if (email.Contains('@') && (!emailValidation(email)))
             {
-                MessageBox.Show("Email no valid", "Error", button, icon);
-            }
+                MessageBox.Show("Email no valid", "Error", button, icon);      
+            }              
             else if (string.IsNullOrEmpty(password))
             {
                 MessageBox.Show("Contrasenya no pot estar buida", "Error", button, icon);
+            }            
+            else
+            {
+                if (!email.Contains('@')) //Suposem que és el ADMIN qui intenta fer login
+                {
+                    MessageBox.Show("Admin trying to log in", "ADMIN", button, icon);
+                    //string adminName = email;
+                    LoginAdmin loginAdmin = new LoginAdmin(email,password);
+                    doLoginAdmin(loginAdmin);
+                }
+                else
+                {
+                    // Creem user amb les dades introduides (email i password)
+                    LoginUser loginUser = new LoginUser(email, password);
+
+                    //fem login
+                    doLogin(loginUser);
+                }
+            }
+        }
+
+        async void doLoginAdmin(LoginAdmin loginAdmin)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = "http://localhost:8080/coffee/api/admin/p/login";
+            using HttpResponseMessage responseAdmin = await httpClient.PostAsJsonAsync<LoginAdmin>(url, loginAdmin);
+
+            // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
+            if (!responseAdmin.IsSuccessStatusCode)
+            {
+                // Si la resposta es NO SUCCESS, mostrem error
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                MessageBox.Show(responseAdmin.ToString(), "Error", button, icon);
+                MessageBox.Show("ADMIN desconegut o no trobat.", "Error", button, icon);
             }
             else
             {
+                // Si la resposta es SUCCESS
+                // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)
 
-                // Creem user amb les dades introduides (email i password)
-                LoginUser loginUser = new LoginUser(email, password);
+                var loginHttpResponse = await responseAdmin.Content.ReadFromJsonAsync<LoginHttpResponseAdmin>();
 
-                //fem login
-                doLogin(loginUser);
-                
+                // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
+                if (loginHttpResponse is not null)
+                {
+                    AppInformation.administrador = new Admin(loginHttpResponse.Head, 
+                        loginHttpResponse.Token, loginHttpResponse.Username);
+                    //MessageBox.Show(AppInformation.usuari.head + AppInformation.usuari.token +  AppInformation.usuari.nom + AppInformation.usuari.email);
+
+                    // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
+                    if (loginHttpResponse.Head == "CBS")
+                    {
+                        this.Hide();
+                        usuari_Menu usuariMenu = new usuari_Menu();
+                        usuariMenu.Show();
+                    }
+                    else
+                    {
+                        this.Hide();
+                        admin_Menu adminMenuForm = new admin_Menu();
+                        adminMenuForm.Show();
+                    }
+                }
+                else
+                {
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Warning;
+                    MessageBox.Show("Torna a intentar el login", "Token no rebut", button, icon);
+                }
             }
         }
 
@@ -76,13 +138,11 @@ namespace WPC_1
             else
             {
                 // Si la resposta es SUCCESS
-
                 // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)
                 
                 var loginHttpResponse = await response.Content.ReadFromJsonAsync<LoginHttpResponse>();
                 
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
-
                 if (loginHttpResponse is not null)
                 {
                     AppInformation.usuari = new User(loginHttpResponse.Head, loginHttpResponse.Token,
@@ -92,28 +152,27 @@ namespace WPC_1
                     // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
                     if (loginHttpResponse.Head == "CBS")
                     {
+                        this.Hide();
                         usuari_Menu usuariMenu = new usuari_Menu();                        
                         usuariMenu.Show();
                     }
                     else
                     {
+                        this.Hide();
                         admin_Menu adminMenuForm = new admin_Menu();
                         adminMenuForm.Show();
-                    }
-
-                    // Tanquem el Formulari
-                   // this.Close();
+                    }                    
                 }
                 else
                 {
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
-                    MessageBox.Show("Torna a intentar el registre", "Token no rebut", button, icon);
+                    MessageBox.Show("Torna a intentar el login", "Token no rebut", button, icon);
                 }
             }
         }
-
-        private Boolean isEmailValid(string emailToValidate)
+        
+        private Boolean emailValidation(string emailToValidate)
         {
             try
             {
@@ -125,15 +184,14 @@ namespace WPC_1
                 return false;
             }
         }
-
         private void labelDonaAlta_Click(object sender, EventArgs e)
         {
-            
-            //Obrim el Form4
-            register_Menu frm2 = new register_Menu();
-            frm2.ShowDialog();
             //Tanquem el Form1
             this.Hide();
+            //Obrim el Form2
+            register_Menu frm2 = new register_Menu();
+            frm2.ShowDialog();
+            
 
         }
     }

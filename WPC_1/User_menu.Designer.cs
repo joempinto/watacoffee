@@ -67,7 +67,7 @@
             label4.Size = new Size(92, 25);
             label4.TabIndex = 8;
             label4.Text = "userName";
-            label4.Click += label4_Click;
+           
             // 
             // label3
             // 
@@ -132,7 +132,7 @@
             label1.Size = new Size(82, 32);
             label1.TabIndex = 10;
             label1.Text = "Grups";
-            label1.Click += label1_Click;
+
             // 
             // pictureBox1
             // 

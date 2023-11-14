@@ -20,3 +20,4 @@ C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.register_
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Login_inici.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.CanviContrasenya.resources
 C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Usuari_Config.resources
+C:\Users\goodp\source\repos\WPC_1\WPC_1\obj\Debug\net6.0-windows\WPC_1.Admin_GestioUsers.resources

@@ -28,23 +28,10 @@ namespace WPC_1
         {
             InitializeComponent();
         }
-        private void admin_Menu_Load(object sender, EventArgs e)
-        {
-
-        }
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void usuari_Menu_Load(object sender, EventArgs e)
         {
-            //MessageBox.Show(AppInformation.usuari.ToString());
+            label4.Text = AppInformation.usuari.Email;
         }
 
         private void button1_Click(object sender, EventArgs e) //LOGOUT BUTTON

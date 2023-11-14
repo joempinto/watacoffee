@@ -43,9 +43,9 @@ namespace WPC_1
             if (string.IsNullOrEmpty(email))
             {
                 MessageBox.Show("Email no pot estar buit", "Error", button, icon);
-            }
-            else if (!emailValidation(email))
-            {
+            }            
+            else if (!emailValidation(email)) //s'ha introduit un email malament
+            {                
                 MessageBox.Show("Email no valid", "Error", button, icon);
             }
             else if (string.IsNullOrEmpty(password1))
@@ -80,7 +80,7 @@ namespace WPC_1
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
                     //MessageBox.Show("Registre no realitzat. Torna-ho a intentar", "Error", button, icon);
-                    MessageBox.Show("Registre no realitzat. Torna-ho a intentar\n"+response.ToString(), "Error", button, icon);
+                    MessageBox.Show("Registre no realitzat. Torna-ho a intentar\n" + response.ToString(), "Error", button, icon);
                 }
                 else
                 {
@@ -134,9 +134,11 @@ namespace WPC_1
             }
         }
 
-        private void labelDonaAlta_Click(object sender, EventArgs e)
+        private void labelCancelAltaUser_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Hide();
+            Login_inici frm1 = new Login_inici();
+            frm1.ShowDialog();
         }
     }
 }
