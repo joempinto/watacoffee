@@ -54,7 +54,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(326, 48);
+            label2.Location = new Point(243, 53);
             label2.Name = "label2";
             label2.Size = new Size(401, 60);
             label2.TabIndex = 16;
@@ -91,18 +91,18 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(107, 55, 35);
-            label3.Location = new Point(629, 427);
+            label3.Location = new Point(546, 432);
             label3.Name = "label3";
-            label3.Size = new Size(82, 32);
+            label3.Size = new Size(183, 32);
             label3.TabIndex = 13;
-            label3.Text = "Grups";
+            label3.Text = "Llista de Grups";
             // 
             // pictureBox3
             // 
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(408, 369);
+            pictureBox3.Location = new Point(325, 374);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(180, 163);
             pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -117,11 +117,11 @@
             llistaUsers.Cursor = Cursors.Hand;
             llistaUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             llistaUsers.ForeColor = Color.FromArgb(107, 55, 35);
-            llistaUsers.Location = new Point(629, 191);
+            llistaUsers.Location = new Point(546, 196);
             llistaUsers.Name = "llistaUsers";
-            llistaUsers.Size = new Size(162, 32);
+            llistaUsers.Size = new Size(184, 32);
             llistaUsers.TabIndex = 11;
-            llistaUsers.Text = "Llista usuaris";
+            llistaUsers.Text = "Llista d'usuaris";
             llistaUsers.Click += llistaUsers_Click;
             // 
             // pictureBoxLllistaUsers
@@ -130,7 +130,7 @@
             pictureBoxLllistaUsers.BackColor = Color.Transparent;
             pictureBoxLllistaUsers.Cursor = Cursors.Hand;
             pictureBoxLllistaUsers.Image = (Image)resources.GetObject("pictureBoxLllistaUsers.Image");
-            pictureBoxLllistaUsers.Location = new Point(408, 142);
+            pictureBoxLllistaUsers.Location = new Point(325, 147);
             pictureBoxLllistaUsers.Name = "pictureBoxLllistaUsers";
             pictureBoxLllistaUsers.Size = new Size(180, 153);
             pictureBoxLllistaUsers.SizeMode = PictureBoxSizeMode.StretchImage;

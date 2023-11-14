@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Compile Update="Admin_GestioUsers.cs">
+    <Compile Update="Admin_GestioUsers\Admin_GestioUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="CanviContrasenya.cs">
@@ -10,10 +10,10 @@
     <Compile Update="login\Login_inici.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Admin_menu.cs">
+    <Compile Update="Admin_menu\Admin_menu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="User_menu.cs">
+    <Compile Update="User_menu\User_menu.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="register\Register_menu.cs">

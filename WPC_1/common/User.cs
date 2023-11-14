@@ -57,7 +57,7 @@ namespace WPC_1
         public string name { get; set; }
         public string email { get; set; }
 
-        public UserLlista(in string name, in string email)
+        public UserLlista(string name, string email)
         {
             this.name = name;
             this.email = email;

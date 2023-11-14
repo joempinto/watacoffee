@@ -24,7 +24,7 @@ namespace WPC_1
 
         private void Admin_GestioUsers_load(object sender, EventArgs e)
         {
-            string location = String.Concat(AppInformation.administrador.Username,
+            string location = String.Concat("[ADMIN] > ",AppInformation.administrador.Username,
                 " > Gestió de la aplicació");
             pageLocation.Text = location;
         }
@@ -42,10 +42,10 @@ namespace WPC_1
         async void doLlistaUsersAdmin(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/r/logout";
+            string url = "http://localhost:8080/coffee/api/admin/r/getAllUsers";
             //MessageBox.Show(logoutUser.Authorization);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
-            using HttpResponseMessage response = await httpClient.PostAsJsonAsync(url, logoutAdmin);
+            using HttpResponseMessage response = await httpClient.GetAsync(url);
 
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
@@ -54,7 +54,7 @@ namespace WPC_1
                 // Si la resposta es NO SUCCESS, mostrem error 
                 MessageBoxButtons button = MessageBoxButtons.OK;
                 MessageBoxIcon icon = MessageBoxIcon.Warning;
-                MessageBox.Show("Error al fer petició. Torna a intentar-ho\n"+response, "Error", button, icon);
+                MessageBox.Show("Error al fer petició. Torna a intentar-ho\n" + response, "Error", button, icon);
             }
             else
             {
@@ -66,11 +66,10 @@ namespace WPC_1
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
                 if (loginHttpResponse is not null)
                 {
-                    MessageBox.Show("response: \n" + loginHttpResponse);
-                    
+
                     //Una llista uLlista li assignem valors de la response
                     AppInformation.uLlista = loginHttpResponse;
-                    MessageBox.Show("uLlista values: \n" + AppInformation.uLlista);
+                    MessageBox.Show("uLlista values: \n" + AppInformation.uLlista[0]);
                 }
                 else
                 {
