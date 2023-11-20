@@ -116,8 +116,10 @@
             // listBoxUsers
             // 
             listBoxUsers.FormattingEnabled = true;
+            listBoxUsers.HorizontalScrollbar = true;
             listBoxUsers.ItemHeight = 25;
             listBoxUsers.Location = new Point(258, 262);
+            listBoxUsers.MultiColumn = true;
             listBoxUsers.Name = "listBoxUsers";
             listBoxUsers.Size = new Size(455, 279);
             listBoxUsers.TabIndex = 25;
@@ -178,7 +180,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(845, 634);
             Controls.Add(totalGrups);
             Controls.Add(label1);
             Controls.Add(listBoxUsers);

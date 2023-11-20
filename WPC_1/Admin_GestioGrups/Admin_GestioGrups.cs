@@ -52,7 +52,7 @@ namespace WPC_1
             LogoutInfo admin = new LogoutInfo(header);
             //Hem creat header per preparar la petició al server i obtenir el llistat de users
             doLlistaGrupsAdmin(admin);
-            doCountGrups(admin);
+           // doCountGrups(admin);
         }
 
         async void doLlistaGrupsAdmin(LogoutInfo logoutAdmin)
@@ -82,11 +82,12 @@ namespace WPC_1
 
                     //Una llista uLlista li assignem valors de la response
                     AppInformation.gLlista = loginHttpResponse;
-                    MessageBox.Show("Test\n" + AppInformation.gLlista[0]);
+                    //MessageBox.Show("Test\n" + AppInformation.gLlista[0]);
 
 
                     listBoxUsers.Visible = true;
                     listBoxUsers.Items.Clear();
+                    totalGrups.Text = AppInformation.gLlista.Count().ToString();
                     //imprimim els users un a un
                     for (int i = 0; i < loginHttpResponse.Count; i++)
                         listBoxUsers.Items.Add("Nom Grup: " + AppInformation.gLlista[i].groupName + "  " + "Participants: " + AppInformation.gLlista[i].numMembers);

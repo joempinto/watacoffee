@@ -19,6 +19,9 @@
     <Compile Update="User_addGroup\User_addGrup.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="User_AfegirMembre\User_AfegirMembre.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="User_GestioGrups.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -26,6 +29,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="register\Register_menu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="User_UpdateMember.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Usuari_Config.cs">

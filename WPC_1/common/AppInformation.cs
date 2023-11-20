@@ -16,6 +16,7 @@ namespace WPC_1
         public static Group? grup = null;
         public static List<UserLlista>? uLlista = null;
         public static List<GroupLlista>? gLlista = null;
+        public static List<GroupLlistaTipus>? gLlistaTipus = null;
     }
 
 }

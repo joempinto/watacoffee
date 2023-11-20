@@ -8,10 +8,10 @@ namespace WPC_1.User_addGroup
 {
     internal class AddGroupHttpResponse
     {
-        public string id { get; set; }
+        public int id { get; set; }
         public string name { get; set; }
 
-        public AddGroupHttpResponse(string id, string name)
+        public AddGroupHttpResponse(int id, string name)
         {
             this.id = id;
             this.name = name;            

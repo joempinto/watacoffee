@@ -11,15 +11,13 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace WPC_1.logout
 {
-    internal class LogoutInfo //maybe public struct
+    internal class LogoutInfo 
     {
-        public string Authorization {  get; set; }  
-        //public string Password { get; set; }
+        public string Authorization {  get; set; }         
 
         public LogoutInfo(string authorization)
         {
-            this.Authorization = authorization;
-          //  this.Password = Password;
+            this.Authorization = authorization;          
         }
 
         /*public string CreateHeader(string head, string token)

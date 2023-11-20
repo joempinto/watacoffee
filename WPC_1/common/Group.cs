@@ -22,9 +22,9 @@ namespace WPC_1
     internal class GroupLlista
     {
         public string groupName { get; set; }
-        public string numMembers { get; set; }
+        public int numMembers { get; set; }
 
-        public GroupLlista(string groupName, string numMembers)
+        public GroupLlista(string groupName, int numMembers)
         {
             this.groupName = groupName;
             this.numMembers = numMembers;
@@ -33,6 +33,24 @@ namespace WPC_1
         public override string ToString()
         {
             return "\nName: " + groupName+ " Num. Participants: " + numMembers;
+        }
+    }
+
+    internal class GroupLlistaTipus
+    {
+        public int id { get; set; }
+        public string name { get; set; }
+        
+
+        public GroupLlistaTipus(string name, int id)
+        {            
+            this.id = id;
+            this.name = name;
+        }
+
+        public override string ToString()
+        {
+            return "\nid: " + id + " Nom Grup: " + name;
         }
     }
 }

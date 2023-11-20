@@ -51,6 +51,7 @@
             labelCancelAddGrup.Size = new Size(109, 30);
             labelCancelAddGrup.TabIndex = 40;
             labelCancelAddGrup.Text = "Cancel.lar";
+            labelCancelAddGrup.Click += labelCancelAddGrup_Click;
             // 
             // confirmaAddGrupBtn
             // 
@@ -135,7 +136,7 @@
             Controls.Add(label2);
             Controls.Add(label1);
             Name = "User_addGrup";
-            Text = "User_addGrup";
+            Text = "User_addGrup";            
             ResumeLayout(false);
             PerformLayout();
         }

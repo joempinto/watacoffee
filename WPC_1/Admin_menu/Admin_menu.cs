@@ -81,7 +81,6 @@ namespace WPC_1
                     this.Hide();
                     Login_inici inici = new Login_inici();
                     inici.ShowDialog();
-
                 }
             }
         }
