@@ -28,7 +28,7 @@ namespace WPC_1
 
         private void admin_Menu_Load(object sender, EventArgs e)
         {
-            label4.Text = AppInformation.administrador.Username;
+            label4.Text = String.Concat("[ADMIN logged as: ", AppInformation.administrador.Username, " ]");
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace WPC_1
 
         }
 
-        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        public void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //fem logout del ADMIN
             // Creem logoutuser assignant les dades que tenim en memoria a Appinformation (head i token)            
@@ -88,10 +88,31 @@ namespace WPC_1
 
         private void label1_Click(object sender, EventArgs e)
         {
+            this.Hide();
+            Admin_GestioUsers gestioUsers = new Admin_GestioUsers();
+            gestioUsers.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
             // Tanquem el Formulari
             this.Hide();
             Admin_GestioUsers gestioUsers = new Admin_GestioUsers();
             gestioUsers.ShowDialog();
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin_GestioGrups gestioGroups = new Admin_GestioGrups();
+            gestioGroups.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Admin_GestioGrups gestioGroups = new Admin_GestioGrups();
+            gestioGroups.ShowDialog();
         }
     }
 }

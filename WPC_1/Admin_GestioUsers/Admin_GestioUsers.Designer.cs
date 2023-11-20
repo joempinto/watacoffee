@@ -32,33 +32,31 @@
             label2 = new Label();
             pageLocation = new Label();
             pictureBox4 = new PictureBox();
-            label3 = new Label();
-            pictureBox3 = new PictureBox();
             llistaUsers = new Label();
             pictureBoxLllistaUsers = new PictureBox();
             menuStrip1 = new MenuStrip();
             op1ToolStripMenuItem = new ToolStripMenuItem();
             op2ToolStripMenuItem = new ToolStripMenuItem();
-            op3ToolStripMenuItem = new ToolStripMenuItem();
             logoutToolStripMenuItem = new ToolStripMenuItem();
+            listBoxUsers = new ListBox();
+            totalUsers = new TextBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLllistaUsers).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // label2
             // 
-            label2.Anchor = AnchorStyles.None;
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(243, 53);
+            label2.Location = new Point(125, 58);
             label2.Name = "label2";
-            label2.Size = new Size(401, 60);
+            label2.Size = new Size(379, 60);
             label2.TabIndex = 16;
-            label2.Text = "Gestió de Usuaris";
+            label2.Text = "Gestió d'Usuaris";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
             // pageLocation
@@ -67,7 +65,7 @@
             pageLocation.BackColor = Color.Transparent;
             pageLocation.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             pageLocation.ForeColor = Color.FromArgb(107, 55, 50);
-            pageLocation.Location = new Point(92, 20);
+            pageLocation.Location = new Point(132, 20);
             pageLocation.Name = "pageLocation";
             pageLocation.Size = new Size(377, 28);
             pageLocation.TabIndex = 15;
@@ -77,72 +75,46 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(23, 12);
+            pictureBox4.Location = new Point(678, 202);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(41, 36);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 14;
             pictureBox4.TabStop = false;
             // 
-            // label3
-            // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(107, 55, 35);
-            label3.Location = new Point(546, 432);
-            label3.Name = "label3";
-            label3.Size = new Size(183, 32);
-            label3.TabIndex = 13;
-            label3.Text = "Llista de Grups";
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(325, 374);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(180, 163);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 12;
-            pictureBox3.TabStop = false;
-            // 
             // llistaUsers
             // 
-            llistaUsers.Anchor = AnchorStyles.None;
             llistaUsers.AutoSize = true;
             llistaUsers.BackColor = Color.Transparent;
             llistaUsers.Cursor = Cursors.Hand;
             llistaUsers.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             llistaUsers.ForeColor = Color.FromArgb(107, 55, 35);
-            llistaUsers.Location = new Point(546, 196);
+            llistaUsers.Location = new Point(226, 157);
             llistaUsers.Name = "llistaUsers";
-            llistaUsers.Size = new Size(184, 32);
+            llistaUsers.Size = new Size(251, 32);
             llistaUsers.TabIndex = 11;
-            llistaUsers.Text = "Llista d'usuaris";
+            llistaUsers.Text = "Llista tots els usuaris";
             llistaUsers.Click += llistaUsers_Click;
             // 
             // pictureBoxLllistaUsers
             // 
-            pictureBoxLllistaUsers.Anchor = AnchorStyles.None;
             pictureBoxLllistaUsers.BackColor = Color.Transparent;
             pictureBoxLllistaUsers.Cursor = Cursors.Hand;
             pictureBoxLllistaUsers.Image = (Image)resources.GetObject("pictureBoxLllistaUsers.Image");
-            pictureBoxLllistaUsers.Location = new Point(325, 147);
+            pictureBoxLllistaUsers.Location = new Point(132, 137);
             pictureBoxLllistaUsers.Name = "pictureBoxLllistaUsers";
-            pictureBoxLllistaUsers.Size = new Size(180, 153);
+            pictureBoxLllistaUsers.Size = new Size(88, 78);
             pictureBoxLllistaUsers.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLllistaUsers.TabIndex = 10;
             pictureBoxLllistaUsers.TabStop = false;
+            pictureBoxLllistaUsers.Click += pictureBoxLllistaUsers_Click;
             // 
             // menuStrip1
             // 
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { op1ToolStripMenuItem });
-            menuStrip1.Location = new Point(23, 73);
+            menuStrip1.Location = new Point(9, 8);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
             menuStrip1.Size = new Size(81, 57);
@@ -151,7 +123,7 @@
             // 
             // op1ToolStripMenuItem
             // 
-            op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { op2ToolStripMenuItem, op3ToolStripMenuItem, logoutToolStripMenuItem });
+            op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { op2ToolStripMenuItem, logoutToolStripMenuItem });
             op1ToolStripMenuItem.Image = Properties.Resources.main_coffee;
             op1ToolStripMenuItem.Name = "op1ToolStripMenuItem";
             op1ToolStripMenuItem.Size = new Size(73, 53);
@@ -161,20 +133,45 @@
             // op2ToolStripMenuItem
             // 
             op2ToolStripMenuItem.Name = "op2ToolStripMenuItem";
-            op2ToolStripMenuItem.Size = new Size(171, 34);
+            op2ToolStripMenuItem.Size = new Size(270, 34);
             op2ToolStripMenuItem.Text = "Inici";
-            // 
-            // op3ToolStripMenuItem
-            // 
-            op3ToolStripMenuItem.Name = "op3ToolStripMenuItem";
-            op3ToolStripMenuItem.Size = new Size(171, 34);
-            op3ToolStripMenuItem.Text = "Delete";
+            op2ToolStripMenuItem.Click += op2ToolStripMenuItem_Click;
             // 
             // logoutToolStripMenuItem
             // 
             logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            logoutToolStripMenuItem.Size = new Size(171, 34);
+            logoutToolStripMenuItem.Size = new Size(270, 34);
             logoutToolStripMenuItem.Text = "Logout";
+            logoutToolStripMenuItem.Click += logoutToolStripMenuItem_Click;
+            // 
+            // listBoxUsers
+            // 
+            listBoxUsers.FormattingEnabled = true;
+            listBoxUsers.ItemHeight = 25;
+            listBoxUsers.Location = new Point(275, 248);
+            listBoxUsers.Name = "listBoxUsers";
+            listBoxUsers.Size = new Size(455, 279);
+            listBoxUsers.TabIndex = 18;
+            // 
+            // totalUsers
+            // 
+            totalUsers.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            totalUsers.Location = new Point(609, 197);
+            totalUsers.Name = "totalUsers";
+            totalUsers.Size = new Size(63, 45);
+            totalUsers.TabIndex = 20;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(107, 55, 35);
+            label1.Location = new Point(542, 207);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 30);
+            label1.TabIndex = 19;
+            label1.Text = "Total:";
             // 
             // Admin_GestioUsers
             // 
@@ -182,11 +179,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(924, 546);
+            Controls.Add(totalUsers);
+            Controls.Add(label1);
+            Controls.Add(listBoxUsers);
             Controls.Add(label2);
             Controls.Add(pageLocation);
             Controls.Add(pictureBox4);
-            Controls.Add(label3);
-            Controls.Add(pictureBox3);
             Controls.Add(llistaUsers);
             Controls.Add(pictureBoxLllistaUsers);
             Controls.Add(menuStrip1);
@@ -195,7 +193,6 @@
             WindowState = FormWindowState.Maximized;
             Load += Admin_GestioUsers_load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLllistaUsers).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -208,14 +205,14 @@
         private Label label2;
         private Label pageLocation;
         private PictureBox pictureBox4;
-        private Label label3;
-        private PictureBox pictureBox3;
         private Label llistaUsers;
         private PictureBox pictureBoxLllistaUsers;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem op1ToolStripMenuItem;
         private ToolStripMenuItem op2ToolStripMenuItem;
-        private ToolStripMenuItem op3ToolStripMenuItem;
         private ToolStripMenuItem logoutToolStripMenuItem;
+        private ListBox listBoxUsers;
+        private TextBox totalUsers;
+        private Label label1;
     }
 }

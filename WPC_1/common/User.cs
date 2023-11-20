@@ -54,18 +54,18 @@ namespace WPC_1
 
     internal class UserLlista
     {
-        public string name { get; set; }
+        public string username { get; set; }
         public string email { get; set; }
 
-        public UserLlista(string name, string email)
+        public UserLlista(string username, string email)
         {
-            this.name = name;
+            this.username = username;
             this.email = email;
         }
 
         public override string ToString()
         {
-            return "\nEmail: " + email + "\nName: " + name;
+            return "\nEmail: " + email + "\nName: " + username;
         }
     }
 }

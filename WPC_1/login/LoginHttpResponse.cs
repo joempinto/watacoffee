@@ -62,17 +62,15 @@ namespace WPC_1.login
         {
             this.User= user;
         }
-              
-        /*public override string ToString(in Array[] user)
+    }
+
+    public class LoginHttpResponseArrayGroups<GroupLlista>
+    {
+        public List<GroupLlista> Group { get; set; }
+
+        public LoginHttpResponseArrayGroups(in List<GroupLlista> group)
         {
-            for (int i=0; i < User.Length; i++)
-            {
-                if (User[i] != null)
-                {
-                    return ". Email: " + user[] + ". Name: " + User[i].Username;
-                }
-            }
-            return "fin";
-        }*/
+            this.Group = group;
+        }
     }
 }

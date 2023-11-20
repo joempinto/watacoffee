@@ -72,13 +72,12 @@ namespace WPC_1
                 var resposta = await response.Content.ReadAsStringAsync();
                 MessageBox.Show("Logout correcte! " + resposta, "Info");
 
-                //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
+                // Tanquem el Formulari
+                this.Hide();
+                // Crea nou form
                 Login_inici inici = new Login_inici();
                 inici.ShowDialog();
 
-
-                // Tanquem el Formulari
-                this.Close();
             }
         }
 
@@ -121,12 +120,11 @@ namespace WPC_1
                 var resposta = await response.Content.ReadAsStringAsync();
                 MessageBox.Show("DELETE correcte! " + resposta, "Info");
 
-                //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
-                Login_inici inici = new Login_inici();
-                inici.ShowDialog();
-
                 // Tanquem el Formulari
                 this.Close();
+                //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
+                Login_inici inici = new Login_inici();
+                inici.ShowDialog();     
             }
         }
 
@@ -134,6 +132,13 @@ namespace WPC_1
         {
             CanviContrasenya modPass = new CanviContrasenya();
             modPass.Show();
+        }
+
+        private void menuGrupsBtn_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            User_GestioGrups userMenuGrups = new User_GestioGrups();
+            userMenuGrups.Show();
         }
     }
 }

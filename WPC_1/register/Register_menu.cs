@@ -100,17 +100,16 @@ namespace WPC_1
                         // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
                         if (registerHttpResponse?.Head == "CBS")
                         {
+                            this.Hide();
                             usuari_Menu usuariMenu = new usuari_Menu();
                             usuariMenu.Show();
                         }
                         else
                         {
+                            this.Hide();
                             admin_Menu adminMenuForm = new admin_Menu();
                             adminMenuForm.Show();
-                        }
-
-                        // Tanquem el Formulari
-                        //this.Close();
+                        }                        
 
                     }
                     else

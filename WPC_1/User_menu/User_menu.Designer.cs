@@ -31,21 +31,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(usuari_Menu));
             pictureBox4 = new PictureBox();
             label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            label1 = new Label();
-            pictureBox1 = new PictureBox();
+            menuConfigBtn = new Label();
+            menuDadesBtn = new Label();
+            pictureBoxMenuConfig = new PictureBox();
+            pictureBoxMenuDades = new PictureBox();
+            menuGrupsBtn = new Label();
+            pictureBoxMenuGrups = new PictureBox();
             label5 = new Label();
             button1 = new Button();
             label8 = new Label();
             label6 = new Label();
             button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuConfig).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuDades).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuGrups).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -62,89 +62,97 @@
             // label4
             // 
             label4.AutoSize = true;
+            label4.BackColor = Color.Transparent;
+            label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(107, 55, 50);
             label4.Location = new Point(60, 18);
             label4.Name = "label4";
-            label4.Size = new Size(92, 25);
+            label4.Size = new Size(105, 28);
             label4.TabIndex = 8;
             label4.Text = "userName";
-           
             // 
-            // label3
+            // menuConfigBtn
             // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.BackColor = Color.Transparent;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label3.ForeColor = Color.FromArgb(107, 55, 35);
-            label3.Location = new Point(541, 516);
-            label3.Name = "label3";
-            label3.Size = new Size(162, 32);
-            label3.TabIndex = 14;
-            label3.Text = "Configuració";
+            menuConfigBtn.Anchor = AnchorStyles.None;
+            menuConfigBtn.AutoSize = true;
+            menuConfigBtn.BackColor = Color.Transparent;
+            menuConfigBtn.Cursor = Cursors.Hand;
+            menuConfigBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            menuConfigBtn.ForeColor = Color.FromArgb(107, 55, 35);
+            menuConfigBtn.Location = new Point(541, 528);
+            menuConfigBtn.Name = "menuConfigBtn";
+            menuConfigBtn.Size = new Size(162, 32);
+            menuConfigBtn.TabIndex = 14;
+            menuConfigBtn.Text = "Configuració";
             // 
-            // label2
+            // menuDadesBtn
             // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(541, 328);
-            label2.Name = "label2";
-            label2.Size = new Size(163, 32);
-            label2.TabIndex = 13;
-            label2.Text = "Estadístiques";
+            menuDadesBtn.Anchor = AnchorStyles.None;
+            menuDadesBtn.AutoSize = true;
+            menuDadesBtn.BackColor = Color.Transparent;
+            menuDadesBtn.Cursor = Cursors.Hand;
+            menuDadesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            menuDadesBtn.ForeColor = Color.FromArgb(107, 55, 35);
+            menuDadesBtn.Location = new Point(541, 340);
+            menuDadesBtn.Name = "menuDadesBtn";
+            menuDadesBtn.Size = new Size(163, 32);
+            menuDadesBtn.TabIndex = 13;
+            menuDadesBtn.Text = "Estadístiques";
             // 
-            // pictureBox3
+            // pictureBoxMenuConfig
             // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(332, 462);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(178, 154);
-            pictureBox3.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox3.TabIndex = 12;
-            pictureBox3.TabStop = false;
-            pictureBox3.Click += pictureBox3_Click;
+            pictureBoxMenuConfig.Anchor = AnchorStyles.None;
+            pictureBoxMenuConfig.BackColor = Color.Transparent;
+            pictureBoxMenuConfig.Cursor = Cursors.Hand;
+            pictureBoxMenuConfig.Image = (Image)resources.GetObject("pictureBoxMenuConfig.Image");
+            pictureBoxMenuConfig.Location = new Point(332, 474);
+            pictureBoxMenuConfig.Name = "pictureBoxMenuConfig";
+            pictureBoxMenuConfig.Size = new Size(178, 154);
+            pictureBoxMenuConfig.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMenuConfig.TabIndex = 12;
+            pictureBoxMenuConfig.TabStop = false;
+            pictureBoxMenuConfig.Click += pictureBox3_Click;
             // 
-            // pictureBox2
+            // pictureBoxMenuDades
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(332, 288);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(178, 147);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 11;
-            pictureBox2.TabStop = false;
+            pictureBoxMenuDades.Anchor = AnchorStyles.None;
+            pictureBoxMenuDades.BackColor = Color.Transparent;
+            pictureBoxMenuDades.Cursor = Cursors.Hand;
+            pictureBoxMenuDades.Image = (Image)resources.GetObject("pictureBoxMenuDades.Image");
+            pictureBoxMenuDades.Location = new Point(332, 300);
+            pictureBoxMenuDades.Name = "pictureBoxMenuDades";
+            pictureBoxMenuDades.Size = new Size(178, 147);
+            pictureBoxMenuDades.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMenuDades.TabIndex = 11;
+            pictureBoxMenuDades.TabStop = false;
             // 
-            // label1
+            // menuGrupsBtn
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(107, 55, 35);
-            label1.Location = new Point(541, 143);
-            label1.Name = "label1";
-            label1.Size = new Size(82, 32);
-            label1.TabIndex = 10;
-            label1.Text = "Grups";
-
+            menuGrupsBtn.Anchor = AnchorStyles.None;
+            menuGrupsBtn.AutoSize = true;
+            menuGrupsBtn.BackColor = Color.Transparent;
+            menuGrupsBtn.Cursor = Cursors.Hand;
+            menuGrupsBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            menuGrupsBtn.ForeColor = Color.FromArgb(107, 55, 35);
+            menuGrupsBtn.Location = new Point(541, 155);
+            menuGrupsBtn.Name = "menuGrupsBtn";
+            menuGrupsBtn.Size = new Size(82, 32);
+            menuGrupsBtn.TabIndex = 10;
+            menuGrupsBtn.Text = "Grups";
+            menuGrupsBtn.Click += menuGrupsBtn_Click;
             // 
-            // pictureBox1
+            // pictureBoxMenuGrups
             // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(332, 97);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(178, 160);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
+            pictureBoxMenuGrups.Anchor = AnchorStyles.None;
+            pictureBoxMenuGrups.BackColor = Color.Transparent;
+            pictureBoxMenuGrups.Cursor = Cursors.Hand;
+            pictureBoxMenuGrups.Image = (Image)resources.GetObject("pictureBoxMenuGrups.Image");
+            pictureBoxMenuGrups.Location = new Point(332, 109);
+            pictureBoxMenuGrups.Name = "pictureBoxMenuGrups";
+            pictureBoxMenuGrups.Size = new Size(178, 160);
+            pictureBoxMenuGrups.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxMenuGrups.TabIndex = 9;
+            pictureBoxMenuGrups.TabStop = false;
             // 
             // label5
             // 
@@ -153,7 +161,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(107, 55, 35);
-            label5.Location = new Point(359, 9);
+            label5.Location = new Point(359, 21);
             label5.Name = "label5";
             label5.Size = new Size(296, 60);
             label5.TabIndex = 15;
@@ -209,30 +217,29 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(968, 621);
+            ClientSize = new Size(968, 645);
             Controls.Add(button2);
             Controls.Add(label6);
             Controls.Add(label8);
             Controls.Add(button1);
             Controls.Add(label5);
-            Controls.Add(label3);
-            Controls.Add(label2);
-            Controls.Add(pictureBox3);
-            Controls.Add(pictureBox2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
+            Controls.Add(menuConfigBtn);
+            Controls.Add(menuDadesBtn);
+            Controls.Add(pictureBoxMenuConfig);
+            Controls.Add(pictureBoxMenuDades);
+            Controls.Add(menuGrupsBtn);
+            Controls.Add(pictureBoxMenuGrups);
             Controls.Add(label4);
             Controls.Add(pictureBox4);
-            Cursor = Cursors.Hand;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Name = "usuari_Menu";
             Text = "Usuari";
             WindowState = FormWindowState.Maximized;
             Load += usuari_Menu_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuConfig).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuDades).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxMenuGrups).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -240,12 +247,12 @@
         #endregion
         private PictureBox pictureBox4;
         private Label label4;
-        private Label label3;
-        private Label label2;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private Label label1;
-        private PictureBox pictureBox1;
+        private Label menuConfigBtn;
+        private Label menuDadesBtn;
+        private PictureBox pictureBoxMenuConfig;
+        private PictureBox pictureBoxMenuDades;
+        private Label menuGrupsBtn;
+        private PictureBox pictureBoxMenuGrups;
         private Label label5;
         private Button button1;
         private Label label8;
