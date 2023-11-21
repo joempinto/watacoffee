@@ -10,6 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using WPC_1.User_addGroup;
+using WPC_1.logout;
 
 namespace WPC_1
 {
@@ -23,7 +24,7 @@ namespace WPC_1
         private void User_GestioGrups_Load(object sender, EventArgs e)
         {
             string location = String.Concat("[USER] ", AppInformation.usuari.Email,
-                        " > Gestió de la aplicació");
+                        " > Menu Usuari >");
             pageLocation.Text = location;
         }
 
@@ -127,6 +128,15 @@ namespace WPC_1
         {
             User_UpdateMember updateMembre = new User_UpdateMember();
             updateMembre.Show();
+        }
+
+        private void logoutStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+
+            usuari_Menu uMenu = new usuari_Menu();
+            uMenu.button1_Click(sender, e); //dologout
         }
     }
 }

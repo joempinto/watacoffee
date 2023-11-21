@@ -19,6 +19,7 @@ using WPC_1.login;
 using WPC_1.logout;
 using WPC_1.delete;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using WPC_1.User_addGroup;
 
 namespace WPC_1
 {
@@ -31,10 +32,10 @@ namespace WPC_1
 
         private void usuari_Menu_Load(object sender, EventArgs e)
         {
-            label4.Text = AppInformation.usuari.Email;
+            label4.Text = String.Concat("[USER] ", AppInformation.usuari.Email, " >");
         }
 
-        private void button1_Click(object sender, EventArgs e) //LOGOUT BUTTON
+        public void button1_Click(object sender, EventArgs e) //LOGOUT BUTTON
         {
             //Farem LOGOUT de la sessió amb el header (el head i el token)
             //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
@@ -81,25 +82,31 @@ namespace WPC_1
             }
         }
 
-        private void button2_Click(object sender, EventArgs e) //DELETE BUTTON
+
+        /*private void button2_Click(object sender, EventArgs e) //DELETE BUTTON
         {
+            //Preguntem si usuari està segur de fer del delete del perfil a la app
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            MessageBoxIcon icon = MessageBoxIcon.Question;
+            MessageBox.Show("Està segur que vol iniciar el procés per eliminar el perfil a WPC?.", "Atenció!", button, icon);
+
             //Farem DELETE de la sessió amb el header (el head i el token)
             //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
 
             // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
             string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
-            DeleteInfo deleteUser = new DeleteInfo(header);
+            UserAuthorization auth = new UserAuthorization(header);
             //fem logout
-            doDelete(deleteUser);
+            doDelete(auth);
 
-        }
+        } 
 
-        async void doDelete(DeleteInfo deleteUser)
+        async void doDelete(UserAuthorization aut)
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/delete";
-            //MessageBox.Show(deleteUser.Authorization);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(deleteUser.Authorization);
+            MessageBox.Show(aut.Authorization);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 
 
@@ -122,16 +129,17 @@ namespace WPC_1
 
                 // Tanquem el Formulari
                 this.Close();
-                //S'HA ARREGLAR: crea nou form1 i es queda obert - tindriem dos Form1 oberts
+                //crea nou form1 i es queda obert - tindriem dos Form1 oberts
                 Login_inici inici = new Login_inici();
                 inici.ShowDialog();     
             }
-        }
+        }*/
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            CanviContrasenya modPass = new CanviContrasenya();
-            modPass.Show();
+            this.Hide();
+            Usuari_Config uConfig = new Usuari_Config();
+            uConfig.Show();
         }
 
         private void menuGrupsBtn_Click(object sender, EventArgs e)
@@ -139,6 +147,11 @@ namespace WPC_1
             this.Hide();
             User_GestioGrups userMenuGrups = new User_GestioGrups();
             userMenuGrups.Show();
+        }
+
+        private void menuConfigBtn_Click(object sender, EventArgs e)
+        {
+            pictureBox3_Click(sender, e);
         }
     }
 }

@@ -29,75 +29,81 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Usuari_Config));
-            button1 = new Button();
-            pictureBox1 = new PictureBox();
-            label1 = new Label();
-            pictureBox2 = new PictureBox();
-            label2 = new Label();
+            pictureBoxCanviPwd = new PictureBox();
+            labelCanviPwd = new Label();
+            pictureBoxEsborra = new PictureBox();
+            labelEsborra = new Label();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            pageLocation = new Label();
+            pictureBoxShowInfo = new PictureBox();
+            labelShowInfo = new Label();
+            menuStrip1 = new MenuStrip();
+            op1ToolStripMenuItem = new ToolStripMenuItem();
+            iniciStripMenuItem = new ToolStripMenuItem();
+            logoutStripMenuItem = new ToolStripMenuItem();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCanviPwd).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEsborra).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShowInfo).BeginInit();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // button1
+            // pictureBoxCanviPwd
             // 
-            button1.Anchor = AnchorStyles.None;
-            button1.Location = new Point(485, 498);
-            button1.Name = "button1";
-            button1.Size = new Size(112, 34);
-            button1.TabIndex = 0;
-            button1.Text = "Cancel.lar";
-            button1.UseVisualStyleBackColor = true;
+            pictureBoxCanviPwd.Anchor = AnchorStyles.None;
+            pictureBoxCanviPwd.BackColor = Color.Transparent;
+            pictureBoxCanviPwd.Cursor = Cursors.Hand;
+            pictureBoxCanviPwd.Image = (Image)resources.GetObject("pictureBoxCanviPwd.Image");
+            pictureBoxCanviPwd.Location = new Point(385, 320);
+            pictureBoxCanviPwd.Name = "pictureBoxCanviPwd";
+            pictureBoxCanviPwd.Size = new Size(150, 128);
+            pictureBoxCanviPwd.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxCanviPwd.TabIndex = 1;
+            pictureBoxCanviPwd.TabStop = false;
+            pictureBoxCanviPwd.Click += pictureBoxCanviPwd_Click;
             // 
-            // pictureBox1
+            // labelCanviPwd
             // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(374, 136);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(150, 128);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            labelCanviPwd.Anchor = AnchorStyles.None;
+            labelCanviPwd.AutoSize = true;
+            labelCanviPwd.BackColor = Color.Transparent;
+            labelCanviPwd.Cursor = Cursors.Hand;
+            labelCanviPwd.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelCanviPwd.ForeColor = Color.FromArgb(107, 55, 35);
+            labelCanviPwd.Location = new Point(565, 362);
+            labelCanviPwd.Name = "labelCanviPwd";
+            labelCanviPwd.Size = new Size(246, 32);
+            labelCanviPwd.TabIndex = 11;
+            labelCanviPwd.Text = "Canviar contrasenya";
+            labelCanviPwd.Click += labelCanviPwd_Click;
             // 
-            // label1
+            // pictureBoxEsborra
             // 
-            label1.Anchor = AnchorStyles.None;
-            label1.AutoSize = true;
-            label1.BackColor = Color.Transparent;
-            label1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label1.ForeColor = Color.FromArgb(107, 55, 35);
-            label1.Location = new Point(554, 178);
-            label1.Name = "label1";
-            label1.Size = new Size(246, 32);
-            label1.TabIndex = 11;
-            label1.Text = "Canviar contrasenya";
+            pictureBoxEsborra.Anchor = AnchorStyles.None;
+            pictureBoxEsborra.BackColor = Color.Transparent;
+            pictureBoxEsborra.Cursor = Cursors.Hand;
+            pictureBoxEsborra.Image = (Image)resources.GetObject("pictureBoxEsborra.Image");
+            pictureBoxEsborra.Location = new Point(385, 475);
+            pictureBoxEsborra.Name = "pictureBoxEsborra";
+            pictureBoxEsborra.Size = new Size(150, 130);
+            pictureBoxEsborra.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxEsborra.TabIndex = 12;
+            pictureBoxEsborra.TabStop = false;
+            pictureBoxEsborra.Click += pictureBoxEsborra_Click;
             // 
-            // pictureBox2
+            // labelEsborra
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(374, 291);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(150, 130);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
-            // 
-            // label2
-            // 
-            label2.Anchor = AnchorStyles.None;
-            label2.AutoSize = true;
-            label2.BackColor = Color.Transparent;
-            label2.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(554, 338);
-            label2.Name = "label2";
-            label2.Size = new Size(170, 32);
-            label2.TabIndex = 13;
-            label2.Text = "Esborra perfil";
+            labelEsborra.Anchor = AnchorStyles.None;
+            labelEsborra.AutoSize = true;
+            labelEsborra.BackColor = Color.Transparent;
+            labelEsborra.Cursor = Cursors.Hand;
+            labelEsborra.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelEsborra.ForeColor = Color.FromArgb(107, 55, 35);
+            labelEsborra.Location = new Point(565, 522);
+            labelEsborra.Name = "labelEsborra";
+            labelEsborra.Size = new Size(170, 32);
+            labelEsborra.TabIndex = 13;
+            labelEsborra.Text = "Esborra perfil";
+            labelEsborra.Click += labelEsborra_Click;
             // 
             // label5
             // 
@@ -106,40 +112,129 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(107, 55, 35);
-            label5.Location = new Point(300, 44);
+            label5.Location = new Point(315, 86);
             label5.Name = "label5";
             label5.Size = new Size(496, 60);
             label5.TabIndex = 16;
             label5.Text = "Configuració d'usuari";
             label5.TextAlign = ContentAlignment.TopCenter;
             // 
+            // pageLocation
+            // 
+            pageLocation.AutoSize = true;
+            pageLocation.BackColor = Color.Transparent;
+            pageLocation.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            pageLocation.ForeColor = Color.FromArgb(107, 55, 50);
+            pageLocation.Location = new Point(111, 34);
+            pageLocation.Name = "pageLocation";
+            pageLocation.Size = new Size(325, 28);
+            pageLocation.TabIndex = 21;
+            pageLocation.Text = "location: Username>MenuUsuari>";
+            // 
+            // pictureBoxShowInfo
+            // 
+            pictureBoxShowInfo.Anchor = AnchorStyles.None;
+            pictureBoxShowInfo.BackColor = Color.Transparent;
+            pictureBoxShowInfo.Cursor = Cursors.Hand;
+            pictureBoxShowInfo.Image = (Image)resources.GetObject("pictureBoxShowInfo.Image");
+            pictureBoxShowInfo.Location = new Point(385, 175);
+            pictureBoxShowInfo.Name = "pictureBoxShowInfo";
+            pictureBoxShowInfo.Size = new Size(150, 126);
+            pictureBoxShowInfo.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxShowInfo.TabIndex = 23;
+            pictureBoxShowInfo.TabStop = false;
+            // 
+            // labelShowInfo
+            // 
+            labelShowInfo.Anchor = AnchorStyles.None;
+            labelShowInfo.AutoSize = true;
+            labelShowInfo.BackColor = Color.Transparent;
+            labelShowInfo.Cursor = Cursors.Hand;
+            labelShowInfo.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            labelShowInfo.ForeColor = Color.FromArgb(107, 55, 35);
+            labelShowInfo.Location = new Point(565, 233);
+            labelShowInfo.Name = "labelShowInfo";
+            labelShowInfo.Size = new Size(297, 32);
+            labelShowInfo.TabIndex = 24;
+            labelShowInfo.Text = "Mostrar Info del Compte";
+            labelShowInfo.Click += labelShowInfo_Click;
+            // 
+            // menuStrip1
+            // 
+            menuStrip1.Dock = DockStyle.None;
+            menuStrip1.ImageScalingSize = new Size(24, 24);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { op1ToolStripMenuItem });
+            menuStrip1.Location = new Point(23, 20);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.RenderMode = ToolStripRenderMode.Professional;
+            menuStrip1.Size = new Size(81, 57);
+            menuStrip1.TabIndex = 25;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // op1ToolStripMenuItem
+            // 
+            op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { iniciStripMenuItem, logoutStripMenuItem });
+            op1ToolStripMenuItem.Image = Properties.Resources.main_coffee;
+            op1ToolStripMenuItem.Name = "op1ToolStripMenuItem";
+            op1ToolStripMenuItem.Size = new Size(73, 53);
+            op1ToolStripMenuItem.Text = "Menu";
+            op1ToolStripMenuItem.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // iniciStripMenuItem
+            // 
+            iniciStripMenuItem.Name = "iniciStripMenuItem";
+            iniciStripMenuItem.Size = new Size(171, 34);
+            iniciStripMenuItem.Text = "Inici";
+            iniciStripMenuItem.Click += iniciStripMenuItem_Click;
+            // 
+            // logoutStripMenuItem
+            // 
+            logoutStripMenuItem.Name = "logoutStripMenuItem";
+            logoutStripMenuItem.Size = new Size(171, 34);
+            logoutStripMenuItem.Text = "Logout";
+            logoutStripMenuItem.Click += logoutStripMenuItem_Click;
+            // 
             // Usuari_Config
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(987, 568);
+            ClientSize = new Size(1015, 648);
+            Controls.Add(menuStrip1);
+            Controls.Add(labelShowInfo);
+            Controls.Add(pictureBoxShowInfo);
+            Controls.Add(pageLocation);
             Controls.Add(label5);
-            Controls.Add(label2);
-            Controls.Add(pictureBox2);
-            Controls.Add(label1);
-            Controls.Add(pictureBox1);
-            Controls.Add(button1);
+            Controls.Add(labelEsborra);
+            Controls.Add(pictureBoxEsborra);
+            Controls.Add(labelCanviPwd);
+            Controls.Add(pictureBoxCanviPwd);
             Name = "Usuari_Config";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Configuració usuari";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            WindowState = FormWindowState.Maximized;
+            Load += Usuari_Config_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBoxCanviPwd).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxEsborra).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShowInfo).EndInit();
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button button1;
-        private PictureBox pictureBox1;
-        private Label label1;
-        private PictureBox pictureBox2;
-        private Label label2;
+        private PictureBox pictureBoxCanviPwd;
+        private Label labelCanviPwd;
+        private PictureBox pictureBoxEsborra;
+        private Label labelEsborra;
         private Label label5;
+        private Label pageLocation;
+        private PictureBox pictureBoxShowInfo;
+        private Label labelShowInfo;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem op1ToolStripMenuItem;
+        private ToolStripMenuItem iniciStripMenuItem;
+        private ToolStripMenuItem logoutStripMenuItem;
     }
 }

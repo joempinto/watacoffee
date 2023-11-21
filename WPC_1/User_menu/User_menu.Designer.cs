@@ -40,8 +40,6 @@
             label5 = new Label();
             button1 = new Button();
             label8 = new Label();
-            label6 = new Label();
-            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMenuConfig).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxMenuDades).BeginInit();
@@ -52,9 +50,9 @@
             // 
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(12, 12);
+            pictureBox4.Location = new Point(29, 12);
             pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(41, 36);
+            pictureBox4.Size = new Size(55, 46);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox4.TabIndex = 7;
             pictureBox4.TabStop = false;
@@ -65,7 +63,7 @@
             label4.BackColor = Color.Transparent;
             label4.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(107, 55, 50);
-            label4.Location = new Point(60, 18);
+            label4.Location = new Point(90, 20);
             label4.Name = "label4";
             label4.Size = new Size(105, 28);
             label4.TabIndex = 8;
@@ -84,6 +82,7 @@
             menuConfigBtn.Size = new Size(162, 32);
             menuConfigBtn.TabIndex = 14;
             menuConfigBtn.Text = "Configuració";
+            menuConfigBtn.Click += menuConfigBtn_Click;
             // 
             // menuDadesBtn
             // 
@@ -190,36 +189,12 @@
             label8.TabIndex = 19;
             label8.Text = "Logout";
             // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.Font = new Font("Segoe UI", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            label6.ForeColor = Color.FromArgb(107, 55, 35);
-            label6.Location = new Point(12, 162);
-            label6.Name = "label6";
-            label6.Size = new Size(120, 28);
-            label6.TabIndex = 20;
-            label6.Text = "Delete user";
-            // 
-            // button2
-            // 
-            button2.Location = new Point(12, 193);
-            button2.Name = "button2";
-            button2.Size = new Size(112, 34);
-            button2.TabIndex = 21;
-            button2.Text = "Esborra";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // usuari_Menu
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(968, 645);
-            Controls.Add(button2);
-            Controls.Add(label6);
             Controls.Add(label8);
             Controls.Add(button1);
             Controls.Add(label5);
@@ -256,7 +231,5 @@
         private Label label5;
         private Button button1;
         private Label label8;
-        private Label label6;
-        private Button button2;
     }
 }

@@ -47,18 +47,18 @@ namespace WPC_1
             else
             {
                 string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
-                LogoutInfo logoutUser = new LogoutInfo(header);               
-                
+                LogoutInfo logoutUser = new LogoutInfo(header);
+
                 //fem canvi de contrasenya                
-                doCanviPassword(logoutUser,newPwd1);
+                doCanviPassword(logoutUser, newPwd1);
             }
 
             async void doCanviPassword(LogoutInfo logoutUser, string password)
             {
                 HttpClient httpClient = new HttpClient();
                 string url = "http://localhost:8080/coffee/api/auth/modPassword";
-               
-               // using HttpResponseMessage response = await httpClient.PutAsJsonAsync<ChangePwd>(url, newPassword);
+
+                // using HttpResponseMessage response = await httpClient.PutAsJsonAsync<ChangePwd>(url, newPassword);
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutUser.Authorization);
                 using HttpResponseMessage response = await httpClient.PutAsJsonAsync<String>(url, password);
 
@@ -69,7 +69,7 @@ namespace WPC_1
                     // Si la resposta es NO SUCCESS, mostrem error
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
-                    MessageBox.Show("Canvi de contrasenya no realitzat. Torna-ho a intentar "+response, "Error", button, icon);
+                    MessageBox.Show("Canvi de contrasenya no realitzat. Torna-ho a intentar " + response, "Error", button, icon);
 
                 }
                 else
@@ -83,6 +83,11 @@ namespace WPC_1
                 }
             }
 
+        }
+
+        private void labelCancelCanviPwd_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

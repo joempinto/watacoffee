@@ -29,29 +29,29 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CanviContrasenya));
-            buttonConfirmaRegister = new Button();
+            buttonConfirmaCanviPwd = new Button();
             newPassword2 = new TextBox();
             label3 = new Label();
             newPassword1 = new TextBox();
             label6 = new Label();
             label2 = new Label();
-            labelDonaAlta = new Label();
+            labelCancelCanviPwd = new Label();
             SuspendLayout();
             // 
-            // buttonConfirmaRegister
+            // buttonConfirmaCanviPwd
             // 
-            buttonConfirmaRegister.Anchor = AnchorStyles.None;
-            buttonConfirmaRegister.BackColor = Color.FromArgb(107, 55, 35);
-            buttonConfirmaRegister.FlatStyle = FlatStyle.Popup;
-            buttonConfirmaRegister.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point);
-            buttonConfirmaRegister.ForeColor = Color.FromArgb(64, 0, 0);
-            buttonConfirmaRegister.Location = new Point(320, 226);
-            buttonConfirmaRegister.Name = "buttonConfirmaRegister";
-            buttonConfirmaRegister.Size = new Size(202, 78);
-            buttonConfirmaRegister.TabIndex = 32;
-            buttonConfirmaRegister.Text = "Confirmar";
-            buttonConfirmaRegister.UseVisualStyleBackColor = false;
-            buttonConfirmaRegister.Click += buttonConfirmaRegister_Click;
+            buttonConfirmaCanviPwd.Anchor = AnchorStyles.None;
+            buttonConfirmaCanviPwd.BackColor = Color.FromArgb(107, 55, 35);
+            buttonConfirmaCanviPwd.FlatStyle = FlatStyle.Popup;
+            buttonConfirmaCanviPwd.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonConfirmaCanviPwd.ForeColor = Color.FromArgb(64, 0, 0);
+            buttonConfirmaCanviPwd.Location = new Point(320, 226);
+            buttonConfirmaCanviPwd.Name = "buttonConfirmaCanviPwd";
+            buttonConfirmaCanviPwd.Size = new Size(202, 78);
+            buttonConfirmaCanviPwd.TabIndex = 32;
+            buttonConfirmaCanviPwd.Text = "Confirmar";
+            buttonConfirmaCanviPwd.UseVisualStyleBackColor = false;
+            buttonConfirmaCanviPwd.Click += buttonConfirmaRegister_Click;
             // 
             // newPassword2
             // 
@@ -109,19 +109,20 @@
             label2.Text = "Canviar la contrasenya";
             label2.TextAlign = ContentAlignment.TopCenter;
             // 
-            // labelDonaAlta
+            // labelCancelCanviPwd
             // 
-            labelDonaAlta.Anchor = AnchorStyles.None;
-            labelDonaAlta.AutoSize = true;
-            labelDonaAlta.BackColor = Color.Transparent;
-            labelDonaAlta.Cursor = Cursors.Hand;
-            labelDonaAlta.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
-            labelDonaAlta.ForeColor = Color.FromArgb(107, 55, 35);
-            labelDonaAlta.Location = new Point(367, 314);
-            labelDonaAlta.Name = "labelDonaAlta";
-            labelDonaAlta.Size = new Size(109, 30);
-            labelDonaAlta.TabIndex = 33;
-            labelDonaAlta.Text = "Cancel.lar";
+            labelCancelCanviPwd.Anchor = AnchorStyles.None;
+            labelCancelCanviPwd.AutoSize = true;
+            labelCancelCanviPwd.BackColor = Color.Transparent;
+            labelCancelCanviPwd.Cursor = Cursors.Hand;
+            labelCancelCanviPwd.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelCancelCanviPwd.ForeColor = Color.FromArgb(107, 55, 35);
+            labelCancelCanviPwd.Location = new Point(367, 314);
+            labelCancelCanviPwd.Name = "labelCancelCanviPwd";
+            labelCancelCanviPwd.Size = new Size(109, 30);
+            labelCancelCanviPwd.TabIndex = 33;
+            labelCancelCanviPwd.Text = "Cancel.lar";
+            labelCancelCanviPwd.Click += labelCancelCanviPwd_Click;
             // 
             // CanviContrasenya
             // 
@@ -129,8 +130,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 378);
-            Controls.Add(labelDonaAlta);
-            Controls.Add(buttonConfirmaRegister);
+            Controls.Add(labelCancelCanviPwd);
+            Controls.Add(buttonConfirmaCanviPwd);
             Controls.Add(newPassword2);
             Controls.Add(label3);
             Controls.Add(newPassword1);
@@ -143,12 +144,12 @@
         }
 
         #endregion
-        private Button buttonConfirmaRegister;
+        private Button buttonConfirmaCanviPwd;
         private TextBox newPassword2;
         private Label label3;
         private TextBox newPassword1;
         private Label label6;
         private Label label2;
-        private Label labelDonaAlta;
+        private Label labelCancelCanviPwd;
     }
 }

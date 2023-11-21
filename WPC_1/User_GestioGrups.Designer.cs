@@ -68,7 +68,7 @@
             menuStrip1.Location = new Point(12, 11);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(81, 57);
+            menuStrip1.Size = new Size(261, 57);
             menuStrip1.TabIndex = 20;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -84,15 +84,16 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(171, 34);
+            iniciStripMenuItem.Size = new Size(270, 34);
             iniciStripMenuItem.Text = "Inici";
             iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(171, 34);
+            logoutStripMenuItem.Size = new Size(270, 34);
             logoutStripMenuItem.Text = "Logout";
+            logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
             // pageLocation
             // 
@@ -102,9 +103,9 @@
             pageLocation.ForeColor = Color.FromArgb(107, 55, 50);
             pageLocation.Location = new Point(105, 24);
             pageLocation.Name = "pageLocation";
-            pageLocation.Size = new Size(377, 28);
+            pageLocation.Size = new Size(325, 28);
             pageLocation.TabIndex = 19;
-            pageLocation.Text = "location: Username>GestiodelaAplicacio";
+            pageLocation.Text = "location: Username>MenuUsuari>";
             // 
             // label2
             // 

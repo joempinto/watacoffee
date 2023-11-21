@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_UpdateMember));
             labelUsername = new Label();
-            usernameTxt = new TextBox();
             labelCancelUpdateMembre = new Label();
             confirmaUpdateMembreBtn = new Button();
             nicknameMembreTxt = new TextBox();
@@ -38,6 +37,7 @@
             idGrupTxt = new TextBox();
             labelGrupID = new Label();
             labelUpdate = new Label();
+            usernameTxt = new TextBox();
             SuspendLayout();
             // 
             // labelUsername
@@ -46,19 +46,11 @@
             labelUsername.AutoSize = true;
             labelUsername.BackColor = Color.Transparent;
             labelUsername.ForeColor = Color.FromArgb(107, 55, 35);
-            labelUsername.Location = new Point(115, 217);
+            labelUsername.Location = new Point(114, 216);
             labelUsername.Name = "labelUsername";
             labelUsername.Size = new Size(91, 25);
             labelUsername.TabIndex = 60;
             labelUsername.Text = "Username";
-            // 
-            // usernameTxt
-            // 
-            usernameTxt.Anchor = AnchorStyles.None;
-            usernameTxt.Location = new Point(256, 214);
-            usernameTxt.Name = "usernameTxt";
-            usernameTxt.Size = new Size(274, 31);
-            usernameTxt.TabIndex = 59;
             // 
             // labelCancelUpdateMembre
             // 
@@ -144,14 +136,22 @@
             labelUpdate.Text = "Update Membre";
             labelUpdate.TextAlign = ContentAlignment.TopCenter;
             // 
+            // usernameTxt
+            // 
+            usernameTxt.Anchor = AnchorStyles.None;
+            usernameTxt.Location = new Point(256, 213);
+            usernameTxt.Name = "usernameTxt";
+            usernameTxt.Size = new Size(274, 31);
+            usernameTxt.TabIndex = 62;
+            // 
             // User_UpdateMember
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(600, 427);
-            Controls.Add(labelUsername);
             Controls.Add(usernameTxt);
+            Controls.Add(labelUsername);
             Controls.Add(labelCancelUpdateMembre);
             Controls.Add(confirmaUpdateMembreBtn);
             Controls.Add(nicknameMembreTxt);
@@ -176,5 +176,7 @@
         private TextBox idGrupTxt;
         private Label labelGrupID;
         private Label labelUpdate;
+        private TextBox textBox1;
+        private Label label1;
     }
 }
