@@ -152,6 +152,7 @@
             pictureBoxMenuGrups.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxMenuGrups.TabIndex = 9;
             pictureBoxMenuGrups.TabStop = false;
+            pictureBoxMenuGrups.Click += pictureBoxMenuGrups_Click;
             // 
             // label5
             // 

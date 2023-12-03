@@ -127,13 +127,13 @@
             labelUpdate.Anchor = AnchorStyles.None;
             labelUpdate.AutoSize = true;
             labelUpdate.BackColor = Color.Transparent;
-            labelUpdate.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            labelUpdate.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point);
             labelUpdate.ForeColor = Color.FromArgb(107, 55, 35);
-            labelUpdate.Location = new Point(136, 10);
+            labelUpdate.Location = new Point(102, 21);
             labelUpdate.Name = "labelUpdate";
-            labelUpdate.Size = new Size(376, 60);
+            labelUpdate.Size = new Size(417, 54);
             labelUpdate.TabIndex = 51;
-            labelUpdate.Text = "Update Membre";
+            labelUpdate.Text = "Link usuari registrat";
             labelUpdate.TextAlign = ContentAlignment.TopCenter;
             // 
             // usernameTxt

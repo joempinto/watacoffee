@@ -52,7 +52,7 @@ namespace WPC_1
             LogoutInfo admin = new LogoutInfo(header);
             //Hem creat header per preparar la petició al server i obtenir el llistat de users
             doLlistaGrupsAdmin(admin);
-           // doCountGrups(admin);
+            doCountGrups(admin);
         }
 
         async void doLlistaGrupsAdmin(LogoutInfo logoutAdmin)
@@ -87,7 +87,7 @@ namespace WPC_1
 
                     listBoxUsers.Visible = true;
                     listBoxUsers.Items.Clear();
-                    totalGrups.Text = AppInformation.gLlista.Count().ToString();
+                    //totalGrups.Text = AppInformation.gLlista.Count().ToString();
                     //imprimim els users un a un
                     for (int i = 0; i < loginHttpResponse.Count; i++)
                         listBoxUsers.Items.Add("Nom Grup: " + AppInformation.gLlista[i].groupName + "  " + "Participants: " + AppInformation.gLlista[i].numMembers);
@@ -104,7 +104,7 @@ namespace WPC_1
         async void doCountGrups(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/r/count/groups";
+            string url = "http://localhost:8080/coffee/api/admin/r/count/groups";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 

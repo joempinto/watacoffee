@@ -51,7 +51,6 @@ namespace WPC_1
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/auth/logout";
-            //MessageBox.Show(logoutUser.Authorization);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutUser.Authorization);
             using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LogoutInfo>(url, logoutUser);
 
@@ -82,59 +81,6 @@ namespace WPC_1
             }
         }
 
-
-        /*private void button2_Click(object sender, EventArgs e) //DELETE BUTTON
-        {
-            //Preguntem si usuari està segur de fer del delete del perfil a la app
-            MessageBoxButtons button = MessageBoxButtons.YesNo;
-            MessageBoxIcon icon = MessageBoxIcon.Question;
-            MessageBox.Show("Està segur que vol iniciar el procés per eliminar el perfil a WPC?.", "Atenció!", button, icon);
-
-            //Farem DELETE de la sessió amb el header (el head i el token)
-            //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
-
-            // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
-            string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
-            UserAuthorization auth = new UserAuthorization(header);
-            //fem logout
-            doDelete(auth);
-
-        } 
-
-        async void doDelete(UserAuthorization aut)
-        {
-            HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/auth/delete";
-            MessageBox.Show(aut.Authorization);
-            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
-            using HttpResponseMessage response = await httpClient.DeleteAsync(url);
-
-
-            // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
-            if (!response.IsSuccessStatusCode)
-            {
-
-                // Si la resposta es NO SUCCESS, mostrem error
-                MessageBoxButtons button = MessageBoxButtons.OK;
-                MessageBoxIcon icon = MessageBoxIcon.Warning;
-                MessageBox.Show("Error al fer DELETE. Torna a intentar-ho \n" + response, "Error", button, icon);
-            }
-            else
-            {
-                // Si la resposta es SUCCESS
-
-                // Creem un objecte de tipus String per agafar les dades que retorna el server (String confirmant delete)                               
-                var resposta = await response.Content.ReadAsStringAsync();
-                MessageBox.Show("DELETE correcte! " + resposta, "Info");
-
-                // Tanquem el Formulari
-                this.Close();
-                //crea nou form1 i es queda obert - tindriem dos Form1 oberts
-                Login_inici inici = new Login_inici();
-                inici.ShowDialog();     
-            }
-        }*/
-
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -152,6 +98,11 @@ namespace WPC_1
         private void menuConfigBtn_Click(object sender, EventArgs e)
         {
             pictureBox3_Click(sender, e);
+        }
+
+        private void pictureBoxMenuGrups_Click(object sender, EventArgs e)
+        {
+            menuGrupsBtn_Click(sender, e);
         }
     }
 }

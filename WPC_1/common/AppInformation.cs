@@ -15,8 +15,10 @@ namespace WPC_1
         public static Admin? administrador = null;
         public static Group? grup = null;
         public static List<UserLlista>? uLlista = null;
+        public static List<MembresLlista>? membresLlista = null;
         public static List<GroupLlista>? gLlista = null;
         public static List<GroupLlistaTipus>? gLlistaTipus = null;
+        
     }
 
 }

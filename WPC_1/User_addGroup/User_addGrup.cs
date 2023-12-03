@@ -79,7 +79,7 @@ namespace WPC_1
 
                     // Creem un objecte de tipus AddGroupHttpResponse per agafar les dades que retorna el server (Head, Token, Email i Nom)
                     var addGroupHttpResponse = await response.Content.ReadFromJsonAsync<AddGroupHttpResponse>();
-                    MessageBox.Show(addGroupHttpResponse.ToString());
+                    //MessageBox.Show(addGroupHttpResponse.ToString());
 
 
                     // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server. 
@@ -90,12 +90,12 @@ namespace WPC_1
 
 
                         this.Hide();
-                        User_GestioGrups usuariMenu = new User_GestioGrups();
-                        usuariMenu.Show();
+                       // User_GestioGrups usuariMenu = new User_GestioGrups();
+                       // usuariMenu.Show();
                     }
                     else
                     {
-                        MessageBox.Show("Torna a intentar el registre", "Token no rebut", button, icon);
+                        MessageBox.Show("Torna a intentar afegir un grup", "Error", button, icon);
                     }
                     this.Hide();
                 }

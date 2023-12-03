@@ -116,11 +116,11 @@
             labelAfegir.Anchor = AnchorStyles.None;
             labelAfegir.AutoSize = true;
             labelAfegir.BackColor = Color.Transparent;
-            labelAfegir.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
+            labelAfegir.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point);
             labelAfegir.ForeColor = Color.FromArgb(107, 55, 35);
-            labelAfegir.Location = new Point(139, 13);
+            labelAfegir.Location = new Point(155, 18);
             labelAfegir.Name = "labelAfegir";
-            labelAfegir.Size = new Size(357, 60);
+            labelAfegir.Size = new Size(322, 54);
             labelAfegir.TabIndex = 41;
             labelAfegir.Text = "Afegir Membre";
             labelAfegir.TextAlign = ContentAlignment.TopCenter;

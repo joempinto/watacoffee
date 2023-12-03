@@ -68,4 +68,26 @@ namespace WPC_1
             return "\nEmail: " + email + "\nName: " + username;
         }
     }
+
+    internal class MembresLlista
+    {
+        public int groupId { get; set; }
+        public string nickname { get; set; }
+        public string username { get; set; }
+        public Boolean admin { get; set; }
+
+        public MembresLlista(int groupId, string nickname, string username, Boolean admin)
+        {
+            this.groupId = groupId;
+            this.nickname = nickname;
+            this.username = username;
+            this.admin = admin;
+        }
+
+        public override string ToString()
+        {
+            return "IDgroup: " + groupId + "\nNickname: " + nickname + "\nUsername: " + username + "\nAdmin: " + admin;
+        }
+
+    }
 }

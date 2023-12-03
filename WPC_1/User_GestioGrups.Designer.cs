@@ -39,25 +39,29 @@
             pictureBoxCreaGrup = new PictureBox();
             pictureBoxLlistaGrupTipus = new PictureBox();
             llistaGrupsTypeBtn = new Label();
-            pictureBoxAddMemberGrup = new PictureBox();
-            addMemberGrupBtn = new Label();
-            listGrupsTipus = new ListBox();
             rbAdmin = new RadioButton();
             llistatBox = new GroupBox();
+            listGrupsTipus = new ListView();
+            idGrupHeader1 = new ColumnHeader();
+            nomGrupHeader2 = new ColumnHeader();
             totalGrupsLlista = new TextBox();
+            label3 = new Label();
             label1 = new Label();
+            idGrupShow = new TextBox();
             infoSelecciona = new Label();
             imprimirLlistatBtn = new Button();
             rbTots = new RadioButton();
             rbMembre = new RadioButton();
-            pictureBoxUpdateMemberGrup = new PictureBox();
-            updateMemberBtn = new Label();
+            pictureBoxShowMembresGrup = new PictureBox();
+            showMembresGrupBtn = new Label();
+            pictureBoxDeleteGrup = new PictureBox();
+            deleteGrupBtn = new Label();
             menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCreaGrup).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLlistaGrupTipus).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAddMemberGrup).BeginInit();
             llistatBox.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxUpdateMemberGrup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShowMembresGrup).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDeleteGrup).BeginInit();
             SuspendLayout();
             // 
             // menuStrip1
@@ -68,7 +72,7 @@
             menuStrip1.Location = new Point(12, 11);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(261, 57);
+            menuStrip1.Size = new Size(81, 57);
             menuStrip1.TabIndex = 20;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -84,14 +88,14 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(270, 34);
+            iniciStripMenuItem.Size = new Size(171, 34);
             iniciStripMenuItem.Text = "Inici";
             iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(270, 34);
+            logoutStripMenuItem.Size = new Size(171, 34);
             logoutStripMenuItem.Text = "Logout";
             logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
@@ -127,18 +131,17 @@
             creaGrupBtn.Cursor = Cursors.Hand;
             creaGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             creaGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            creaGrupBtn.Location = new Point(167, 262);
+            creaGrupBtn.Location = new Point(178, 206);
             creaGrupBtn.Name = "creaGrupBtn";
             creaGrupBtn.Size = new Size(174, 32);
             creaGrupBtn.TabIndex = 26;
             creaGrupBtn.Text = "Crear un grup";
-            creaGrupBtn.Click += creaGrupBtn_Click;
             // 
             // pictureBoxCreaGrup
             // 
             pictureBoxCreaGrup.BackColor = Color.Transparent;
             pictureBoxCreaGrup.Image = (Image)resources.GetObject("pictureBoxCreaGrup.Image");
-            pictureBoxCreaGrup.Location = new Point(120, 258);
+            pictureBoxCreaGrup.Location = new Point(131, 202);
             pictureBoxCreaGrup.Name = "pictureBoxCreaGrup";
             pictureBoxCreaGrup.Size = new Size(41, 36);
             pictureBoxCreaGrup.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -149,7 +152,7 @@
             // 
             pictureBoxLlistaGrupTipus.BackColor = Color.Transparent;
             pictureBoxLlistaGrupTipus.Image = (Image)resources.GetObject("pictureBoxLlistaGrupTipus.Image");
-            pictureBoxLlistaGrupTipus.Location = new Point(120, 172);
+            pictureBoxLlistaGrupTipus.Location = new Point(130, 300);
             pictureBoxLlistaGrupTipus.Name = "pictureBoxLlistaGrupTipus";
             pictureBoxLlistaGrupTipus.Size = new Size(41, 36);
             pictureBoxLlistaGrupTipus.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -163,48 +166,12 @@
             llistaGrupsTypeBtn.Cursor = Cursors.Hand;
             llistaGrupsTypeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             llistaGrupsTypeBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            llistaGrupsTypeBtn.Location = new Point(167, 176);
+            llistaGrupsTypeBtn.Location = new Point(177, 304);
             llistaGrupsTypeBtn.Name = "llistaGrupsTypeBtn";
             llistaGrupsTypeBtn.Size = new Size(254, 32);
             llistaGrupsTypeBtn.TabIndex = 29;
             llistaGrupsTypeBtn.Text = "Llistar grup per tipus";
             llistaGrupsTypeBtn.Click += llistaGrupsTypeBtn_Click;
-            // 
-            // pictureBoxAddMemberGrup
-            // 
-            pictureBoxAddMemberGrup.BackColor = Color.Transparent;
-            pictureBoxAddMemberGrup.Image = (Image)resources.GetObject("pictureBoxAddMemberGrup.Image");
-            pictureBoxAddMemberGrup.Location = new Point(120, 343);
-            pictureBoxAddMemberGrup.Name = "pictureBoxAddMemberGrup";
-            pictureBoxAddMemberGrup.Size = new Size(41, 36);
-            pictureBoxAddMemberGrup.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxAddMemberGrup.TabIndex = 32;
-            pictureBoxAddMemberGrup.TabStop = false;
-            // 
-            // addMemberGrupBtn
-            // 
-            addMemberGrupBtn.AutoSize = true;
-            addMemberGrupBtn.BackColor = Color.Transparent;
-            addMemberGrupBtn.Cursor = Cursors.Hand;
-            addMemberGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            addMemberGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            addMemberGrupBtn.Location = new Point(167, 347);
-            addMemberGrupBtn.Name = "addMemberGrupBtn";
-            addMemberGrupBtn.Size = new Size(187, 32);
-            addMemberGrupBtn.TabIndex = 31;
-            addMemberGrupBtn.Text = "Afegir membre";
-            addMemberGrupBtn.Click += addMemberGrupBtn_Click;
-            // 
-            // listGrupsTipus
-            // 
-            listGrupsTipus.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
-            listGrupsTipus.FormattingEnabled = true;
-            listGrupsTipus.ItemHeight = 28;
-            listGrupsTipus.Location = new Point(76, 108);
-            listGrupsTipus.MultiColumn = true;
-            listGrupsTipus.Name = "listGrupsTipus";
-            listGrupsTipus.Size = new Size(591, 424);
-            listGrupsTipus.TabIndex = 33;
             // 
             // rbAdmin
             // 
@@ -221,23 +188,48 @@
             // llistatBox
             // 
             llistatBox.BackColor = Color.Transparent;
+            llistatBox.Controls.Add(listGrupsTipus);
             llistatBox.Controls.Add(totalGrupsLlista);
+            llistatBox.Controls.Add(label3);
             llistatBox.Controls.Add(label1);
+            llistatBox.Controls.Add(idGrupShow);
             llistatBox.Controls.Add(infoSelecciona);
             llistatBox.Controls.Add(imprimirLlistatBtn);
             llistatBox.Controls.Add(rbTots);
             llistatBox.Controls.Add(rbMembre);
-            llistatBox.Controls.Add(listGrupsTipus);
             llistatBox.Controls.Add(rbAdmin);
             llistatBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             llistatBox.ForeColor = Color.FromArgb(107, 55, 35);
-            llistatBox.Location = new Point(439, 172);
+            llistatBox.Location = new Point(485, 172);
             llistatBox.Name = "llistatBox";
             llistatBox.Size = new Size(791, 539);
             llistatBox.TabIndex = 35;
             llistatBox.TabStop = false;
             llistatBox.Text = "Llistat de Grups";
             llistatBox.Visible = false;
+            // 
+            // listGrupsTipus
+            // 
+            listGrupsTipus.Columns.AddRange(new ColumnHeader[] { idGrupHeader1, nomGrupHeader2 });
+            listGrupsTipus.FullRowSelect = true;
+            listGrupsTipus.Location = new Point(29, 117);
+            listGrupsTipus.Name = "listGrupsTipus";
+            listGrupsTipus.Size = new Size(658, 416);
+            listGrupsTipus.TabIndex = 41;
+            listGrupsTipus.UseCompatibleStateImageBehavior = false;
+            listGrupsTipus.View = View.Details;
+            listGrupsTipus.SelectedIndexChanged += selectedIndexChanged;
+            listGrupsTipus.Click += listIndex_Click;
+            // 
+            // idGrupHeader1
+            // 
+            idGrupHeader1.Text = "Group ID";
+            idGrupHeader1.Width = 92;
+            // 
+            // nomGrupHeader2
+            // 
+            nomGrupHeader2.Text = "Nom Del Grup";
+            nomGrupHeader2.Width = 562;
             // 
             // totalGrupsLlista
             // 
@@ -246,6 +238,18 @@
             totalGrupsLlista.Name = "totalGrupsLlista";
             totalGrupsLlista.Size = new Size(63, 45);
             totalGrupsLlista.TabIndex = 40;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.BackColor = Color.Transparent;
+            label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(107, 55, 35);
+            label3.Location = new Point(693, 212);
+            label3.Name = "label3";
+            label3.Size = new Size(80, 28);
+            label3.TabIndex = 41;
+            label3.Text = "Grup ID";
             // 
             // label1
             // 
@@ -258,6 +262,14 @@
             label1.Size = new Size(64, 30);
             label1.TabIndex = 39;
             label1.Text = "Total:";
+            // 
+            // idGrupShow
+            // 
+            idGrupShow.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
+            idGrupShow.Location = new Point(694, 243);
+            idGrupShow.Name = "idGrupShow";
+            idGrupShow.Size = new Size(81, 39);
+            idGrupShow.TabIndex = 41;
             // 
             // infoSelecciona
             // 
@@ -302,42 +314,70 @@
             rbMembre.Text = "Sóc Membre";
             rbMembre.UseVisualStyleBackColor = true;
             // 
-            // pictureBoxUpdateMemberGrup
+            // pictureBoxShowMembresGrup
             // 
-            pictureBoxUpdateMemberGrup.BackColor = Color.Transparent;
-            pictureBoxUpdateMemberGrup.Image = (Image)resources.GetObject("pictureBoxUpdateMemberGrup.Image");
-            pictureBoxUpdateMemberGrup.Location = new Point(120, 434);
-            pictureBoxUpdateMemberGrup.Name = "pictureBoxUpdateMemberGrup";
-            pictureBoxUpdateMemberGrup.Size = new Size(41, 36);
-            pictureBoxUpdateMemberGrup.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBoxUpdateMemberGrup.TabIndex = 37;
-            pictureBoxUpdateMemberGrup.TabStop = false;
+            pictureBoxShowMembresGrup.BackColor = Color.Transparent;
+            pictureBoxShowMembresGrup.Enabled = false;
+            pictureBoxShowMembresGrup.Image = (Image)resources.GetObject("pictureBoxShowMembresGrup.Image");
+            pictureBoxShowMembresGrup.Location = new Point(130, 408);
+            pictureBoxShowMembresGrup.Name = "pictureBoxShowMembresGrup";
+            pictureBoxShowMembresGrup.Size = new Size(41, 36);
+            pictureBoxShowMembresGrup.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxShowMembresGrup.TabIndex = 39;
+            pictureBoxShowMembresGrup.TabStop = false;
             // 
-            // updateMemberBtn
+            // showMembresGrupBtn
             // 
-            updateMemberBtn.AutoSize = true;
-            updateMemberBtn.BackColor = Color.Transparent;
-            updateMemberBtn.Cursor = Cursors.Hand;
-            updateMemberBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            updateMemberBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            updateMemberBtn.Location = new Point(167, 438);
-            updateMemberBtn.Name = "updateMemberBtn";
-            updateMemberBtn.Size = new Size(230, 32);
-            updateMemberBtn.TabIndex = 36;
-            updateMemberBtn.Text = "Actualitza membre";
-            updateMemberBtn.Click += updateMemberBtn_Click;
+            showMembresGrupBtn.AutoSize = true;
+            showMembresGrupBtn.BackColor = Color.Transparent;
+            showMembresGrupBtn.Cursor = Cursors.Hand;
+            showMembresGrupBtn.Enabled = false;
+            showMembresGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            showMembresGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
+            showMembresGrupBtn.Location = new Point(177, 412);
+            showMembresGrupBtn.Name = "showMembresGrupBtn";
+            showMembresGrupBtn.Size = new Size(303, 32);
+            showMembresGrupBtn.TabIndex = 38;
+            showMembresGrupBtn.Text = "Gestió membres del grup";
+            showMembresGrupBtn.Click += showMembresGrupBtn_Click;
+            // 
+            // pictureBoxDeleteGrup
+            // 
+            pictureBoxDeleteGrup.BackColor = Color.Transparent;
+            pictureBoxDeleteGrup.Enabled = false;
+            pictureBoxDeleteGrup.Image = (Image)resources.GetObject("pictureBoxDeleteGrup.Image");
+            pictureBoxDeleteGrup.Location = new Point(130, 514);
+            pictureBoxDeleteGrup.Name = "pictureBoxDeleteGrup";
+            pictureBoxDeleteGrup.Size = new Size(41, 36);
+            pictureBoxDeleteGrup.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxDeleteGrup.TabIndex = 43;
+            pictureBoxDeleteGrup.TabStop = false;
+            // 
+            // deleteGrupBtn
+            // 
+            deleteGrupBtn.AutoSize = true;
+            deleteGrupBtn.BackColor = Color.Transparent;
+            deleteGrupBtn.Cursor = Cursors.Hand;
+            deleteGrupBtn.Enabled = false;
+            deleteGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            deleteGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
+            deleteGrupBtn.Location = new Point(177, 518);
+            deleteGrupBtn.Name = "deleteGrupBtn";
+            deleteGrupBtn.Size = new Size(170, 32);
+            deleteGrupBtn.TabIndex = 42;
+            deleteGrupBtn.Text = "Eliminar grup";
             // 
             // User_GestioGrups
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1333, 711);
-            Controls.Add(pictureBoxUpdateMemberGrup);
-            Controls.Add(updateMemberBtn);
+            ClientSize = new Size(1333, 883);
+            Controls.Add(pictureBoxDeleteGrup);
+            Controls.Add(deleteGrupBtn);
+            Controls.Add(pictureBoxShowMembresGrup);
+            Controls.Add(showMembresGrupBtn);
             Controls.Add(llistatBox);
-            Controls.Add(pictureBoxAddMemberGrup);
-            Controls.Add(addMemberGrupBtn);
             Controls.Add(pictureBoxLlistaGrupTipus);
             Controls.Add(llistaGrupsTypeBtn);
             Controls.Add(pictureBoxCreaGrup);
@@ -353,10 +393,10 @@
             menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBoxCreaGrup).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxLlistaGrupTipus).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxAddMemberGrup).EndInit();
             llistatBox.ResumeLayout(false);
             llistatBox.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBoxUpdateMemberGrup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShowMembresGrup).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxDeleteGrup).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -373,9 +413,6 @@
         private PictureBox pictureBoxCreaGrup;
         private PictureBox pictureBoxLlistaGrupTipus;
         private Label llistaGrupsTypeBtn;
-        private PictureBox pictureBoxAddMemberGrup;
-        private Label addMemberGrupBtn;
-        private ListBox listGrupsTipus;
         private RadioButton rbAdmin;
         private GroupBox llistatBox;
         private Button imprimirLlistatBtn;
@@ -384,7 +421,14 @@
         private Label infoSelecciona;
         private TextBox totalGrupsLlista;
         private Label label1;
-        private PictureBox pictureBoxUpdateMemberGrup;
-        private Label updateMemberBtn;
+        private PictureBox pictureBoxShowMembresGrup;
+        private Label showMembresGrupBtn;
+        private TextBox idGrupShow;
+        private Label label3;
+        private PictureBox pictureBoxDeleteGrup;
+        private Label deleteGrupBtn;
+        private ListView listGrupsTipus;
+        private ColumnHeader idGrupHeader1;
+        private ColumnHeader nomGrupHeader2;
     }
 }

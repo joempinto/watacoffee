@@ -17453,7 +17453,7 @@
         AAAAT548+S+Qb6rmr96R5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBoxAddMemberGrup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxShowMembresGrup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABqIAAAaiCAYAAABJl+liAAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhb/EIyKKhSlELLbQVAZFRSw1CiIohKgQj8LdjYlCdg27ERtLwTZg4dF4FTbW2lrYCoLgAWJrY6Vo
@@ -26119,7 +26119,7 @@
         AAAAT548+S+Qb6rmr96R5gAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBoxUpdateMemberGrup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBoxDeleteGrup.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAABqIAAAaiCAYAAABJl+liAAABg2lDQ1BJQ0MgcHJvZmlsZQAAKM+VkTlI
         A0EYhb/EIyKKhSlELLbQVAZFRSw1CiIohKgQj8LdjYlCdg27ERtLwTZg4dF4FTbW2lrYCoLgAWJrY6Vo

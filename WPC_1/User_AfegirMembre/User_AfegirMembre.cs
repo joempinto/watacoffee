@@ -38,7 +38,7 @@ namespace WPC_1
         {
             string id = idGrupTxt.Text;
             string nickname = nicknameMembreTxt.Text;
-            
+
 
             MessageBoxButtons button = MessageBoxButtons.OK;
             MessageBoxIcon icon = MessageBoxIcon.Warning;
@@ -65,19 +65,19 @@ namespace WPC_1
                     if (string.IsNullOrEmpty(username))
                     {
                         MessageBox.Show("El camp username no pot estar buit", "Error", button, icon);
-                    }                    
-                    else 
+                    }
+                    else
                     {
                         int idNum = Int32.Parse(id);
-                        MessageBox.Show("Trying to add un usuari ja registrat", "Info", button);     
-                        
-                        AddNewMembre newRegMember = new AddNewMembre(idNum, nickname,username);
+                        MessageBox.Show("Trying to add un usuari ja registrat", "Info", button);
+
+                        AddNewMembre newRegMember = new AddNewMembre(idNum, nickname, username);
                         string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                         UserAuthorization auth = new UserAuthorization(header);
 
                         doAddRegMembre(auth, newRegMember);
                     }
-                    
+
                 }
                 else
                 {
@@ -105,29 +105,29 @@ namespace WPC_1
                     {
                         // Si la resposta es NO SUCCESS, mostrem error
                         MessageBoxButtons button = MessageBoxButtons.OK;
-                        MessageBoxIcon icon = MessageBoxIcon.Warning;                        
+                        MessageBoxIcon icon = MessageBoxIcon.Warning;
                         MessageBox.Show("Registre no realitzat. Torna-ho a intentar\n" + response.ToString(), "Error", button, icon);
                     }
                     else
                     {
                         // Si la resposta es SUCCESS
                         var resposta = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Afegit membre SI registrat correctament! " + resposta, "Info");
+                        MessageBox.Show("Afegit membre correctament! " + resposta, "Info");
 
                         // Tanquem el Formulari
-                        this.Hide();                        
+                        this.Hide();
                     }
-                }                
+                }
             }
         }
 
 
 
-        private Boolean validarInt (string textToValidate)
+        private Boolean validarInt(string textToValidate)
         {
             try
             {
-                int num = Int32.Parse(textToValidate);                
+                int num = Int32.Parse(textToValidate);
                 return true;
             }
             catch (FormatException)
@@ -136,6 +136,6 @@ namespace WPC_1
             }
         }
     }
-        
-    
+
+
 }

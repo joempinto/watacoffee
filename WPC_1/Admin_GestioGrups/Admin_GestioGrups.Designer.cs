@@ -192,6 +192,7 @@
             Controls.Add(pageLocation);
             Name = "Admin_GestioGrups";
             Text = "Admin_GestioGrups";
+            WindowState = FormWindowState.Maximized;
             Load += Admin_GestioGrups_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();

@@ -48,8 +48,7 @@ namespace WPC_1
         async void doDelete(UserAuthorization aut)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/auth/delete";
-            MessageBox.Show(aut.Authorization);
+            string url = "http://localhost:8080/coffee/api/auth/delete";            
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 

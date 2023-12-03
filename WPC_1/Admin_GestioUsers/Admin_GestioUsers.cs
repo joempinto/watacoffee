@@ -66,9 +66,7 @@ namespace WPC_1
 
                     //Una llista uLlista li assignem valors de la response
                     AppInformation.uLlista = loginHttpResponse;
-                    MessageBox.Show("Test\n" + AppInformation.uLlista[0]);
-
-
+                    
                     listBoxUsers.Visible = true;
                     listBoxUsers.Items.Clear();
                     //imprimim els users un a un
@@ -79,7 +77,7 @@ namespace WPC_1
                 {
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
-                    MessageBox.Show("Torna-ho a intentar", "Token no rebut", button, icon);
+                    MessageBox.Show("Torna-ho a intentar", "Error", button, icon);
                 }
             }
 
@@ -115,7 +113,7 @@ namespace WPC_1
                 {
                     MessageBoxButtons button = MessageBoxButtons.OK;
                     MessageBoxIcon icon = MessageBoxIcon.Warning;
-                    MessageBox.Show("Torna-ho a intentar", "Token no rebut", button, icon);
+                    MessageBox.Show("Torna-ho a intentar", "Error", button, icon);
                 }
             }
         }

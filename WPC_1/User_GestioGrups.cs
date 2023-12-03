@@ -103,9 +103,18 @@ namespace WPC_1
                     AppInformation.gLlistaTipus = llistaTipusHttpResponse;
 
                     totalGrupsLlista.Text = AppInformation.gLlistaTipus.Count().ToString();
+
                     //imprimim els users un a un
                     for (int i = 0; i < llistaTipusHttpResponse.Count; i++)
-                        listGrupsTipus.Items.Add("ID: " + AppInformation.gLlistaTipus[i].id + "  " + "Nom Grup: " + AppInformation.gLlistaTipus[i].name);
+                    {
+                        ListViewItem item = new ListViewItem(llistaTipusHttpResponse[i].id.ToString());
+                        // Place a check mark next to the item.
+                        item.SubItems.Add(llistaTipusHttpResponse[i].name);
+                        //Add the items to the ListView.
+                        listGrupsTipus.Items.Add(item);
+
+                    }
+
                 }
                 else
                 {
@@ -117,17 +126,27 @@ namespace WPC_1
 
         }
 
-        private void addMemberGrupBtn_Click(object sender, EventArgs e)
+        private void listIndex_Click(object sender, EventArgs e)
         {
-            User_AfegirMembre addMembre = new User_AfegirMembre();
-            addMembre.Show();
-            //3-Sprint: enviar l'index de la LLISTATIPUS amb el ID GROUP on es vol afegir membre
+            var selectedItems = listGrupsTipus.SelectedItems[0];
+            idGrupShow.Text = AppInformation.gLlistaTipus[selectedItems.Index].id.ToString();
+            showMembresGrupBtn.Enabled = true;
+            deleteGrupBtn.Enabled = true;
+            pictureBoxShowMembresGrup.Enabled = true;
+            pictureBoxDeleteGrup.Enabled = true;
+
         }
 
-        private void updateMemberBtn_Click(object sender, EventArgs e)
+        private void selectedIndexChanged(object sender, EventArgs e)
         {
-            User_UpdateMember updateMembre = new User_UpdateMember();
-            updateMembre.Show();
+            if (listGrupsTipus.SelectedItems.Count == 0)
+            {
+                idGrupShow.Text = null;
+                showMembresGrupBtn.Enabled = false;
+                deleteGrupBtn.Enabled = false;
+                pictureBoxShowMembresGrup.Enabled = false;
+                pictureBoxDeleteGrup.Enabled = false;
+            }
         }
 
         private void logoutStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +157,31 @@ namespace WPC_1
             usuari_Menu uMenu = new usuari_Menu();
             uMenu.button1_Click(sender, e); //dologout
         }
+
+        private void showMembresGrupBtn_Click(object sender, EventArgs e)
+        {
+            //Aqui haurem de fer el validateINT
+            int idGrup = Int32.Parse(idGrupShow.Text);
+
+
+            User_ShowMembresGrup showMembres = new User_ShowMembresGrup();
+            showMembres.Show();
+            showMembres.User_ShowMembresGrup_Load(sender, e, idGrup);
+
+        }
+
+        /*private Boolean validarInt(string textToValidate)
+        {
+            try
+            {
+                int num = Int32.Parse(textToValidate);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }*/
     }
 }
 
