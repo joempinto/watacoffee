@@ -33,13 +33,7 @@ namespace WPC_1
             this.Hide();
             usuari_Menu user_Menu = new usuari_Menu();
             user_Menu.Show();
-        }
-
-        private void creaGrupBtn_Click(object sender, EventArgs e)
-        {
-            User_addGrup addGroupMenu = new User_addGrup();
-            addGroupMenu.Show();
-        }
+        }        
 
         private void llistaGrupsTypeBtn_Click(object sender, EventArgs e)
         {
@@ -170,18 +164,89 @@ namespace WPC_1
 
         }
 
-        /*private Boolean validarInt(string textToValidate)
+        private void deleteGrupBtn_Click(object sender, EventArgs e)
         {
-            try
+            var selectedItems = listGrupsTipus.SelectedItems[0];
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            DialogResult result = MessageBox.Show("Està segur que vol eliminar el grup amb " +
+                "\nidGroup " + AppInformation.gLlistaTipus[selectedItems.Index].id +
+
+                "\nNom " + AppInformation.gLlistaTipus[selectedItems.Index].name +
+
+                " ?", "Atenció!", button, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
             {
-                int num = Int32.Parse(textToValidate);
-                return true;
+
+                int idGroup = AppInformation.gLlistaTipus[selectedItems.Index].id;
+                string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
+                UserAuthorization auth = new UserAuthorization(header);
+
+                doEliminaGrup(auth, idGroup);
+
+                imprimirLlistatBtn_Click(sender, e);
+                
+                selectedIndexChanged(sender, e);
             }
-            catch (FormatException)
+            else
             {
-                return false;
+                listGrupsTipus.Items.Clear();
+                totalGrupsLlista.Text = null;
+                selectedIndexChanged(sender, e);                
             }
-        }*/
+
+        }
+
+        private async void doEliminaGrup(UserAuthorization aut, int groupID)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = String.Concat("http://localhost:8080/coffee/api/groups/delete/group/", groupID);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
+            using HttpResponseMessage response = await httpClient.DeleteAsync(url);
+
+
+            // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
+            if (!response.IsSuccessStatusCode)
+            {
+
+                // Si la resposta es NO SUCCESS, mostrem error
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                MessageBox.Show("Error al fer DELETE. Torna a intentar-ho \n" + response, "Error", button, icon);
+            }
+            else
+            {
+                // Si la resposta es SUCCESS
+
+                // Creem un objecte de tipus String per agafar les dades que retorna el server (String confirmant delete)                               
+                var resposta = await response.Content.ReadAsStringAsync();
+                MessageBox.Show("DELETE correcte! > " + resposta, "Info");
+                listGrupsTipus.Items.Clear();
+                totalGrupsLlista.Text = null;
+
+
+            }
+        }
+
+        private void creaGrupBtn_Click_1(object sender, EventArgs e)
+        {
+            User_addGrup addGroupMenu = new User_addGrup();
+            addGroupMenu.Show();
+        }
     }
+
+    /*private Boolean validarInt(string textToValidate)
+    {
+        try
+        {
+            int num = Int32.Parse(textToValidate);
+            return true;
+        }
+        catch (FormatException)
+        {
+            return false;
+        }
+    }*/
 }
+
 

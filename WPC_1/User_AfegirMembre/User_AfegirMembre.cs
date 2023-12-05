@@ -22,7 +22,7 @@ namespace WPC_1
         {
             InitializeComponent();
         }
-
+       
         private void labelCancelAddMembre_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -34,9 +34,25 @@ namespace WPC_1
             labelUsername.Visible = checkUsername.Checked;
         }
 
+
+        private Boolean validarInt(string textToValidate)
+        {
+            try
+            {
+                int num = Int32.Parse(textToValidate);
+                return true;
+            }
+            catch (FormatException)
+            {
+                return false;
+            }
+        }
+
         private void confirmaAddMembreBtn_Click(object sender, EventArgs e)
         {
-            string id = idGrupTxt.Text;
+
+            string idGroup = idGrupTxt.Text.ToString();
+            //idGrupTxt.Text = idGroup.ToString();
             string nickname = nicknameMembreTxt.Text;
 
 
@@ -44,11 +60,11 @@ namespace WPC_1
             MessageBoxIcon icon = MessageBoxIcon.Warning;
 
             // Validació de email i password: No estan empty i que email es valid
-            if (string.IsNullOrEmpty(id))
+            if (string.IsNullOrEmpty(idGrupTxt.Text))
             {
                 MessageBox.Show("El camp ID Grup no pot estar buit", "Error", button, icon);
             }
-            else if (!validarInt(id))
+            else if (!validarInt(idGrupTxt.Text))
             {
                 MessageBox.Show("No s'ha introduit un numero positiu", "Error", button, icon);
             }
@@ -68,20 +84,20 @@ namespace WPC_1
                     }
                     else
                     {
-                        int idNum = Int32.Parse(id);
+                        int idNum = Int32.Parse(idGrupTxt.Text);
                         MessageBox.Show("Trying to add un usuari ja registrat", "Info", button);
 
                         AddNewMembre newRegMember = new AddNewMembre(idNum, nickname, username);
                         string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                         UserAuthorization auth = new UserAuthorization(header);
 
-                        doAddRegMembre(auth, newRegMember);
+                        doAddMembre(auth, newRegMember);
                     }
 
                 }
                 else
                 {
-                    int idNum = Int32.Parse(id);
+                    int idNum = Int32.Parse(idGrupTxt.Text);
                     string username = null;
 
                     // Creem user amb les dades introduides (idNum i nickname)
@@ -89,11 +105,11 @@ namespace WPC_1
                     string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                     UserAuthorization auth = new UserAuthorization(header);
                     //fem login
-                    doAddRegMembre(auth, newMember);
+                    doAddMembre(auth, newMember);
                 }
 
 
-                async void doAddRegMembre(UserAuthorization aut, AddNewMembre nouRegMembre)
+                async void doAddMembre(UserAuthorization aut, AddNewMembre nouRegMembre)
                 {
                     HttpClient httpClient = new HttpClient();
                     string url = "http://localhost:8080/coffee/api/groups/add/member";
@@ -116,26 +132,16 @@ namespace WPC_1
 
                         // Tanquem el Formulari
                         this.Hide();
+
                     }
+
                 }
             }
         }
 
-
-
-        private Boolean validarInt(string textToValidate)
-        {
-            try
-            {
-                int num = Int32.Parse(textToValidate);
-                return true;
-            }
-            catch (FormatException)
-            {
-                return false;
-            }
-        }
+    
     }
-
-
 }
+
+
+

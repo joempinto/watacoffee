@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -24,6 +25,7 @@ namespace WPC_1
 
         public void User_ShowMembresGrup_Load(object sender, EventArgs e, int id)
         {
+            listMembres.Items.Clear();
 
             doLlistaMembres(id);
         }
@@ -65,6 +67,7 @@ namespace WPC_1
                     {
                         ListViewItem item = new ListViewItem(llistaMembresHttpResponse[i].groupId.ToString());
                         // Place a check mark next to the item.
+                        item.SubItems.Add(llistaMembresHttpResponse[i].userId.ToString());
                         item.SubItems.Add(llistaMembresHttpResponse[i].nickname);
                         item.SubItems.Add(llistaMembresHttpResponse[i].username);
                         item.SubItems.Add(llistaMembresHttpResponse[i].admin.ToString());
@@ -92,10 +95,7 @@ namespace WPC_1
         private void listIndex_Click(object sender, EventArgs e)
         {
             var selectedItems = listMembres.SelectedItems[0];
-            MessageBoxButtons button = MessageBoxButtons.OK;
-            MessageBoxIcon icon = MessageBoxIcon.Warning;
-            MessageBox.Show("Selected index " + AppInformation.membresLlista[selectedItems.Index].groupId.ToString(), "Info", button, icon);
-
+             
             addMemberGrupBtn.Enabled = true;
             updateMemberBtn.Enabled = true;
             eliminaMemberBtn.Enabled = true;
@@ -115,14 +115,78 @@ namespace WPC_1
 
         private void addMemberGrupBtn_Click(object sender, EventArgs e)
         {
+            var selectedItems = listMembres.SelectedItems[0];
             User_AfegirMembre addMembre = new User_AfegirMembre();
             addMembre.Show();
+            
         }
 
         private void updateMemberBtn_Click(object sender, EventArgs e)
         {
             User_UpdateMember updateMembre = new User_UpdateMember();
             updateMembre.Show();
+        }
+
+        private void eliminaMemberBtn_Click(object sender, EventArgs e)
+        {
+
+            var selectedItems = listMembres.SelectedItems[0];
+            MessageBoxButtons button = MessageBoxButtons.YesNo;
+            MessageBoxIcon icon = MessageBoxIcon.Warning;
+            DialogResult result = MessageBox.Show("Està segur que vols eliminar l'usuari amb " +
+                "\nnickname " + AppInformation.membresLlista[selectedItems.Index].nickname +
+
+                "\nidGroup " + AppInformation.membresLlista[selectedItems.Index].groupId +
+                "\nidUser " + AppInformation.membresLlista[selectedItems.Index].userId +
+
+                " ?", "Atenció!", button, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+
+                int idGroup = AppInformation.membresLlista[selectedItems.Index].groupId;
+                int idUser = AppInformation.membresLlista[selectedItems.Index].userId;
+                string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
+                UserAuthorization auth = new UserAuthorization(header);
+
+                doEliminaParticipant(auth, idGroup, idUser);
+
+                User_ShowMembresGrup_Load(sender, e, idGroup);
+            }
+            else
+            {
+                selectedIndexChanged(sender, e);
+            }
+
+        }
+
+        private async void doEliminaParticipant(UserAuthorization aut, int groupID, int userID)
+        {
+            HttpClient httpClient = new HttpClient();
+            string url = String.Concat("http://localhost:8080/coffee/api/groups/delete/member/from/group/", userID, "/", groupID);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
+            using HttpResponseMessage response = await httpClient.DeleteAsync(url);
+
+
+            // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
+            if (!response.IsSuccessStatusCode)
+            {
+
+                // Si la resposta es NO SUCCESS, mostrem error
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                MessageBox.Show("Error al fer DELETE. Torna a intentar-ho \n" + response, "Error", button, icon);
+            }
+            else
+            {
+                // Si la resposta es SUCCESS
+
+                // Creem un objecte de tipus String per agafar les dades que retorna el server (String confirmant delete)                               
+                var resposta = await response.Content.ReadAsStringAsync();
+                MessageBox.Show("DELETE correcte! > " + resposta, "Info");
+
+
+            }
         }
     }
 }

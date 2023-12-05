@@ -49,7 +49,7 @@
             labelCancelAddMembre.Cursor = Cursors.Hand;
             labelCancelAddMembre.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
             labelCancelAddMembre.ForeColor = Color.FromArgb(107, 55, 35);
-            labelCancelAddMembre.Location = new Point(253, 389);
+            labelCancelAddMembre.Location = new Point(253, 388);
             labelCancelAddMembre.Name = "labelCancelAddMembre";
             labelCancelAddMembre.Size = new Size(109, 30);
             labelCancelAddMembre.TabIndex = 47;
@@ -65,7 +65,7 @@
             confirmaAddMembreBtn.ForeColor = Color.FromArgb(64, 0, 0);
             confirmaAddMembreBtn.Location = new Point(216, 315);
             confirmaAddMembreBtn.Name = "confirmaAddMembreBtn";
-            confirmaAddMembreBtn.Size = new Size(192, 67);
+            confirmaAddMembreBtn.Size = new Size(191, 67);
             confirmaAddMembreBtn.TabIndex = 46;
             confirmaAddMembreBtn.Text = "Confirmar";
             confirmaAddMembreBtn.UseVisualStyleBackColor = false;
@@ -94,7 +94,7 @@
             // idGrupTxt
             // 
             idGrupTxt.Anchor = AnchorStyles.None;
-            idGrupTxt.Location = new Point(259, 106);
+            idGrupTxt.Location = new Point(259, 107);
             idGrupTxt.Name = "idGrupTxt";
             idGrupTxt.Size = new Size(274, 31);
             idGrupTxt.TabIndex = 43;
@@ -105,7 +105,7 @@
             labelGrupID.AutoSize = true;
             labelGrupID.BackColor = Color.Transparent;
             labelGrupID.ForeColor = Color.FromArgb(107, 55, 35);
-            labelGrupID.Location = new Point(74, 109);
+            labelGrupID.Location = new Point(74, 108);
             labelGrupID.Name = "labelGrupID";
             labelGrupID.Size = new Size(74, 25);
             labelGrupID.TabIndex = 42;
@@ -118,7 +118,7 @@
             labelAfegir.BackColor = Color.Transparent;
             labelAfegir.Font = new Font("Segoe UI Black", 20F, FontStyle.Bold, GraphicsUnit.Point);
             labelAfegir.ForeColor = Color.FromArgb(107, 55, 35);
-            labelAfegir.Location = new Point(155, 18);
+            labelAfegir.Location = new Point(154, 18);
             labelAfegir.Name = "labelAfegir";
             labelAfegir.Size = new Size(322, 54);
             labelAfegir.TabIndex = 41;
@@ -130,7 +130,7 @@
             checkUsername.AutoSize = true;
             checkUsername.BackColor = Color.Transparent;
             checkUsername.ForeColor = Color.FromArgb(107, 55, 35);
-            checkUsername.Location = new Point(105, 207);
+            checkUsername.Location = new Point(106, 207);
             checkUsername.Name = "checkUsername";
             checkUsername.Size = new Size(135, 29);
             checkUsername.TabIndex = 48;
@@ -141,7 +141,7 @@
             // usernameTxt
             // 
             usernameTxt.Anchor = AnchorStyles.None;
-            usernameTxt.Location = new Point(259, 249);
+            usernameTxt.Location = new Point(259, 248);
             usernameTxt.Name = "usernameTxt";
             usernameTxt.Size = new Size(274, 31);
             usernameTxt.TabIndex = 49;
@@ -153,7 +153,7 @@
             labelUsername.AutoSize = true;
             labelUsername.BackColor = Color.Transparent;
             labelUsername.ForeColor = Color.FromArgb(107, 55, 35);
-            labelUsername.Location = new Point(145, 252);
+            labelUsername.Location = new Point(146, 252);
             labelUsername.Name = "labelUsername";
             labelUsername.Size = new Size(91, 25);
             labelUsername.TabIndex = 50;
@@ -178,9 +178,11 @@
             Controls.Add(labelAfegir);
             Name = "User_AfegirMembre";
             Text = "User_AfegirMembre";
+           
             ResumeLayout(false);
             PerformLayout();
         }
+
 
         #endregion
 

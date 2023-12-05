@@ -32,16 +32,23 @@ namespace WPC_1
             //Preguntem si usuari està segur de fer del delete del perfil a la app
             MessageBoxButtons button = MessageBoxButtons.YesNo;
             MessageBoxIcon icon = MessageBoxIcon.Question;
-            MessageBox.Show("Està segur que vol iniciar el procés per eliminar el perfil a WPC?.", "Atenció!", button, icon);
+            
+            DialogResult result = MessageBox.Show("Està segur que vol iniciar el procés per eliminar el perfil a WPC?.", "Atenció!", button, icon);
 
-            //Farem DELETE de la sessió amb el header (el head i el token)
-            //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
+            if (result == DialogResult.Yes)
+            {
+                //Farem DELETE de la sessió amb el header (el head i el token)
+                //En aquest cas el header, per ser un usuari, haurà de ser 'CBS'
 
-            // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
-            string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
-            UserAuthorization auth = new UserAuthorization(header);
-            //fem logout
-            doDelete(auth);
+                // Creem deleteUser assignant les dades que tenim en memoria a Appinformation (head i token)            
+                string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
+                UserAuthorization auth = new UserAuthorization(header);
+                //fem logout
+                doDelete(auth);
+            } else
+            {
+                this.Close();
+            }
 
         }
 
