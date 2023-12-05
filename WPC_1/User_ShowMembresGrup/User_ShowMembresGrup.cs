@@ -116,7 +116,7 @@ namespace WPC_1
         private void addMemberGrupBtn_Click(object sender, EventArgs e)
         {
             var selectedItems = listMembres.SelectedItems[0];
-            User_AfegirMembre addMembre = new User_AfegirMembre();
+            User_AfegirMembre addMembre = new User_AfegirMembre(AppInformation.membresLlista[selectedItems.Index].groupId);
             addMembre.Show();
             
         }

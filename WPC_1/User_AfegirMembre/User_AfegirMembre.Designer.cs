@@ -177,8 +177,7 @@
             Controls.Add(labelGrupID);
             Controls.Add(labelAfegir);
             Name = "User_AfegirMembre";
-            Text = "User_AfegirMembre";
-           
+            Text = "User_AfegirMembre";           
             ResumeLayout(false);
             PerformLayout();
         }

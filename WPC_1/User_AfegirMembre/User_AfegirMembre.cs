@@ -18,11 +18,12 @@ namespace WPC_1
 {
     public partial class User_AfegirMembre : Form
     {
-        public User_AfegirMembre()
+        public User_AfegirMembre(int idgroup)
         {
             InitializeComponent();
+            idGrupTxt.Text = idgroup.ToString();
         }
-       
+
         private void labelCancelAddMembre_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -48,11 +49,10 @@ namespace WPC_1
             }
         }
 
-        private void confirmaAddMembreBtn_Click(object sender, EventArgs e)
+        public void confirmaAddMembreBtn_Click(object sender, EventArgs e)
         {
 
-            string idGroup = idGrupTxt.Text.ToString();
-            //idGrupTxt.Text = idGroup.ToString();
+            string idGroup = idGrupTxt.Text.ToString();            
             string nickname = nicknameMembreTxt.Text;
 
 
@@ -123,6 +123,7 @@ namespace WPC_1
                         MessageBoxButtons button = MessageBoxButtons.OK;
                         MessageBoxIcon icon = MessageBoxIcon.Warning;
                         MessageBox.Show("Registre no realitzat. Torna-ho a intentar\n" + response.ToString(), "Error", button, icon);
+
                     }
                     else
                     {
@@ -133,13 +134,17 @@ namespace WPC_1
                         // Tanquem el Formulari
                         this.Hide();
 
+                        User_ShowMembresGrup showListAgain = new User_ShowMembresGrup();
+                           
+                        showListAgain.User_ShowMembresGrup_Load(sender, e, Int32.Parse(idGroup));
+                           
                     }
+
 
                 }
             }
         }
-
-    
+        
     }
 }
 
