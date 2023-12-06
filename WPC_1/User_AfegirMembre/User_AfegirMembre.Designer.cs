@@ -127,6 +127,7 @@
             // 
             // checkUsername
             // 
+            checkUsername.Anchor = AnchorStyles.None;
             checkUsername.AutoSize = true;
             checkUsername.BackColor = Color.Transparent;
             checkUsername.ForeColor = Color.FromArgb(107, 55, 35);
@@ -177,7 +178,7 @@
             Controls.Add(labelGrupID);
             Controls.Add(labelAfegir);
             Name = "User_AfegirMembre";
-            Text = "User_AfegirMembre";           
+            Text = "User_AfegirMembre";
             ResumeLayout(false);
             PerformLayout();
         }

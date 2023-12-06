@@ -18,10 +18,10 @@ namespace WPC_1
 {
     public partial class User_AfegirMembre : Form
     {
-        public User_AfegirMembre(int idgroup)
+        public User_AfegirMembre(int idNum)
         {
             InitializeComponent();
-            idGrupTxt.Text = idgroup.ToString();
+            idGrupTxt.Text = idNum.ToString();
         }
 
         private void labelCancelAddMembre_Click(object sender, EventArgs e)
@@ -52,7 +52,9 @@ namespace WPC_1
         public void confirmaAddMembreBtn_Click(object sender, EventArgs e)
         {
 
-            string idGroup = idGrupTxt.Text.ToString();            
+            int idgroup = Int32.Parse(idGrupTxt.Text);
+
+
             string nickname = nicknameMembreTxt.Text;
 
 
@@ -91,7 +93,7 @@ namespace WPC_1
                         string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                         UserAuthorization auth = new UserAuthorization(header);
 
-                        doAddMembre(auth, newRegMember);
+                        doAddMembre(auth, newRegMember, idgroup);
                     }
 
                 }
@@ -105,11 +107,12 @@ namespace WPC_1
                     string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                     UserAuthorization auth = new UserAuthorization(header);
                     //fem login
-                    doAddMembre(auth, newMember);
+                    doAddMembre(auth, newMember, idgroup);
+
                 }
 
 
-                async void doAddMembre(UserAuthorization aut, AddNewMembre nouRegMembre)
+                async void doAddMembre(UserAuthorization aut, AddNewMembre nouRegMembre, int idgroup)
                 {
                     HttpClient httpClient = new HttpClient();
                     string url = "http://localhost:8080/coffee/api/groups/add/member";
@@ -128,23 +131,25 @@ namespace WPC_1
                     else
                     {
                         // Si la resposta es SUCCESS
+
+
+
                         var resposta = await response.Content.ReadAsStringAsync();
-                        MessageBox.Show("Afegit membre correctament! " + resposta, "Info");
+
+                        User_ShowMembresGrup showListAgain = new User_ShowMembresGrup(idgroup);
+                        showListAgain.Refresh();
+
+
+                        MessageBox.Show("Afegit membre correctament! " + resposta, "Info", MessageBoxButtons.OK);
 
                         // Tanquem el Formulari
                         this.Hide();
 
-                        User_ShowMembresGrup showListAgain = new User_ShowMembresGrup();
-                           
-                        showListAgain.User_ShowMembresGrup_Load(sender, e, Int32.Parse(idGroup));
-                           
                     }
-
-
                 }
             }
         }
-        
+
     }
 }
 

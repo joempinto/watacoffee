@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,19 +19,30 @@ namespace WPC_1
 {
     public partial class User_ShowMembresGrup : Form
     {
-        public User_ShowMembresGrup()
+        public User_ShowMembresGrup(int GRUPID)
         {
             InitializeComponent();
+            numGrupTxt.Text = GRUPID.ToString();
         }
 
-        public void User_ShowMembresGrup_Load(object sender, EventArgs e, int id)
+        public void cabecera_Load(object sender, EventArgs e)
+        {
+            string location = String.Concat("[USER] ", AppInformation.usuari.Email,
+                        " > Menu Usuari > Gestió de Grups");
+            pageLocation.Text = location;
+
+
+        }
+
+        //BOTO QUE NO EXISTEIX PER FER UPDATE DE LA TAULA DE MEMBRES
+        public void updateTableMembers_Click(object sender, EventArgs e, int num)
         {
             listMembres.Items.Clear();
 
-            doLlistaMembres(id);
+            doLlistaMembres(num);
         }
 
-        async void doLlistaMembres(int idGrup)
+        public async void doLlistaMembres(int idGrup)
         {
             string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
             UserAuthorization auth = new UserAuthorization(header);
@@ -95,7 +107,7 @@ namespace WPC_1
         private void listIndex_Click(object sender, EventArgs e)
         {
             var selectedItems = listMembres.SelectedItems[0];
-             
+
             addMemberGrupBtn.Enabled = true;
             updateMemberBtn.Enabled = true;
             eliminaMemberBtn.Enabled = true;
@@ -110,6 +122,7 @@ namespace WPC_1
                 addMemberGrupBtn.Enabled = false;
                 updateMemberBtn.Enabled = false;
                 eliminaMemberBtn.Enabled = false;
+                hideUpdateButtons_Click(sender, e);
             }
         }
 
@@ -118,13 +131,18 @@ namespace WPC_1
             var selectedItems = listMembres.SelectedItems[0];
             User_AfegirMembre addMembre = new User_AfegirMembre(AppInformation.membresLlista[selectedItems.Index].groupId);
             addMembre.Show();
-            
+
         }
 
         private void updateMemberBtn_Click(object sender, EventArgs e)
+        {            
+                linkUsernameBtn.Visible = true;
+                updateNicknameBtn.Visible = true;   
+        }
+        private void hideUpdateButtons_Click(object sender, EventArgs e)
         {
-            User_UpdateMember updateMembre = new User_UpdateMember();
-            updateMembre.Show();
+            linkUsernameBtn.Visible = false;
+            updateNicknameBtn.Visible = false;
         }
 
         private void eliminaMemberBtn_Click(object sender, EventArgs e)
@@ -151,7 +169,8 @@ namespace WPC_1
 
                 doEliminaParticipant(auth, idGroup, idUser);
 
-                User_ShowMembresGrup_Load(sender, e, idGroup);
+                updateTableMembers_Click(sender, e, idGroup);
+                selectedIndexChanged(sender, e);
             }
             else
             {
@@ -185,8 +204,54 @@ namespace WPC_1
                 var resposta = await response.Content.ReadAsStringAsync();
                 MessageBox.Show("DELETE correcte! > " + resposta, "Info");
 
-
             }
+        }
+
+        private void iniciStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            usuari_Menu user_Menu = new usuari_Menu();
+            user_Menu.Show();
+        }
+
+        private void logoutStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+            usuari_Menu uMenu = new usuari_Menu();
+            uMenu.button1_Click(sender, e); //dologout
+        }
+
+        public void refreshBtn_Click(object sender, EventArgs e)
+        {
+            int GRUPID = Int32.Parse(numGrupTxt.Text);
+            updateTableMembers_Click(sender, e, GRUPID);
+        }
+
+        private void linkUsernameBtn_Click(object sender, EventArgs e)
+        {
+            var selectedItems = listMembres.SelectedItems[0];
+            int idGroup = AppInformation.membresLlista[selectedItems.Index].groupId;
+            String nicknameSel = AppInformation.membresLlista[selectedItems.Index].nickname;
+
+
+            hideUpdateButtons_Click(sender, e);
+            selectedIndexChanged(sender, e);
+            User_UpdateMember updateMemberForm = new User_UpdateMember(idGroup, nicknameSel);
+            updateMemberForm.Show();
+        }
+
+        private void updateNicknameBtn_Click(object sender, EventArgs e)
+        {
+            var selectedItems = listMembres.SelectedItems[0];
+            int idGroup = AppInformation.membresLlista[selectedItems.Index].groupId;
+            String nicknameSel = AppInformation.membresLlista[selectedItems.Index].nickname;
+
+
+            hideUpdateButtons_Click(sender,e);
+            selectedIndexChanged(sender, e);
+            User_UpdateNickname updateNicknameForm = new User_UpdateNickname(idGroup, nicknameSel);
+            updateNicknameForm.Show(); 
         }
     }
 }

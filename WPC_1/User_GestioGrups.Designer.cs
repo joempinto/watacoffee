@@ -69,11 +69,10 @@
             menuStrip1.Dock = DockStyle.None;
             menuStrip1.ImageScalingSize = new Size(24, 24);
             menuStrip1.Items.AddRange(new ToolStripItem[] { op1ToolStripMenuItem });
-            menuStrip1.Location = new Point(8, 7);
+            menuStrip1.Location = new Point(11, 12);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(4, 1, 0, 1);
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(56, 45);
+            menuStrip1.Size = new Size(81, 57);
             menuStrip1.TabIndex = 20;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -82,21 +81,21 @@
             op1ToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { iniciStripMenuItem, logoutStripMenuItem });
             op1ToolStripMenuItem.Image = Properties.Resources.main_coffee;
             op1ToolStripMenuItem.Name = "op1ToolStripMenuItem";
-            op1ToolStripMenuItem.Size = new Size(50, 43);
+            op1ToolStripMenuItem.Size = new Size(73, 53);
             op1ToolStripMenuItem.Text = "Menu";
             op1ToolStripMenuItem.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(112, 22);
-            iniciStripMenuItem.Text = "Inici";
+            iniciStripMenuItem.Size = new Size(270, 34);
+            iniciStripMenuItem.Text = "Menú Usuari";
             iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(112, 22);
+            logoutStripMenuItem.Size = new Size(270, 34);
             logoutStripMenuItem.Text = "Logout";
             logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
@@ -106,10 +105,9 @@
             pageLocation.BackColor = Color.Transparent;
             pageLocation.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point);
             pageLocation.ForeColor = Color.FromArgb(107, 55, 50);
-            pageLocation.Location = new Point(74, 14);
-            pageLocation.Margin = new Padding(2, 0, 2, 0);
+            pageLocation.Location = new Point(106, 23);
             pageLocation.Name = "pageLocation";
-            pageLocation.Size = new Size(225, 19);
+            pageLocation.Size = new Size(325, 28);
             pageLocation.TabIndex = 19;
             pageLocation.Text = "location: Username>MenuUsuari>";
             // 
@@ -119,10 +117,9 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(67, 47);
-            label2.Margin = new Padding(2, 0, 2, 0);
+            label2.Location = new Point(96, 78);
             label2.Name = "label2";
-            label2.Size = new Size(251, 41);
+            label2.Size = new Size(368, 60);
             label2.TabIndex = 27;
             label2.Text = "Gestió de Grups";
             label2.TextAlign = ContentAlignment.TopCenter;
@@ -134,10 +131,9 @@
             creaGrupBtn.Cursor = Cursors.Hand;
             creaGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             creaGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            creaGrupBtn.Location = new Point(125, 124);
-            creaGrupBtn.Margin = new Padding(2, 0, 2, 0);
+            creaGrupBtn.Location = new Point(179, 207);
             creaGrupBtn.Name = "creaGrupBtn";
-            creaGrupBtn.Size = new Size(114, 21);
+            creaGrupBtn.Size = new Size(174, 32);
             creaGrupBtn.TabIndex = 26;
             creaGrupBtn.Text = "Crear un grup";
             creaGrupBtn.Click += creaGrupBtn_Click_1;
@@ -146,10 +142,9 @@
             // 
             pictureBoxCreaGrup.BackColor = Color.Transparent;
             pictureBoxCreaGrup.Image = (Image)resources.GetObject("pictureBoxCreaGrup.Image");
-            pictureBoxCreaGrup.Location = new Point(92, 121);
-            pictureBoxCreaGrup.Margin = new Padding(2);
+            pictureBoxCreaGrup.Location = new Point(131, 202);
             pictureBoxCreaGrup.Name = "pictureBoxCreaGrup";
-            pictureBoxCreaGrup.Size = new Size(29, 22);
+            pictureBoxCreaGrup.Size = new Size(41, 37);
             pictureBoxCreaGrup.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxCreaGrup.TabIndex = 28;
             pictureBoxCreaGrup.TabStop = false;
@@ -158,10 +153,9 @@
             // 
             pictureBoxLlistaGrupTipus.BackColor = Color.Transparent;
             pictureBoxLlistaGrupTipus.Image = (Image)resources.GetObject("pictureBoxLlistaGrupTipus.Image");
-            pictureBoxLlistaGrupTipus.Location = new Point(91, 180);
-            pictureBoxLlistaGrupTipus.Margin = new Padding(2);
+            pictureBoxLlistaGrupTipus.Location = new Point(130, 300);
             pictureBoxLlistaGrupTipus.Name = "pictureBoxLlistaGrupTipus";
-            pictureBoxLlistaGrupTipus.Size = new Size(29, 22);
+            pictureBoxLlistaGrupTipus.Size = new Size(41, 37);
             pictureBoxLlistaGrupTipus.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxLlistaGrupTipus.TabIndex = 30;
             pictureBoxLlistaGrupTipus.TabStop = false;
@@ -173,10 +167,9 @@
             llistaGrupsTypeBtn.Cursor = Cursors.Hand;
             llistaGrupsTypeBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             llistaGrupsTypeBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            llistaGrupsTypeBtn.Location = new Point(124, 182);
-            llistaGrupsTypeBtn.Margin = new Padding(2, 0, 2, 0);
+            llistaGrupsTypeBtn.Location = new Point(177, 303);
             llistaGrupsTypeBtn.Name = "llistaGrupsTypeBtn";
-            llistaGrupsTypeBtn.Size = new Size(167, 21);
+            llistaGrupsTypeBtn.Size = new Size(254, 32);
             llistaGrupsTypeBtn.TabIndex = 29;
             llistaGrupsTypeBtn.Text = "Llistar grup per tipus";
             llistaGrupsTypeBtn.Click += llistaGrupsTypeBtn_Click;
@@ -185,10 +178,9 @@
             // 
             rbAdmin.AutoSize = true;
             rbAdmin.Font = new Font("Segoe UI", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            rbAdmin.Location = new Point(75, 44);
-            rbAdmin.Margin = new Padding(2);
+            rbAdmin.Location = new Point(107, 73);
             rbAdmin.Name = "rbAdmin";
-            rbAdmin.Size = new Size(96, 23);
+            rbAdmin.Size = new Size(137, 32);
             rbAdmin.TabIndex = 34;
             rbAdmin.TabStop = true;
             rbAdmin.Text = "Sóc Admin";
@@ -209,11 +201,9 @@
             llistatBox.Controls.Add(rbAdmin);
             llistatBox.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             llistatBox.ForeColor = Color.FromArgb(107, 55, 35);
-            llistatBox.Location = new Point(340, 103);
-            llistatBox.Margin = new Padding(2);
+            llistatBox.Location = new Point(486, 172);
             llistatBox.Name = "llistatBox";
-            llistatBox.Padding = new Padding(2);
-            llistatBox.Size = new Size(554, 323);
+            llistatBox.Size = new Size(791, 538);
             llistatBox.TabIndex = 35;
             llistatBox.TabStop = false;
             llistatBox.Text = "Llistat de Grups";
@@ -223,10 +213,9 @@
             // 
             listGrupsTipus.Columns.AddRange(new ColumnHeader[] { idGrupHeader1, nomGrupHeader2 });
             listGrupsTipus.FullRowSelect = true;
-            listGrupsTipus.Location = new Point(20, 70);
-            listGrupsTipus.Margin = new Padding(2);
+            listGrupsTipus.Location = new Point(29, 117);
             listGrupsTipus.Name = "listGrupsTipus";
-            listGrupsTipus.Size = new Size(462, 251);
+            listGrupsTipus.Size = new Size(658, 416);
             listGrupsTipus.TabIndex = 41;
             listGrupsTipus.UseCompatibleStateImageBehavior = false;
             listGrupsTipus.View = View.Details;
@@ -246,10 +235,9 @@
             // totalGrupsLlista
             // 
             totalGrupsLlista.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
-            totalGrupsLlista.Location = new Point(485, 79);
-            totalGrupsLlista.Margin = new Padding(2);
+            totalGrupsLlista.Location = new Point(693, 132);
             totalGrupsLlista.Name = "totalGrupsLlista";
-            totalGrupsLlista.Size = new Size(45, 32);
+            totalGrupsLlista.Size = new Size(63, 45);
             totalGrupsLlista.TabIndex = 40;
             // 
             // label3
@@ -258,10 +246,9 @@
             label3.BackColor = Color.Transparent;
             label3.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(107, 55, 35);
-            label3.Location = new Point(485, 127);
-            label3.Margin = new Padding(2, 0, 2, 0);
+            label3.Location = new Point(693, 212);
             label3.Name = "label3";
-            label3.Size = new Size(58, 19);
+            label3.Size = new Size(80, 28);
             label3.TabIndex = 41;
             label3.Text = "Grup ID";
             // 
@@ -271,38 +258,34 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Segoe UI", 11F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(107, 55, 35);
-            label1.Location = new Point(485, 54);
-            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Location = new Point(693, 90);
             label1.Name = "label1";
-            label1.Size = new Size(45, 20);
+            label1.Size = new Size(64, 30);
             label1.TabIndex = 39;
             label1.Text = "Total:";
             // 
             // idGrupShow
             // 
             idGrupShow.Font = new Font("Segoe UI", 12F, FontStyle.Italic, GraphicsUnit.Point);
-            idGrupShow.Location = new Point(486, 146);
-            idGrupShow.Margin = new Padding(2);
+            idGrupShow.Location = new Point(694, 243);
             idGrupShow.Name = "idGrupShow";
-            idGrupShow.Size = new Size(58, 29);
+            idGrupShow.Size = new Size(81, 39);
             idGrupShow.TabIndex = 41;
             // 
             // infoSelecciona
             // 
             infoSelecciona.AutoSize = true;
-            infoSelecciona.Location = new Point(97, 24);
-            infoSelecciona.Margin = new Padding(2, 0, 2, 0);
+            infoSelecciona.Location = new Point(139, 40);
             infoSelecciona.Name = "infoSelecciona";
-            infoSelecciona.Size = new Size(267, 19);
+            infoSelecciona.Size = new Size(384, 28);
             infoSelecciona.TabIndex = 38;
             infoSelecciona.Text = "Selecciona una de les opcions i prem \"Go!\"";
             // 
             // imprimirLlistatBtn
             // 
-            imprimirLlistatBtn.Location = new Point(368, 44);
-            imprimirLlistatBtn.Margin = new Padding(2);
+            imprimirLlistatBtn.Location = new Point(526, 73);
             imprimirLlistatBtn.Name = "imprimirLlistatBtn";
-            imprimirLlistatBtn.Size = new Size(66, 20);
+            imprimirLlistatBtn.Size = new Size(94, 33);
             imprimirLlistatBtn.TabIndex = 37;
             imprimirLlistatBtn.Text = "Go!";
             imprimirLlistatBtn.UseVisualStyleBackColor = true;
@@ -312,10 +295,9 @@
             // 
             rbTots.AutoSize = true;
             rbTots.Font = new Font("Segoe UI", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            rbTots.Location = new Point(301, 44);
-            rbTots.Margin = new Padding(2);
+            rbTots.Location = new Point(430, 73);
             rbTots.Name = "rbTots";
-            rbTots.Size = new Size(54, 23);
+            rbTots.Size = new Size(78, 32);
             rbTots.TabIndex = 36;
             rbTots.TabStop = true;
             rbTots.Text = "Tots";
@@ -325,10 +307,9 @@
             // 
             rbMembre.AutoSize = true;
             rbMembre.Font = new Font("Segoe UI", 10F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            rbMembre.Location = new Point(183, 44);
-            rbMembre.Margin = new Padding(2);
+            rbMembre.Location = new Point(261, 73);
             rbMembre.Name = "rbMembre";
-            rbMembre.Size = new Size(106, 23);
+            rbMembre.Size = new Size(150, 32);
             rbMembre.TabIndex = 35;
             rbMembre.TabStop = true;
             rbMembre.Text = "Sóc Membre";
@@ -339,10 +320,9 @@
             pictureBoxShowMembresGrup.BackColor = Color.Transparent;
             pictureBoxShowMembresGrup.Enabled = false;
             pictureBoxShowMembresGrup.Image = (Image)resources.GetObject("pictureBoxShowMembresGrup.Image");
-            pictureBoxShowMembresGrup.Location = new Point(91, 245);
-            pictureBoxShowMembresGrup.Margin = new Padding(2);
+            pictureBoxShowMembresGrup.Location = new Point(130, 408);
             pictureBoxShowMembresGrup.Name = "pictureBoxShowMembresGrup";
-            pictureBoxShowMembresGrup.Size = new Size(29, 22);
+            pictureBoxShowMembresGrup.Size = new Size(41, 37);
             pictureBoxShowMembresGrup.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxShowMembresGrup.TabIndex = 39;
             pictureBoxShowMembresGrup.TabStop = false;
@@ -355,10 +335,9 @@
             showMembresGrupBtn.Enabled = false;
             showMembresGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             showMembresGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            showMembresGrupBtn.Location = new Point(124, 247);
-            showMembresGrupBtn.Margin = new Padding(2, 0, 2, 0);
+            showMembresGrupBtn.Location = new Point(177, 412);
             showMembresGrupBtn.Name = "showMembresGrupBtn";
-            showMembresGrupBtn.Size = new Size(201, 21);
+            showMembresGrupBtn.Size = new Size(303, 32);
             showMembresGrupBtn.TabIndex = 38;
             showMembresGrupBtn.Text = "Gestió membres del grup";
             showMembresGrupBtn.Click += showMembresGrupBtn_Click;
@@ -368,10 +347,9 @@
             pictureBoxDeleteGrup.BackColor = Color.Transparent;
             pictureBoxDeleteGrup.Enabled = false;
             pictureBoxDeleteGrup.Image = (Image)resources.GetObject("pictureBoxDeleteGrup.Image");
-            pictureBoxDeleteGrup.Location = new Point(91, 308);
-            pictureBoxDeleteGrup.Margin = new Padding(2);
+            pictureBoxDeleteGrup.Location = new Point(130, 513);
             pictureBoxDeleteGrup.Name = "pictureBoxDeleteGrup";
-            pictureBoxDeleteGrup.Size = new Size(29, 22);
+            pictureBoxDeleteGrup.Size = new Size(41, 37);
             pictureBoxDeleteGrup.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxDeleteGrup.TabIndex = 43;
             pictureBoxDeleteGrup.TabStop = false;
@@ -384,20 +362,19 @@
             deleteGrupBtn.Enabled = false;
             deleteGrupBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             deleteGrupBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            deleteGrupBtn.Location = new Point(124, 311);
-            deleteGrupBtn.Margin = new Padding(2, 0, 2, 0);
+            deleteGrupBtn.Location = new Point(177, 518);
             deleteGrupBtn.Name = "deleteGrupBtn";
-            deleteGrupBtn.Size = new Size(114, 21);
+            deleteGrupBtn.Size = new Size(170, 32);
             deleteGrupBtn.TabIndex = 42;
             deleteGrupBtn.Text = "Eliminar grup";
             deleteGrupBtn.Click += deleteGrupBtn_Click;
             // 
             // User_GestioGrups
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(899, 421);
+            ClientSize = new Size(1284, 702);
             Controls.Add(pictureBoxDeleteGrup);
             Controls.Add(deleteGrupBtn);
             Controls.Add(pictureBoxShowMembresGrup);
@@ -410,7 +387,6 @@
             Controls.Add(creaGrupBtn);
             Controls.Add(menuStrip1);
             Controls.Add(pageLocation);
-            Margin = new Padding(2);
             Name = "User_GestioGrups";
             Text = "User_GestioGrups";
             WindowState = FormWindowState.Maximized;

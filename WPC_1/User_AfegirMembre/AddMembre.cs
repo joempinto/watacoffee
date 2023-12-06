@@ -21,4 +21,19 @@ namespace WPC_1
         }
 
     }
+
+    public struct ChangeNicknameMembre
+    {
+        public int groupId { get; set; }
+        public string oldNickname { get; set; }
+        public string newNickname { get; set; }
+
+        public ChangeNicknameMembre(in int id, in string oldNickname, in string newNickname)
+        {
+            this.groupId = id;
+            this.oldNickname = oldNickname;
+            this.newNickname = newNickname;
+        }
+
+    }
 }

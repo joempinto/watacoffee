@@ -15,9 +15,11 @@ namespace WPC_1
 {
     public partial class User_UpdateMember : Form
     {
-        public User_UpdateMember()
+        public User_UpdateMember(int grupSel, String nicknameSel)
         {
             InitializeComponent();
+            idGrupTxt.Text = grupSel.ToString();
+            nicknameMembreTxt.Text = nicknameSel.ToString();
         }
 
         private void labelCancelUpdateMembre_Click(object sender, EventArgs e)
@@ -66,7 +68,7 @@ namespace WPC_1
             async void doUpdateMembre(UserAuthorization aut, AddNewMembre nouRegMembre)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/groups/update/member/group";
+                string url = "http://localhost:8080/coffee/api/groups/add/reguser/member/from/group";
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
                 using HttpResponseMessage response = await httpClient.PutAsJsonAsync<AddNewMembre>(url, nouRegMembre);
 

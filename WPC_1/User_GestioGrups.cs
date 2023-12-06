@@ -33,7 +33,7 @@ namespace WPC_1
             this.Hide();
             usuari_Menu user_Menu = new usuari_Menu();
             user_Menu.Show();
-        }        
+        }
 
         private void llistaGrupsTypeBtn_Click(object sender, EventArgs e)
         {
@@ -158,9 +158,9 @@ namespace WPC_1
             int idGrup = Int32.Parse(idGrupShow.Text);
 
 
-            User_ShowMembresGrup showMembres = new User_ShowMembresGrup();
+            User_ShowMembresGrup showMembres = new User_ShowMembresGrup(idGrup);
             showMembres.Show();
-            showMembres.User_ShowMembresGrup_Load(sender, e, idGrup);
+            showMembres.updateTableMembers_Click(sender, e, idGrup);
 
         }
 
@@ -185,14 +185,14 @@ namespace WPC_1
                 doEliminaGrup(auth, idGroup);
 
                 imprimirLlistatBtn_Click(sender, e);
-                
+
                 selectedIndexChanged(sender, e);
             }
             else
             {
                 listGrupsTipus.Items.Clear();
                 totalGrupsLlista.Text = null;
-                selectedIndexChanged(sender, e);                
+                selectedIndexChanged(sender, e);
             }
 
         }
