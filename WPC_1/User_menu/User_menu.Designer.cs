@@ -77,7 +77,7 @@
             menuConfigBtn.Cursor = Cursors.Hand;
             menuConfigBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuConfigBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            menuConfigBtn.Location = new Point(541, 528);
+            menuConfigBtn.Location = new Point(541, 569);
             menuConfigBtn.Name = "menuConfigBtn";
             menuConfigBtn.Size = new Size(162, 32);
             menuConfigBtn.TabIndex = 14;
@@ -92,11 +92,12 @@
             menuDadesBtn.Cursor = Cursors.Hand;
             menuDadesBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuDadesBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            menuDadesBtn.Location = new Point(541, 340);
+            menuDadesBtn.Location = new Point(541, 365);
             menuDadesBtn.Name = "menuDadesBtn";
-            menuDadesBtn.Size = new Size(163, 32);
+            menuDadesBtn.Size = new Size(163, 96);
             menuDadesBtn.TabIndex = 13;
-            menuDadesBtn.Text = "Estadístiques";
+            menuDadesBtn.Text = " Pagaments \r\n         i\r\nEstadístiques";
+            menuDadesBtn.Click += menuDadesBtn_Click;
             // 
             // pictureBoxMenuConfig
             // 
@@ -104,7 +105,7 @@
             pictureBoxMenuConfig.BackColor = Color.Transparent;
             pictureBoxMenuConfig.Cursor = Cursors.Hand;
             pictureBoxMenuConfig.Image = (Image)resources.GetObject("pictureBoxMenuConfig.Image");
-            pictureBoxMenuConfig.Location = new Point(332, 474);
+            pictureBoxMenuConfig.Location = new Point(332, 515);
             pictureBoxMenuConfig.Name = "pictureBoxMenuConfig";
             pictureBoxMenuConfig.Size = new Size(178, 154);
             pictureBoxMenuConfig.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -118,12 +119,13 @@
             pictureBoxMenuDades.BackColor = Color.Transparent;
             pictureBoxMenuDades.Cursor = Cursors.Hand;
             pictureBoxMenuDades.Image = (Image)resources.GetObject("pictureBoxMenuDades.Image");
-            pictureBoxMenuDades.Location = new Point(332, 300);
+            pictureBoxMenuDades.Location = new Point(332, 331);
             pictureBoxMenuDades.Name = "pictureBoxMenuDades";
-            pictureBoxMenuDades.Size = new Size(178, 147);
+            pictureBoxMenuDades.Size = new Size(178, 154);
             pictureBoxMenuDades.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBoxMenuDades.TabIndex = 11;
             pictureBoxMenuDades.TabStop = false;
+            pictureBoxMenuDades.Click += pictureBoxMenuDades_Click;
             // 
             // menuGrupsBtn
             // 
@@ -133,7 +135,7 @@
             menuGrupsBtn.Cursor = Cursors.Hand;
             menuGrupsBtn.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
             menuGrupsBtn.ForeColor = Color.FromArgb(107, 55, 35);
-            menuGrupsBtn.Location = new Point(541, 155);
+            menuGrupsBtn.Location = new Point(541, 187);
             menuGrupsBtn.Name = "menuGrupsBtn";
             menuGrupsBtn.Size = new Size(82, 32);
             menuGrupsBtn.TabIndex = 10;
@@ -146,7 +148,7 @@
             pictureBoxMenuGrups.BackColor = Color.Transparent;
             pictureBoxMenuGrups.Cursor = Cursors.Hand;
             pictureBoxMenuGrups.Image = (Image)resources.GetObject("pictureBoxMenuGrups.Image");
-            pictureBoxMenuGrups.Location = new Point(332, 109);
+            pictureBoxMenuGrups.Location = new Point(332, 141);
             pictureBoxMenuGrups.Name = "pictureBoxMenuGrups";
             pictureBoxMenuGrups.Size = new Size(178, 160);
             pictureBoxMenuGrups.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -161,7 +163,7 @@
             label5.BackColor = Color.Transparent;
             label5.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(107, 55, 35);
-            label5.Location = new Point(359, 21);
+            label5.Location = new Point(359, 53);
             label5.Name = "label5";
             label5.Size = new Size(296, 60);
             label5.TabIndex = 15;
@@ -195,7 +197,7 @@
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(968, 645);
+            ClientSize = new Size(968, 709);
             Controls.Add(label8);
             Controls.Add(button1);
             Controls.Add(label5);

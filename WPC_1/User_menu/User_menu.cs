@@ -104,5 +104,17 @@ namespace WPC_1
         {
             menuGrupsBtn_Click(sender, e);
         }
+
+        private void menuDadesBtn_Click(object sender, EventArgs e)
+        {
+            User_SelectionPE selectionPE = new User_SelectionPE();
+            selectionPE.Show();
+            this.Close();
+        }
+
+        private void pictureBoxMenuDades_Click(object sender, EventArgs e)
+        {
+            menuDadesBtn_Click(sender, e);
+        }
     }
 }

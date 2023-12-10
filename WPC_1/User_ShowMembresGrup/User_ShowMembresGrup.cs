@@ -42,6 +42,7 @@ namespace WPC_1
             doLlistaMembres(num);
         }
 
+        //CHECK IF ADMIN BOOLEAN IS WORKING FINE LATER ON
         public async void doLlistaMembres(int idGrup)
         {
             string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
@@ -114,7 +115,7 @@ namespace WPC_1
 
         }
 
-        private void selectedIndexChanged(object sender, EventArgs e)
+        public void selectedIndexChanged(object sender, EventArgs e)
         {
             if (listMembres.SelectedItems.Count == 0)
             {
@@ -135,9 +136,9 @@ namespace WPC_1
         }
 
         private void updateMemberBtn_Click(object sender, EventArgs e)
-        {            
-                linkUsernameBtn.Visible = true;
-                updateNicknameBtn.Visible = true;   
+        {
+            linkUsernameBtn.Visible = true;
+            updateNicknameBtn.Visible = true;
         }
         private void hideUpdateButtons_Click(object sender, EventArgs e)
         {
@@ -226,6 +227,7 @@ namespace WPC_1
         {
             int GRUPID = Int32.Parse(numGrupTxt.Text);
             updateTableMembers_Click(sender, e, GRUPID);
+            selectedIndexChanged(sender, e);
         }
 
         private void linkUsernameBtn_Click(object sender, EventArgs e)
@@ -248,10 +250,10 @@ namespace WPC_1
             String nicknameSel = AppInformation.membresLlista[selectedItems.Index].nickname;
 
 
-            hideUpdateButtons_Click(sender,e);
+            hideUpdateButtons_Click(sender, e);
             selectedIndexChanged(sender, e);
             User_UpdateNickname updateNicknameForm = new User_UpdateNickname(idGroup, nicknameSel);
-            updateNicknameForm.Show(); 
+            updateNicknameForm.Show();
         }
     }
 }
