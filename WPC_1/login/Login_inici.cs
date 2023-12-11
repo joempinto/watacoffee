@@ -15,6 +15,9 @@ using WPC_1.register;
 using WPC_1.delete;
 using WPC_1.logout;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
+using System.Text;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace WPC_1
 {
@@ -73,7 +76,9 @@ namespace WPC_1
         {
             HttpClient httpClient = new HttpClient();
             string url = "http://localhost:8080/coffee/api/admin/p/login";
-            using HttpResponseMessage responseAdmin = await httpClient.PostAsJsonAsync<LoginAdmin>(url, loginAdmin);
+            var loginAdminJson = JObject.FromObject(loginAdmin);
+            var content = new StringContent(loginAdminJson.ToString(), Encoding.UTF8, "application/json");
+            using HttpResponseMessage responseAdmin = await httpClient.PostAsync(url, content);
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
             if (!responseAdmin.IsSuccessStatusCode)
@@ -89,17 +94,18 @@ namespace WPC_1
                 // Si la resposta es SUCCESS
                 // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)
 
-                var loginHttpResponse = await responseAdmin.Content.ReadFromJsonAsync<LoginHttpResponseAdmin>();
+                var loginHttpResponse = await responseAdmin.Content.ReadAsStringAsync();
 
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
                 if (loginHttpResponse is not null)
                 {
-                    AppInformation.administrador = new Admin(loginHttpResponse.Head, 
-                        loginHttpResponse.Token, loginHttpResponse.Username);
+                    var resposta = JsonConvert.DeserializeObject<LoginHttpResponseAdmin>(loginHttpResponse);
+                    AppInformation.administrador = new Admin(resposta.Head,
+                        resposta.Token, resposta.Username);
                     //MessageBox.Show(AppInformation.usuari.head + AppInformation.usuari.token +  AppInformation.usuari.nom + AppInformation.usuari.email);
 
                     // Segons el Prefix, obrim el formulari usuari_Menu o admin_Menu.                    
-                    if (loginHttpResponse.Head == "CBS")
+                    if (resposta.Head == "CBS")
                     {
                         this.Hide();
                         usuari_Menu usuariMenu = new usuari_Menu();
