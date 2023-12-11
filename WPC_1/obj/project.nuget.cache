@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "7yCWeiyfwrZdd10N5T7HwGwRNze5AY9/NicO+g5bXbOqPDLZRcCr3uBgfso+d79QRPXMjrXiPH+2bEVpQPQjcg==",
+  "dgSpecHash": "NuApFAgC1W96ZYccmiVTrl/Ptt4ElS2PUakKRND2cj3zAkSC8TxE/gBZgBUUwgp7sAanZD3lCw00h8lnwbBGew==",
   "success": true,
   "projectFilePath": "C:\\Users\\goodp\\source\\repos\\WPC_1\\WPC_1\\WPC_1.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\goodp\\.nuget\\packages\\json.net\\1.0.33\\json.net.1.0.33.nupkg.sha512",
     "C:\\Users\\goodp\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.25\\microsoft.windowsdesktop.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\goodp\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.25\\microsoft.netcore.app.ref.6.0.25.nupkg.sha512",
     "C:\\Users\\goodp\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.25\\microsoft.aspnetcore.app.ref.6.0.25.nupkg.sha512",

@@ -9,12 +9,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="old\Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Update="Properties\Settings.Designer.cs">
+    <Compile Update="old\Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -22,21 +22,42 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="old\Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="User_PAG_EST\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Properties\Settings.settings">
+    <None Update="old\Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Ui\login\" />
+    <Folder Include="Ui\canviPwd\" />
+    <Folder Include="Ui\menuUsuari\" />
+    <Folder Include="Ui\configuracioUsuari\" />
+    <Folder Include="Ui\gestioPagaments\" />
+    <Folder Include="Ui\gestioEstadistiques\" />
+    <Folder Include="Ui\gestioGrups\" />
+    <Folder Include="Ui\crearGrup\" />
+    <Folder Include="Ui\gestioMembresGrup\" />
+    <Folder Include="Ui\afegirMembre\" />
+    <Folder Include="Ui\llistaTotsPagamentsGrup\" />
+    <Folder Include="Ui\adminMenu\" />
+    <Folder Include="Ui\adminGestioGrups\" />
+    <Folder Include="Ui\adminGestioUsuaris\" />
+    <Folder Include="Ui\updateLinkUsername\" />
+    <Folder Include="Ui\updateNickname\" />
+    <Folder Include="Ui\seleccioPagEst\" />
+    <Folder Include="Ui\register\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Json.Net" Version="1.0.33" />
   </ItemGroup>
 
 </Project>
