@@ -4,9 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
+using System.Net.Http.Json;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WPC_1.User_addGroup;
+using WPC_1.logout;
 
 namespace WPC_1
 {
@@ -22,6 +26,153 @@ namespace WPC_1
             string location = String.Concat("[USER] ", AppInformation.usuari.Email,
                         " > Menu Usuari > Pagaments >");
             pageLocation.Text = location;
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            listGrupsTipus.Items.Clear();
+
+            if (comboBox1.SelectedIndex == 0)
+            {
+                string type = "admin";
+                doLlistatTipus(type);
+
+            }
+            else if (comboBox1.SelectedIndex == 1)
+            {
+                string type = "member";
+                doLlistatTipus(type);
+            }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                string type = "all";
+                doLlistatTipus(type);
+            }
+        }
+
+        async void doLlistatTipus(string tipus)
+        {
+            string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
+            UserAuthorization auth = new UserAuthorization(header);
+
+            HttpClient httpClient = new HttpClient();
+            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/groups?type=", tipus);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
+            using HttpResponseMessage response = await httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                // Si la resposta es NO SUCCESS, mostrem error 
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                MessageBox.Show("Error al fer petició. Torna a intentar-ho\n" + response, "Error", button, icon);
+            }
+            else
+            {
+                // Si la resposta es SUCCESS
+                // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)              
+                var llistaTipusHttpResponse = await response.Content.ReadFromJsonAsync<List<GroupLlistaTipus>>();
+
+                // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
+                if (llistaTipusHttpResponse is not null)
+                {
+                    //Una llista gLlistaTipus li assignem valors de la response
+                    AppInformation.gLlistaTipus = llistaTipusHttpResponse;
+
+                    //imprimim els users un a un
+                    for (int i = 0; i < llistaTipusHttpResponse.Count; i++)
+                    {
+                        ListViewItem item = new ListViewItem(llistaTipusHttpResponse[i].id.ToString());
+                        // Place a check mark next to the item.
+                        item.SubItems.Add(llistaTipusHttpResponse[i].name);
+                        //Add the items to the ListView.
+                        listGrupsTipus.Items.Add(item);
+
+                    }
+
+                }
+                else
+                {
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Warning;
+                    MessageBox.Show("Torna-ho a intentar", "Token no rebut", button, icon);
+                }
+            }
+        }
+
+        private void listIndex_Click(object sender, EventArgs e)
+        {
+
+            var selectedGrup = listGrupsTipus.SelectedItems[0];            
+            grupEscollit.Text = AppInformation.gLlistaTipus[selectedGrup.Index].name;
+
+            //carreguem les dates dels membres del grup al listMembres
+
+            int groupId = AppInformation.gLlistaTipus[selectedGrup.Index].id;
+            listMembres.Items.Clear();
+            doLlistaMembres(groupId);
+        }
+
+        private async void doLlistaMembres(int idGrup)
+        {
+            string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
+            UserAuthorization auth = new UserAuthorization(header);
+
+            HttpClient httpClient = new HttpClient();
+            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/members/group/", idGrup);
+            httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
+            using HttpResponseMessage response = await httpClient.GetAsync(url);
+
+            if (!response.IsSuccessStatusCode)
+            {
+                // Si la resposta es NO SUCCESS, mostrem error 
+                MessageBoxButtons button = MessageBoxButtons.OK;
+                MessageBoxIcon icon = MessageBoxIcon.Warning;
+                MessageBox.Show("Error al fer petició. Torna a intentar-ho\n" + response, "Error", button, icon);
+            }
+            else
+            {
+                // Si la resposta es SUCCESS
+                // Creem un objecte de tipus LoginHttpResponse per agafar les dades que retorna el server (Email, Token, Name i Prefix)              
+                var llistaMembresHttpResponse = await response.Content.ReadFromJsonAsync<List<MembresLlista>>();
+
+                // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
+                if (llistaMembresHttpResponse is not null)
+                {
+                    //Una llista gLlistaTipus li assignem valors de la response
+                    AppInformation.membresLlista = llistaMembresHttpResponse;
+
+                    //imprimim els users un a un
+
+                    for (int i = 0; i < llistaMembresHttpResponse.Count; i++)
+                    {
+                        ListViewItem item = new ListViewItem(llistaMembresHttpResponse[i].groupId.ToString());
+
+                        item.SubItems.Add(llistaMembresHttpResponse[i].userId.ToString());
+                        item.SubItems.Add(llistaMembresHttpResponse[i].nickname);
+                        //item.SubItems.Add(llistaMembresHttpResponse[i].username);
+                        item.SubItems.Add(llistaMembresHttpResponse[i].admin.ToString());
+
+                        //Add the items to the ListView.
+                        listMembres.Items.Add(item);
+
+                    }
+
+                }
+                else
+                {
+                    MessageBoxButtons button = MessageBoxButtons.OK;
+                    MessageBoxIcon icon = MessageBoxIcon.Warning;
+                    MessageBox.Show("Torna-ho a intentar", "Token no rebut", button, icon);
+                }
+            }
+
+        }
+
+        private void listMembres_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selectedMembre = listGrupsTipus.SelectedItems[0];
+            membreEscollit.Text = AppInformation.membresLlista[selectedMembre.Index].nickname.ToString();
         }
     }
 

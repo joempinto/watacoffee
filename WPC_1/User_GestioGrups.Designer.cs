@@ -88,14 +88,14 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(270, 34);
+            iniciStripMenuItem.Size = new Size(213, 34);
             iniciStripMenuItem.Text = "Menú Usuari";
             iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(270, 34);
+            logoutStripMenuItem.Size = new Size(213, 34);
             logoutStripMenuItem.Text = "Logout";
             logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
@@ -211,9 +211,11 @@
             // 
             // listGrupsTipus
             // 
+            listGrupsTipus.Anchor = AnchorStyles.None;
             listGrupsTipus.Columns.AddRange(new ColumnHeader[] { idGrupHeader1, nomGrupHeader2 });
             listGrupsTipus.FullRowSelect = true;
             listGrupsTipus.Location = new Point(29, 117);
+            listGrupsTipus.MultiSelect = false;
             listGrupsTipus.Name = "listGrupsTipus";
             listGrupsTipus.Size = new Size(658, 416);
             listGrupsTipus.TabIndex = 41;

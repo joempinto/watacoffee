@@ -40,7 +40,7 @@ namespace WPC_1
             llistatBox.Visible = true;
         }
 
-        private void imprimirLlistatBtn_Click(object sender, EventArgs e)
+        public void imprimirLlistatBtn_Click(object sender, EventArgs e)
         {
             listGrupsTipus.Items.Clear();
 
@@ -67,7 +67,7 @@ namespace WPC_1
                 MessageBox.Show("Usuari desconegut o no trobat.", "Error", button, icon);
             }
         }
-        async void doLlistatTipus(string tipus)
+        public async void doLlistatTipus(string tipus)
         {
             string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
             UserAuthorization auth = new UserAuthorization(header);
