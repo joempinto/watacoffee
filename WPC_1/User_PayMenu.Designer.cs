@@ -54,11 +54,14 @@
             labelMembreEscollit = new Label();
             grupEscollit = new TextBox();
             labelGrupEscollit = new Label();
-            textBoxQuantitat = new TextBox();
+            quantitatTxt = new TextBox();
             label7 = new Label();
-            datePagament = new DateTimePicker();
+            dataPagament = new DateTimePicker();
             labelDataPagament = new Label();
             buttonConfirmaPayment = new Button();
+            numGrupTxt = new TextBox();
+            numMembreTxt = new TextBox();
+            labelCancelAddPagament = new Label();
             menuStrip1.SuspendLayout();
             groupBoxSeleccio.SuspendLayout();
             groupBox1.SuspendLayout();
@@ -73,7 +76,7 @@
             label2.BackColor = Color.Transparent;
             label2.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(107, 55, 35);
-            label2.Location = new Point(323, 115);
+            label2.Location = new Point(323, 92);
             label2.Name = "label2";
             label2.Size = new Size(428, 60);
             label2.TabIndex = 23;
@@ -88,7 +91,7 @@
             menuStrip1.Location = new Point(38, 31);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(81, 57);
+            menuStrip1.Size = new Size(261, 57);
             menuStrip1.TabIndex = 27;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -104,14 +107,16 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(213, 34);
+            iniciStripMenuItem.Size = new Size(270, 34);
             iniciStripMenuItem.Text = "Menú Usuari";
+            iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(213, 34);
+            logoutStripMenuItem.Size = new Size(270, 34);
             logoutStripMenuItem.Text = "Logout";
+            logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
             // pageLocation
             // 
@@ -165,7 +170,9 @@
             // 
             listMembres.Anchor = AnchorStyles.None;
             listMembres.Columns.AddRange(new ColumnHeader[] { columnHeaderMembreID, columnHeaderNickname, columnHeaderIsAdmin });
+            listMembres.FullRowSelect = true;
             listMembres.Location = new Point(57, 287);
+            listMembres.MultiSelect = false;
             listMembres.Name = "listMembres";
             listMembres.Size = new Size(586, 213);
             listMembres.TabIndex = 32;
@@ -211,7 +218,7 @@
             groupBoxSeleccio.Controls.Add(label6);
             groupBoxSeleccio.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             groupBoxSeleccio.ForeColor = Color.FromArgb(107, 55, 35);
-            groupBoxSeleccio.Location = new Point(182, 187);
+            groupBoxSeleccio.Location = new Point(188, 155);
             groupBoxSeleccio.Name = "groupBoxSeleccio";
             groupBoxSeleccio.Size = new Size(694, 519);
             groupBoxSeleccio.TabIndex = 33;
@@ -236,16 +243,16 @@
             groupBox1.Controls.Add(labelTicket);
             groupBox1.Controls.Add(pictureBoxTicket);
             groupBox1.Controls.Add(groupBoxParamEscollits);
-            groupBox1.Controls.Add(textBoxQuantitat);
+            groupBox1.Controls.Add(quantitatTxt);
             groupBox1.Controls.Add(label7);
-            groupBox1.Controls.Add(datePagament);
+            groupBox1.Controls.Add(dataPagament);
             groupBox1.Controls.Add(labelDataPagament);
             groupBox1.Controls.Add(buttonConfirmaPayment);
             groupBox1.Font = new Font("Segoe UI", 10F, FontStyle.Regular, GraphicsUnit.Point);
             groupBox1.ForeColor = Color.FromArgb(107, 55, 35);
-            groupBox1.Location = new Point(64, 738);
+            groupBox1.Location = new Point(57, 680);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(940, 291);
+            groupBox1.Size = new Size(940, 267);
             groupBox1.TabIndex = 34;
             groupBox1.TabStop = false;
             groupBox1.Text = "Àrea Pagament";
@@ -255,9 +262,10 @@
             labelTicket.Anchor = AnchorStyles.None;
             labelTicket.AutoSize = true;
             labelTicket.BackColor = Color.Transparent;
+            labelTicket.Enabled = false;
             labelTicket.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             labelTicket.ForeColor = Color.FromArgb(107, 55, 35);
-            labelTicket.Location = new Point(464, 251);
+            labelTicket.Location = new Point(464, 213);
             labelTicket.Name = "labelTicket";
             labelTicket.Size = new Size(104, 21);
             labelTicket.TabIndex = 44;
@@ -267,8 +275,9 @@
             // 
             pictureBoxTicket.Anchor = AnchorStyles.None;
             pictureBoxTicket.BackColor = Color.Transparent;
+            pictureBoxTicket.Enabled = false;
             pictureBoxTicket.Image = (Image)resources.GetObject("pictureBoxTicket.Image");
-            pictureBoxTicket.Location = new Point(423, 245);
+            pictureBoxTicket.Location = new Point(423, 207);
             pictureBoxTicket.Name = "pictureBoxTicket";
             pictureBoxTicket.Size = new Size(35, 32);
             pictureBoxTicket.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -282,7 +291,7 @@
             groupBoxParamEscollits.Controls.Add(labelMembreEscollit);
             groupBoxParamEscollits.Controls.Add(grupEscollit);
             groupBoxParamEscollits.Controls.Add(labelGrupEscollit);
-            groupBoxParamEscollits.Location = new Point(19, 51);
+            groupBoxParamEscollits.Location = new Point(19, 39);
             groupBoxParamEscollits.Name = "groupBoxParamEscollits";
             groupBoxParamEscollits.Size = new Size(302, 212);
             groupBoxParamEscollits.TabIndex = 42;
@@ -294,9 +303,9 @@
             membreEscollit.Anchor = AnchorStyles.None;
             membreEscollit.Location = new Point(11, 151);
             membreEscollit.Name = "membreEscollit";
+            membreEscollit.ReadOnly = true;
             membreEscollit.Size = new Size(274, 34);
             membreEscollit.TabIndex = 36;
-            membreEscollit.UseSystemPasswordChar = true;
             // 
             // labelMembreEscollit
             // 
@@ -315,6 +324,7 @@
             grupEscollit.Anchor = AnchorStyles.None;
             grupEscollit.Location = new Point(11, 72);
             grupEscollit.Name = "grupEscollit";
+            grupEscollit.ReadOnly = true;
             grupEscollit.Size = new Size(274, 34);
             grupEscollit.TabIndex = 34;
             // 
@@ -330,16 +340,14 @@
             labelGrupEscollit.TabIndex = 33;
             labelGrupEscollit.Text = "Grup seleccionat";
             // 
-            // textBoxQuantitat
+            // quantitatTxt
             // 
-            textBoxQuantitat.Anchor = AnchorStyles.None;
-            textBoxQuantitat.Enabled = false;
-            textBoxQuantitat.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point);
-            textBoxQuantitat.Location = new Point(352, 181);
-            textBoxQuantitat.Name = "textBoxQuantitat";
-            textBoxQuantitat.Size = new Size(300, 48);
-            textBoxQuantitat.TabIndex = 41;
-            textBoxQuantitat.UseSystemPasswordChar = true;
+            quantitatTxt.Anchor = AnchorStyles.None;
+            quantitatTxt.Font = new Font("Segoe UI Black", 15F, FontStyle.Bold, GraphicsUnit.Point);
+            quantitatTxt.Location = new Point(352, 146);
+            quantitatTxt.Name = "quantitatTxt";
+            quantitatTxt.Size = new Size(300, 48);
+            quantitatTxt.TabIndex = 41;
             // 
             // label7
             // 
@@ -347,22 +355,24 @@
             label7.AutoSize = true;
             label7.BackColor = Color.Transparent;
             label7.ForeColor = Color.FromArgb(107, 55, 35);
-            label7.Location = new Point(352, 150);
+            label7.Location = new Point(352, 115);
             label7.Name = "label7";
             label7.Size = new Size(123, 28);
             label7.TabIndex = 40;
             label7.Text = "Quantitat (€)";
             // 
-            // datePagament
+            // dataPagament
             // 
-            datePagament.Anchor = AnchorStyles.None;
-            datePagament.CustomFormat = "yyyy-MM-dd";
-            datePagament.Format = DateTimePickerFormat.Custom;
-            datePagament.Location = new Point(352, 87);
-            datePagament.Name = "datePagament";
-            datePagament.Size = new Size(300, 34);
-            datePagament.TabIndex = 39;
-            datePagament.Value = new DateTime(2023, 12, 16, 0, 0, 0, 0);
+            dataPagament.Anchor = AnchorStyles.None;
+            dataPagament.CustomFormat = "yyyy-MMMM-dd";
+            dataPagament.Format = DateTimePickerFormat.Custom;
+            dataPagament.Location = new Point(352, 75);
+            dataPagament.MaxDate = new DateTime(2050, 12, 31, 0, 0, 0, 0);
+            dataPagament.MinDate = new DateTime(2020, 1, 1, 0, 0, 0, 0);
+            dataPagament.Name = "dataPagament";
+            dataPagament.Size = new Size(300, 34);
+            dataPagament.TabIndex = 39;
+            dataPagament.Value = new DateTime(2023, 12, 16, 0, 0, 0, 0);
             // 
             // labelDataPagament
             // 
@@ -370,7 +380,7 @@
             labelDataPagament.AutoSize = true;
             labelDataPagament.BackColor = Color.Transparent;
             labelDataPagament.ForeColor = Color.FromArgb(107, 55, 35);
-            labelDataPagament.Location = new Point(352, 51);
+            labelDataPagament.Location = new Point(352, 39);
             labelDataPagament.Name = "labelDataPagament";
             labelDataPagament.Size = new Size(179, 28);
             labelDataPagament.TabIndex = 38;
@@ -383,19 +393,63 @@
             buttonConfirmaPayment.FlatStyle = FlatStyle.Popup;
             buttonConfirmaPayment.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonConfirmaPayment.ForeColor = Color.FromArgb(64, 0, 0);
-            buttonConfirmaPayment.Location = new Point(708, 123);
+            buttonConfirmaPayment.Location = new Point(708, 111);
             buttonConfirmaPayment.Name = "buttonConfirmaPayment";
             buttonConfirmaPayment.Size = new Size(202, 93);
             buttonConfirmaPayment.TabIndex = 37;
             buttonConfirmaPayment.Text = "Confirmar";
             buttonConfirmaPayment.UseVisualStyleBackColor = false;
+            buttonConfirmaPayment.Click += buttonConfirmaPayment_Click;
+            // 
+            // numGrupTxt
+            // 
+            numGrupTxt.Anchor = AnchorStyles.None;
+            numGrupTxt.BackColor = Color.FromArgb(107, 55, 35);
+            numGrupTxt.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            numGrupTxt.ForeColor = Color.Black;
+            numGrupTxt.Location = new Point(916, 293);
+            numGrupTxt.Name = "numGrupTxt";
+            numGrupTxt.Size = new Size(64, 45);
+            numGrupTxt.TabIndex = 62;
+            numGrupTxt.Visible = false;
+            // 
+            // numMembreTxt
+            // 
+            numMembreTxt.Anchor = AnchorStyles.None;
+            numMembreTxt.BackColor = Color.FromArgb(107, 55, 35);
+            numMembreTxt.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            numMembreTxt.ForeColor = Color.Black;
+            numMembreTxt.Location = new Point(916, 515);
+            numMembreTxt.Name = "numMembreTxt";
+            numMembreTxt.Size = new Size(64, 45);
+            numMembreTxt.TabIndex = 63;
+            numMembreTxt.Visible = false;
+            // 
+            // labelCancelAddPagament
+            // 
+            labelCancelAddPagament.Anchor = AnchorStyles.None;
+            labelCancelAddPagament.AutoSize = true;
+            labelCancelAddPagament.BackColor = Color.Transparent;
+            labelCancelAddPagament.Cursor = Cursors.Hand;
+            labelCancelAddPagament.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelCancelAddPagament.ForeColor = Color.FromArgb(107, 55, 35);
+            labelCancelAddPagament.Location = new Point(516, 971);
+            labelCancelAddPagament.Name = "labelCancelAddPagament";
+            labelCancelAddPagament.Size = new Size(109, 30);
+            labelCancelAddPagament.TabIndex = 45;
+            labelCancelAddPagament.Text = "Cancel.lar";
+            labelCancelAddPagament.Click += labelCancelAddPagament_Click;
             // 
             // User_PayMenu
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1035, 1050);
+            Controls.Add(labelCancelAddPagament);
+            Controls.Add(numMembreTxt);
+            Controls.Add(numGrupTxt);
             Controls.Add(groupBox1);
             Controls.Add(groupBoxSeleccio);
             Controls.Add(menuStrip1);
@@ -403,6 +457,7 @@
             Controls.Add(label2);
             Name = "User_PayMenu";
             Text = "Menu Pagaments";
+            WindowState = FormWindowState.Maximized;
             Load += User_PayMenu_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
@@ -442,12 +497,15 @@
         private Label labelMembreEscollit;
         private TextBox grupEscollit;
         private Label labelGrupEscollit;
-        private DateTimePicker datePagament;
+        private DateTimePicker dataPagament;
         private Label labelDataPagament;
-        private TextBox textBoxQuantitat;
+        private TextBox quantitatTxt;
         private Label label7;
         private GroupBox groupBoxParamEscollits;
         private PictureBox pictureBoxTicket;
         private Label labelTicket;
+        private TextBox numGrupTxt;
+        private TextBox numMembreTxt;
+        private Label labelCancelAddPagament;
     }
 }

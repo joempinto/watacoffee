@@ -32,13 +32,13 @@
             labelGrup = new Label();
             labelCancelCanviPwd = new Label();
             labelNomGrup = new Label();
-            listView1 = new ListView();
+            listPagamentsGrup = new ListView();
             columnHeaderIsMember = new ColumnHeader();
             columnHeaderNickname = new ColumnHeader();
             columnHeaderAmount = new ColumnHeader();
             columnHeaderData = new ColumnHeader();
             columnHeaderHasTicket = new ColumnHeader();
-            label6 = new Label();
+            numGrupTxt = new TextBox();
             SuspendLayout();
             // 
             // labelGrup
@@ -84,16 +84,16 @@
             labelNomGrup.Text = "nomGrup";
             labelNomGrup.TextAlign = ContentAlignment.TopCenter;
             // 
-            // listView1
+            // listPagamentsGrup
             // 
-            listView1.Anchor = AnchorStyles.None;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeaderIsMember, columnHeaderNickname, columnHeaderAmount, columnHeaderData, columnHeaderHasTicket });
-            listView1.Location = new Point(17, 81);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(765, 579);
-            listView1.TabIndex = 36;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listPagamentsGrup.Anchor = AnchorStyles.None;
+            listPagamentsGrup.Columns.AddRange(new ColumnHeader[] { columnHeaderIsMember, columnHeaderNickname, columnHeaderAmount, columnHeaderData, columnHeaderHasTicket });
+            listPagamentsGrup.Location = new Point(17, 81);
+            listPagamentsGrup.Name = "listPagamentsGrup";
+            listPagamentsGrup.Size = new Size(765, 579);
+            listPagamentsGrup.TabIndex = 36;
+            listPagamentsGrup.UseCompatibleStateImageBehavior = false;
+            listPagamentsGrup.View = View.Details;
             // 
             // columnHeaderIsMember
             // 
@@ -120,17 +120,17 @@
             columnHeaderHasTicket.Text = "Ticket uploaded?";
             columnHeaderHasTicket.Width = 146;
             // 
-            // label6
+            // numGrupTxt
             // 
-            label6.Anchor = AnchorStyles.None;
-            label6.AutoSize = true;
-            label6.BackColor = Color.Transparent;
-            label6.ForeColor = Color.FromArgb(107, 55, 35);
-            label6.Location = new Point(647, 37);
-            label6.Name = "label6";
-            label6.Size = new Size(111, 25);
-            label6.TabIndex = 37;
-            label6.Text = "Request #33";
+            numGrupTxt.Anchor = AnchorStyles.None;
+            numGrupTxt.BackColor = Color.FromArgb(107, 55, 35);
+            numGrupTxt.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            numGrupTxt.ForeColor = Color.Black;
+            numGrupTxt.Location = new Point(704, 24);
+            numGrupTxt.Name = "numGrupTxt";
+            numGrupTxt.Size = new Size(64, 45);
+            numGrupTxt.TabIndex = 63;
+            numGrupTxt.Visible = false;
             // 
             // User_LlistaMembresDeGrupPagaments
             // 
@@ -138,13 +138,14 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(800, 747);
-            Controls.Add(label6);
-            Controls.Add(listView1);
+            Controls.Add(numGrupTxt);
+            Controls.Add(listPagamentsGrup);
             Controls.Add(labelNomGrup);
             Controls.Add(labelCancelCanviPwd);
             Controls.Add(labelGrup);
             Name = "User_LlistaMembresDeGrupPagaments";
             Text = "User_LlistaMembresDeGrupPagaments";
+            Load += User_LlistaMembresDeGrupPagaments_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -154,12 +155,12 @@
         private Label labelGrup;
         private Label labelCancelCanviPwd;
         private Label labelNomGrup;
-        private ListView listView1;
+        private ListView listPagamentsGrup;
         private ColumnHeader columnHeaderNickname;
-        private Label label6;
         private ColumnHeader columnHeaderIsMember;
         private ColumnHeader columnHeaderAmount;
         private ColumnHeader columnHeaderData;
         private ColumnHeader columnHeaderHasTicket;
+        private TextBox numGrupTxt;
     }
 }

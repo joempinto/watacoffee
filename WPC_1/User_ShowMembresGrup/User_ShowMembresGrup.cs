@@ -34,15 +34,14 @@ namespace WPC_1
 
         }
 
-        //BOTO QUE NO EXISTEIX PER FER UPDATE DE LA TAULA DE MEMBRES
+        //BOTO PER FER UPDATE DE LA TAULA DE MEMBRES
         public void updateTableMembers_Click(object sender, EventArgs e, int num)
         {
             listMembres.Items.Clear();
 
             doLlistaMembres(num);
         }
-
-        //CHECK IF ADMIN BOOLEAN IS WORKING FINE LATER ON
+        
         public async void doLlistaMembres(int idGrup)
         {
             string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
@@ -78,12 +77,11 @@ namespace WPC_1
 
                     for (int i = 0; i < llistaMembresHttpResponse.Count; i++)
                     {
-                        ListViewItem item = new ListViewItem(llistaMembresHttpResponse[i].groupId.ToString());
-                        // Place a check mark next to the item.
-                        item.SubItems.Add(llistaMembresHttpResponse[i].userId.ToString());
+                        ListViewItem item = new ListViewItem(llistaMembresHttpResponse[i].groupId.ToString());                        
+                        item.SubItems.Add(llistaMembresHttpResponse[i].memberId.ToString());
                         item.SubItems.Add(llistaMembresHttpResponse[i].nickname);
                         item.SubItems.Add(llistaMembresHttpResponse[i].username);
-                        item.SubItems.Add(llistaMembresHttpResponse[i].admin.ToString());
+                        item.SubItems.Add(llistaMembresHttpResponse[i].isAdmin.ToString());
 
                         //Add the items to the ListView.
                         listMembres.Items.Add(item);
@@ -156,7 +154,7 @@ namespace WPC_1
                 "\nnickname " + AppInformation.membresLlista[selectedItems.Index].nickname +
 
                 "\nidGroup " + AppInformation.membresLlista[selectedItems.Index].groupId +
-                "\nidUser " + AppInformation.membresLlista[selectedItems.Index].userId +
+                "\nidUser " + AppInformation.membresLlista[selectedItems.Index].memberId +
 
                 " ?", "Atenció!", button, MessageBoxIcon.Question);
 
@@ -164,7 +162,7 @@ namespace WPC_1
             {
 
                 int idGroup = AppInformation.membresLlista[selectedItems.Index].groupId;
-                int idUser = AppInformation.membresLlista[selectedItems.Index].userId;
+                int idUser = AppInformation.membresLlista[selectedItems.Index].memberId;
                 string header = String.Concat(AppInformation.usuari.Head, AppInformation.usuari.Token);
                 UserAuthorization auth = new UserAuthorization(header);
 

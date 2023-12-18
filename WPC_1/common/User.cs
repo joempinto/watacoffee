@@ -72,23 +72,23 @@ namespace WPC_1
     internal class MembresLlista
     {
         public int groupId { get; set; }
-        public int userId { get; set; }
+        public int memberId { get; set; }
         public string nickname { get; set; }
         public string username { get; set; }
-        public Boolean admin { get; set; }
+        public Boolean isAdmin { get; set; }
 
-        public MembresLlista(int groupId, int userId, string nickname, string username, Boolean admin)
+        public MembresLlista(int groupId, int memberId, string nickname, string username, Boolean isAdmin)
         {
             this.groupId = groupId;
-            this.userId = userId;
+            this.memberId = memberId;
             this.nickname = nickname;
             this.username = username;
-            this.admin = admin;
+            this.isAdmin = isAdmin;
         }
 
         public override string ToString()
         {
-            return "IDgroup: " + groupId + "\nIDuser: " + userId + "\nNickname: " + nickname + "\nUsername: " + username + "\nAdmin: " + admin;
+            return "IDgroup: " + groupId + "\nIDuser: " + memberId + "\nNickname: " + nickname + "\nUsername: " + username + "\nAdmin: " +isAdmin;
         }
 
     }

@@ -19,9 +19,8 @@ namespace WPC_1
 
         private void payBtn_Click(object sender, EventArgs e)
         {
-            User_PayMenu payMenu = new User_PayMenu();
-            payMenu.Show();
-            this.Close();
+            addPagamentBtn.Visible = true;
+            deletePagamentBtn.Visible = true;
         }
 
         private void labelCancelSelecPE_Click(object sender, EventArgs e)
@@ -48,6 +47,20 @@ namespace WPC_1
         private void pictureBoxGrafs_Click(object sender, EventArgs e)
         {
             grafsBtn_Click(sender, e);
+        }
+
+        private void addPagamentBtn_Click(object sender, EventArgs e)
+        {
+            User_PayMenu payMenu = new User_PayMenu();
+            payMenu.Show();
+            this.Close();
+        }
+
+        private void deletePagamentBtn_Click(object sender, EventArgs e)
+        {
+            User_deletePagament deleteMenu = new User_deletePagament();
+            deleteMenu.Show();
+            this.Close();
         }
     }
 }
