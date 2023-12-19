@@ -48,7 +48,7 @@ namespace WPC_1
             UserAuthorization auth = new UserAuthorization(header);
 
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/groups?type=", tipus);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/get/groups?type=", tipus);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -113,7 +113,7 @@ namespace WPC_1
             UserAuthorization auth = new UserAuthorization(header);
 
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/payments/get/by/group?groupId=", groupId);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/get/by/group?groupId=", groupId);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -201,7 +201,7 @@ namespace WPC_1
         private async void doEliminaPayment(UserAuthorization aut, int groupID, int payID)
         {
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/payments/delete?groupId=", groupID, "&paymentId=", payID);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/delete?groupId=", groupID, "&paymentId=", payID);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 

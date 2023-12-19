@@ -72,7 +72,7 @@ namespace WPC_1
         async void doLoginAdmin(LoginAdmin loginAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/p/login";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/p/login";
             using HttpResponseMessage responseAdmin = await httpClient.PostAsJsonAsync<LoginAdmin>(url, loginAdmin);
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.
@@ -124,7 +124,7 @@ namespace WPC_1
         async void doLogin(LoginUser loginUser)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/auth/p/login";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/auth/p/login";
             using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LoginUser>(url, loginUser);           
 
             // Primer mirem si la resposta del server es SUCCESS. Si no ho es, mostrem error.

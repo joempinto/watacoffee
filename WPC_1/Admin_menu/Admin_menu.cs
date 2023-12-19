@@ -54,7 +54,7 @@ namespace WPC_1
             async void doLogoutAdmin(LogoutInfo logoutAdmin)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/admin/r/logout";
+                string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/r/logout";
                 //MessageBox.Show(logoutUser.Authorization);
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
                 using HttpResponseMessage response = await httpClient.PostAsJsonAsync<LogoutInfo>(url, logoutAdmin);

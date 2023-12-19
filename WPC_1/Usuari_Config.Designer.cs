@@ -183,14 +183,14 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(171, 34);
-            iniciStripMenuItem.Text = "Inici";
+            iniciStripMenuItem.Size = new Size(270, 34);
+            iniciStripMenuItem.Text = "Menú Usuari";
             iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(171, 34);
+            logoutStripMenuItem.Size = new Size(270, 34);
             logoutStripMenuItem.Text = "Logout";
             logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 

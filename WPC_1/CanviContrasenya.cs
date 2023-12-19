@@ -56,7 +56,7 @@ namespace WPC_1
             async void doCanviPassword(LogoutInfo logoutUser, string password)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/auth/modPassword";
+                string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/auth/modPassword";
 
                 // using HttpResponseMessage response = await httpClient.PutAsJsonAsync<ChangePwd>(url, newPassword);
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutUser.Authorization);

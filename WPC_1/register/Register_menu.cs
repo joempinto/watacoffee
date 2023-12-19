@@ -70,7 +70,7 @@ namespace WPC_1
             async void doRegister(RegisterUser registerUser)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/auth/p/register";
+                string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/auth/p/register";
                 using HttpResponseMessage response = await httpClient.PostAsJsonAsync<RegisterUser>(url, registerUser);
 
                 // Primer mirem si la resposta del server: Si NO és SUCCESS mostrem error.

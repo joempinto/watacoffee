@@ -42,7 +42,7 @@ namespace WPC_1
         async void doLlistaUsersAdmin(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/r/get/all/users";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/r/get/all/users";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -85,7 +85,7 @@ namespace WPC_1
         async void doCountUsers(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/r/count/users";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/r/count/users";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 

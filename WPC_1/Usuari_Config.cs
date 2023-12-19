@@ -32,7 +32,7 @@ namespace WPC_1
             //Preguntem si usuari està segur de fer del delete del perfil a la app
             MessageBoxButtons button = MessageBoxButtons.YesNo;
             MessageBoxIcon icon = MessageBoxIcon.Question;
-            
+
             DialogResult result = MessageBox.Show("Està segur que vol iniciar el procés per eliminar el perfil a WPC?.", "Atenció!", button, icon);
 
             if (result == DialogResult.Yes)
@@ -45,7 +45,8 @@ namespace WPC_1
                 UserAuthorization auth = new UserAuthorization(header);
                 //fem logout
                 doDelete(auth);
-            } else
+            }
+            else
             {
                 this.Close();
             }
@@ -55,7 +56,7 @@ namespace WPC_1
         async void doDelete(UserAuthorization aut)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/auth/delete";            
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/auth/delete";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 

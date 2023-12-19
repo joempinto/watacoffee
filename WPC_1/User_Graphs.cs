@@ -45,7 +45,7 @@ namespace WPC_1
             UserAuthorization auth = new UserAuthorization(header);
 
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/groups?type=", "all");
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/get/groups?type=", "all");
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -102,7 +102,7 @@ namespace WPC_1
             UserAuthorization auth = new UserAuthorization(header);
 
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/members/group/", idGrup);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/get/members/group/", idGrup);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -234,7 +234,7 @@ namespace WPC_1
                     //dades per usuari
                     labelNickname.Visible = false;
                     nicknameTxt.Visible = false;
-                    string url1 = string.Concat("http://localhost:8080/coffee/api/payments/get/by/member?memberId=", Int32.Parse(numMembreTxt.Text), "&groupId=", Int32.Parse(numGrupTxt.Text));
+                    string url1 = string.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/get/by/member?memberId=", Int32.Parse(numMembreTxt.Text), "&groupId=", Int32.Parse(numGrupTxt.Text));
 
                     if (checkBoxFiltreDates.Checked)
                     {
@@ -249,7 +249,7 @@ namespace WPC_1
                     //dades del grup
                     labelNickname.Visible = false;
                     nicknameTxt.Visible = false;
-                    string url1 = string.Concat("http://localhost:8080/coffee/api/payments/get/by/group?groupId=", Int32.Parse(numGrupTxt.Text));
+                    string url1 = string.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/get/by/group?groupId=", Int32.Parse(numGrupTxt.Text));
 
                     if (checkBoxFiltreDates.Checked)
                     {
@@ -264,7 +264,7 @@ namespace WPC_1
                     //dades dels totals
                     labelNickname.Visible = false;
                     nicknameTxt.Visible = false;
-                    string url1 = string.Concat("http://localhost:8080/coffee/api/payments/get/totals/by/group?groupId=", Int32.Parse(numGrupTxt.Text));
+                    string url1 = string.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/get/totals/by/group?groupId=", Int32.Parse(numGrupTxt.Text));
 
                     if (checkBoxFiltreDates.Checked)
                     {
@@ -279,7 +279,7 @@ namespace WPC_1
 
                     string nick = nicknameTxt.Text;
 
-                    string url1 = string.Concat("http://localhost:8080/coffee/api/payments/get/totals/by/member?groupId=", Int32.Parse(numGrupTxt.Text), "&memberNickname=", nick);
+                    string url1 = string.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/payments/get/totals/by/member?groupId=", Int32.Parse(numGrupTxt.Text), "&memberNickname=", nick);
 
                     if (checkBoxFiltreDates.Checked)
                     {
@@ -291,7 +291,7 @@ namespace WPC_1
             }
         }
 
-        //TODO - DONA ERROR AL MOSTRAR LA RESPOSTA PER PANTALLA - LLISTEM ELS PAGAMENTS D'UN USUARI
+        //LLISTEM ELS PAGAMENTS D'UN USUARI
         private async void doLlistatPerUsuari(UserAuthorization auth, string url)
         {
             int groupID = Int32.Parse(numGrupTxt.Text);
@@ -366,8 +366,7 @@ namespace WPC_1
             else
             {
                 // Si la resposta es SUCCESS
-                // Creem un objecte resposta per agafar les dades que retorna el server
-                //TODO FALLA LA CARREGA DE LA RESPOSTA DEL SERVER
+                // Creem un objecte resposta per agafar les dades que retorna el server                
                 var llistaTipusHttpResponse = await response.Content.ReadFromJsonAsync<List<GrupPagamentInfoResponse>>();
 
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                
@@ -418,8 +417,7 @@ namespace WPC_1
             else
             {
                 // Si la resposta es SUCCESS
-                // Creem un objecte resposta per agafar les dades que retorna el server
-                //TODO FALLA LA CARREGA DE LA RESPOSTA DEL SERVER
+                // Creem un objecte resposta per agafar les dades que retorna el server                
                 var llistaTipusHttpResponse = await response.Content.ReadFromJsonAsync<List<GrupMembreTotalPagamentResponse>>();
 
                 // A AppInformation es guarda la informacio necessaria en memoria de la resposta del server.                

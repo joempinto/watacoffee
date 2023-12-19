@@ -60,7 +60,7 @@ namespace WPC_1
             async void doAfegirGrup(UserAuthorization aut, AddGroup nouGrup)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/groups/add/group";
+                string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/add/group";
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
                 using HttpResponseMessage response = await httpClient.PostAsJsonAsync<AddGroup>(url, nouGrup);
 

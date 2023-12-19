@@ -115,7 +115,7 @@ namespace WPC_1
                 async void doAddMembre(UserAuthorization aut, AddNewMembre nouRegMembre, int idgroup)
                 {
                     HttpClient httpClient = new HttpClient();
-                    string url = "http://localhost:8080/coffee/api/groups/add/member";
+                    string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/add/member";
                     httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
                     using HttpResponseMessage response = await httpClient.PostAsJsonAsync<AddNewMembre>(url, nouRegMembre);
 

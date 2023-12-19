@@ -48,7 +48,7 @@ namespace WPC_1
             UserAuthorization auth = new UserAuthorization(header);
 
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/groups/get/members/group/", idGrup);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/get/members/group/", idGrup);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(auth.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -181,7 +181,7 @@ namespace WPC_1
         private async void doEliminaParticipant(UserAuthorization aut, int groupID, int userID)
         {
             HttpClient httpClient = new HttpClient();
-            string url = String.Concat("http://localhost:8080/coffee/api/groups/delete/member/from/group/", userID, "/", groupID);
+            string url = String.Concat("https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/delete/member/from/group/", userID, "/", groupID);
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
             using HttpResponseMessage response = await httpClient.DeleteAsync(url);
 

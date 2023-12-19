@@ -68,7 +68,7 @@ namespace WPC_1
             async void doUpdateMembre(UserAuthorization aut, ChangeNicknameMembre updated)
             {
                 HttpClient httpClient = new HttpClient();
-                string url = "http://localhost:8080/coffee/api/groups/update/nickname/group";
+                string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/groups/update/nickname/group";
                 httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(aut.Authorization);
                 using HttpResponseMessage response = await httpClient.PutAsJsonAsync<ChangeNicknameMembre>(url, updated);
 

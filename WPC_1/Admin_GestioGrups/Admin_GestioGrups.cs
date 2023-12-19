@@ -58,7 +58,7 @@ namespace WPC_1
         async void doLlistaGrupsAdmin(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/r/get/all/groups";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/r/get/all/groups";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
@@ -104,7 +104,7 @@ namespace WPC_1
         async void doCountGrups(LogoutInfo logoutAdmin)
         {
             HttpClient httpClient = new HttpClient();
-            string url = "http://localhost:8080/coffee/api/admin/r/count/groups";
+            string url = "https://coffee-mug-0606.ew.r.appspot.com/coffee/api/admin/r/count/groups";
             httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue(logoutAdmin.Authorization);
             using HttpResponseMessage response = await httpClient.GetAsync(url);
 
