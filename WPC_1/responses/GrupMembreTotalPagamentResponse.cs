@@ -8,15 +8,13 @@ namespace WPC_1.responses
 {
     public class GrupMembreTotalPagamentResponse
     {
-        public int paymentId {  get; set; }
         public string nickname { get; set; }
-        public int? memberId { get; set; }
+        public int memberId { get; set; }
         public double totalAmount { get; set; }
 
 
-        public GrupMembreTotalPagamentResponse(int paymentId, string nickname, int memberId, double totalAmount)
-        {
-            this.paymentId = paymentId;
+        public GrupMembreTotalPagamentResponse(string nickname, int memberId, double totalAmount)
+        {            
             this.nickname = nickname;
             this.memberId = memberId;
             this.totalAmount = totalAmount;

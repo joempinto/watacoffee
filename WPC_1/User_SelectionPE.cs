@@ -39,6 +39,7 @@ namespace WPC_1
         private void grafsBtn_Click(object sender, EventArgs e)
         {
             User_Graphs grafics = new User_Graphs();
+            grafics.User_Graphs_Load(sender, e);
             grafics.Show();
             this.Close();
             //TODO tancar també el formulari User_menu

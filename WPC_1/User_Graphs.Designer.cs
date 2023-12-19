@@ -35,32 +35,41 @@
             iniciStripMenuItem = new ToolStripMenuItem();
             logoutStripMenuItem = new ToolStripMenuItem();
             pageLocation = new Label();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
+            dataInici = new DateTimePicker();
+            dataFinal = new DateTimePicker();
             label1 = new Label();
             label2 = new Label();
             groupBoxFiltreDates = new GroupBox();
             checkBoxFiltreDates = new CheckBox();
-            xUsuariBtn = new Button();
-            xGrupBtn = new Button();
-            totalsBtn = new Button();
             labelSelGrup = new Label();
             labelSelUser = new Label();
-            listView1 = new ListView();
-            listView2 = new ListView();
-            buttonOKMostraDades = new Button();
-            listView3 = new ListView();
-            labelResult = new Label();
+            listGrupsTipus = new ListView();
             columnHeaderNomGrup = new ColumnHeader();
+            listMembres = new ListView();
             columnHeaderNickname = new ColumnHeader();
+            buttonOKMostraDades = new Button();
+            listDadesResult = new ListView();
             columnHeaderNick = new ColumnHeader();
             columnHeaderPAmount = new ColumnHeader();
             columnHeaderDate = new ColumnHeader();
             columnHeaderIsMember = new ColumnHeader();
-            label3 = new Label();
-            label4 = new Label();
-            label5 = new Label();
-            columnHeaderTicket = new ColumnHeader();
+            labelResult = new Label();
+            numMembreTxt = new TextBox();
+            numGrupTxt = new TextBox();
+            comboBoxSelDades = new ComboBox();
+            label6 = new Label();
+            nicknameTxt = new TextBox();
+            labelNickname = new Label();
+            listViewReq3 = new ListView();
+            columnHeadNickname = new ColumnHeader();
+            columnHeadTotalAmount = new ColumnHeader();
+            columnHeadMemberId = new ColumnHeader();
+            listViewReq1 = new ListView();
+            columnHeaderNicky = new ColumnHeader();
+            columnHeaderPDAmount = new ColumnHeader();
+            columnHeaderPDDate = new ColumnHeader();
+            button1 = new Button();
+            labelCancelEstadistiques = new Label();
             menuStrip1.SuspendLayout();
             groupBoxFiltreDates.SuspendLayout();
             SuspendLayout();
@@ -72,7 +81,7 @@
             labelGrup.BackColor = Color.Transparent;
             labelGrup.Font = new Font("Segoe UI Black", 22F, FontStyle.Bold, GraphicsUnit.Point);
             labelGrup.ForeColor = Color.FromArgb(107, 55, 35);
-            labelGrup.Location = new Point(116, 75);
+            labelGrup.Location = new Point(116, 168);
             labelGrup.Name = "labelGrup";
             labelGrup.Size = new Size(310, 60);
             labelGrup.TabIndex = 25;
@@ -87,7 +96,7 @@
             menuStrip1.Location = new Point(21, 16);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.RenderMode = ToolStripRenderMode.Professional;
-            menuStrip1.Size = new Size(81, 57);
+            menuStrip1.Size = new Size(261, 57);
             menuStrip1.TabIndex = 27;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -103,14 +112,16 @@
             // iniciStripMenuItem
             // 
             iniciStripMenuItem.Name = "iniciStripMenuItem";
-            iniciStripMenuItem.Size = new Size(213, 34);
+            iniciStripMenuItem.Size = new Size(270, 34);
             iniciStripMenuItem.Text = "Menú Usuari";
+            iniciStripMenuItem.Click += iniciStripMenuItem_Click;
             // 
             // logoutStripMenuItem
             // 
             logoutStripMenuItem.Name = "logoutStripMenuItem";
-            logoutStripMenuItem.Size = new Size(213, 34);
+            logoutStripMenuItem.Size = new Size(270, 34);
             logoutStripMenuItem.Text = "Logout";
+            logoutStripMenuItem.Click += logoutStripMenuItem_Click;
             // 
             // pageLocation
             // 
@@ -124,25 +135,25 @@
             pageLocation.TabIndex = 26;
             pageLocation.Text = "location: Username>MenuUsuari>PagamentsiEstadistiques>Estadístiques\r\n";
             // 
-            // dateTimePicker1
+            // dataInici
             // 
-            dateTimePicker1.Anchor = AnchorStyles.None;
-            dateTimePicker1.CustomFormat = "yyyy-MM-dd";
-            dateTimePicker1.Format = DateTimePickerFormat.Custom;
-            dateTimePicker1.Location = new Point(20, 68);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(128, 31);
-            dateTimePicker1.TabIndex = 28;
+            dataInici.Anchor = AnchorStyles.None;
+            dataInici.CustomFormat = "yyyy-MM-dd";
+            dataInici.Format = DateTimePickerFormat.Custom;
+            dataInici.Location = new Point(20, 68);
+            dataInici.Name = "dataInici";
+            dataInici.Size = new Size(128, 31);
+            dataInici.TabIndex = 28;
             // 
-            // dateTimePicker2
+            // dataFinal
             // 
-            dateTimePicker2.Anchor = AnchorStyles.None;
-            dateTimePicker2.CustomFormat = "yyyy-MM-dd";
-            dateTimePicker2.Format = DateTimePickerFormat.Custom;
-            dateTimePicker2.Location = new Point(182, 68);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(128, 31);
-            dateTimePicker2.TabIndex = 29;
+            dataFinal.Anchor = AnchorStyles.None;
+            dataFinal.CustomFormat = "yyyy-MM-dd";
+            dataFinal.Format = DateTimePickerFormat.Custom;
+            dataFinal.Location = new Point(182, 68);
+            dataFinal.Name = "dataFinal";
+            dataFinal.Size = new Size(128, 31);
+            dataFinal.TabIndex = 29;
             // 
             // label1
             // 
@@ -176,11 +187,11 @@
             groupBoxFiltreDates.BackColor = Color.Transparent;
             groupBoxFiltreDates.Controls.Add(label2);
             groupBoxFiltreDates.Controls.Add(label1);
-            groupBoxFiltreDates.Controls.Add(dateTimePicker2);
-            groupBoxFiltreDates.Controls.Add(dateTimePicker1);
+            groupBoxFiltreDates.Controls.Add(dataFinal);
+            groupBoxFiltreDates.Controls.Add(dataInici);
             groupBoxFiltreDates.Enabled = false;
             groupBoxFiltreDates.ForeColor = Color.FromArgb(107, 55, 35);
-            groupBoxFiltreDates.Location = new Point(948, 76);
+            groupBoxFiltreDates.Location = new Point(948, 169);
             groupBoxFiltreDates.Name = "groupBoxFiltreDates";
             groupBoxFiltreDates.Size = new Size(334, 122);
             groupBoxFiltreDates.TabIndex = 42;
@@ -189,48 +200,21 @@
             // 
             // checkBoxFiltreDates
             // 
+            checkBoxFiltreDates.Anchor = AnchorStyles.None;
             checkBoxFiltreDates.AutoSize = true;
-            checkBoxFiltreDates.Location = new Point(920, 87);
+            checkBoxFiltreDates.Cursor = Cursors.Hand;
+            checkBoxFiltreDates.Location = new Point(920, 180);
             checkBoxFiltreDates.Name = "checkBoxFiltreDates";
             checkBoxFiltreDates.Size = new Size(22, 21);
             checkBoxFiltreDates.TabIndex = 44;
             checkBoxFiltreDates.UseVisualStyleBackColor = true;
-            // 
-            // xUsuariBtn
-            // 
-            xUsuariBtn.Anchor = AnchorStyles.None;
-            xUsuariBtn.Location = new Point(968, 245);
-            xUsuariBtn.Name = "xUsuariBtn";
-            xUsuariBtn.Size = new Size(164, 34);
-            xUsuariBtn.TabIndex = 45;
-            xUsuariBtn.Text = "USUARI";
-            xUsuariBtn.UseVisualStyleBackColor = true;
-            // 
-            // xGrupBtn
-            // 
-            xGrupBtn.Anchor = AnchorStyles.None;
-            xGrupBtn.Location = new Point(968, 205);
-            xGrupBtn.Name = "xGrupBtn";
-            xGrupBtn.Size = new Size(164, 34);
-            xGrupBtn.TabIndex = 46;
-            xGrupBtn.Text = "GRUP";
-            xGrupBtn.UseVisualStyleBackColor = true;
-            // 
-            // totalsBtn
-            // 
-            totalsBtn.Anchor = AnchorStyles.None;
-            totalsBtn.Location = new Point(968, 285);
-            totalsBtn.Name = "totalsBtn";
-            totalsBtn.Size = new Size(164, 34);
-            totalsBtn.TabIndex = 47;
-            totalsBtn.Text = "ACUMULATS";
-            totalsBtn.UseVisualStyleBackColor = true;
+            checkBoxFiltreDates.CheckedChanged += checkBoxFiltreDates_CheckedChanged;
             // 
             // labelSelGrup
             // 
             labelSelGrup.Anchor = AnchorStyles.None;
             labelSelGrup.AutoSize = true;
-            labelSelGrup.Location = new Point(464, 85);
+            labelSelGrup.Location = new Point(464, 178);
             labelSelGrup.Name = "labelSelGrup";
             labelSelGrup.Size = new Size(138, 25);
             labelSelGrup.TabIndex = 49;
@@ -240,78 +224,78 @@
             // 
             labelSelUser.Anchor = AnchorStyles.None;
             labelSelUser.AutoSize = true;
-            labelSelUser.Location = new Point(694, 85);
+            labelSelUser.Location = new Point(694, 178);
             labelSelUser.Name = "labelSelUser";
             labelSelUser.Size = new Size(148, 25);
             labelSelUser.TabIndex = 51;
             labelSelUser.Text = "Selecciona Usuari";
             // 
-            // listView1
+            // listGrupsTipus
             // 
-            listView1.Anchor = AnchorStyles.None;
-            listView1.Columns.AddRange(new ColumnHeader[] { columnHeaderNomGrup });
-            listView1.Location = new Point(464, 111);
-            listView1.Name = "listView1";
-            listView1.Size = new Size(193, 139);
-            listView1.TabIndex = 52;
-            listView1.UseCompatibleStateImageBehavior = false;
-            listView1.View = View.Details;
+            listGrupsTipus.Anchor = AnchorStyles.None;
+            listGrupsTipus.Columns.AddRange(new ColumnHeader[] { columnHeaderNomGrup });
+            listGrupsTipus.FullRowSelect = true;
+            listGrupsTipus.Location = new Point(464, 204);
+            listGrupsTipus.MultiSelect = false;
+            listGrupsTipus.Name = "listGrupsTipus";
+            listGrupsTipus.Size = new Size(193, 168);
+            listGrupsTipus.TabIndex = 52;
+            listGrupsTipus.UseCompatibleStateImageBehavior = false;
+            listGrupsTipus.View = View.Details;
+            listGrupsTipus.SelectedIndexChanged += listGrupsTipus_SelectedIndexChanged;
             // 
-            // listView2
+            // columnHeaderNomGrup
             // 
-            listView2.Anchor = AnchorStyles.None;
-            listView2.Columns.AddRange(new ColumnHeader[] { columnHeaderNickname });
-            listView2.Location = new Point(694, 111);
-            listView2.Name = "listView2";
-            listView2.Size = new Size(197, 139);
-            listView2.TabIndex = 53;
-            listView2.UseCompatibleStateImageBehavior = false;
-            listView2.View = View.Details;
+            columnHeaderNomGrup.Text = "";
+            columnHeaderNomGrup.Width = 189;
+            // 
+            // listMembres
+            // 
+            listMembres.Anchor = AnchorStyles.None;
+            listMembres.Columns.AddRange(new ColumnHeader[] { columnHeaderNickname });
+            listMembres.FullRowSelect = true;
+            listMembres.Location = new Point(694, 204);
+            listMembres.MultiSelect = false;
+            listMembres.Name = "listMembres";
+            listMembres.Size = new Size(197, 168);
+            listMembres.TabIndex = 53;
+            listMembres.UseCompatibleStateImageBehavior = false;
+            listMembres.View = View.Details;
+            listMembres.SelectedIndexChanged += listMembres_SelectedIndexChanged;
+            // 
+            // columnHeaderNickname
+            // 
+            columnHeaderNickname.Text = "";
+            columnHeaderNickname.Width = 193;
             // 
             // buttonOKMostraDades
             // 
             buttonOKMostraDades.Anchor = AnchorStyles.None;
             buttonOKMostraDades.BackColor = Color.FromArgb(107, 55, 35);
+            buttonOKMostraDades.Cursor = Cursors.Hand;
             buttonOKMostraDades.FlatStyle = FlatStyle.Popup;
             buttonOKMostraDades.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point);
             buttonOKMostraDades.ForeColor = Color.FromArgb(64, 0, 0);
-            buttonOKMostraDades.Location = new Point(1143, 204);
+            buttonOKMostraDades.Location = new Point(1143, 297);
             buttonOKMostraDades.Name = "buttonOKMostraDades";
             buttonOKMostraDades.Size = new Size(119, 113);
             buttonOKMostraDades.TabIndex = 54;
             buttonOKMostraDades.Text = "OK";
             buttonOKMostraDades.UseVisualStyleBackColor = false;
+            buttonOKMostraDades.Click += buttonOKMostraDades_Click;
             // 
-            // listView3
+            // listDadesResult
             // 
-            listView3.Anchor = AnchorStyles.None;
-            listView3.Columns.AddRange(new ColumnHeader[] { columnHeaderNick, columnHeaderPAmount, columnHeaderDate, columnHeaderIsMember, columnHeaderTicket });
-            listView3.Location = new Point(131, 322);
-            listView3.Name = "listView3";
-            listView3.Size = new Size(766, 393);
-            listView3.TabIndex = 56;
-            listView3.UseCompatibleStateImageBehavior = false;
-            listView3.View = View.Details;
-            // 
-            // labelResult
-            // 
-            labelResult.Anchor = AnchorStyles.None;
-            labelResult.AutoSize = true;
-            labelResult.Location = new Point(131, 296);
-            labelResult.Name = "labelResult";
-            labelResult.Size = new Size(143, 25);
-            labelResult.TabIndex = 55;
-            labelResult.Text = "Dades resultants";
-            // 
-            // columnHeaderNomGrup
-            // 
-            columnHeaderNomGrup.Text = "Nom";
-            columnHeaderNomGrup.Width = 189;
-            // 
-            // columnHeaderNickname
-            // 
-            columnHeaderNickname.Text = "Nickname";
-            columnHeaderNickname.Width = 193;
+            listDadesResult.Anchor = AnchorStyles.None;
+            listDadesResult.Columns.AddRange(new ColumnHeader[] { columnHeaderNick, columnHeaderPAmount, columnHeaderDate, columnHeaderIsMember });
+            listDadesResult.FullRowSelect = true;
+            listDadesResult.Location = new Point(185, 453);
+            listDadesResult.MultiSelect = false;
+            listDadesResult.Name = "listDadesResult";
+            listDadesResult.Size = new Size(762, 393);
+            listDadesResult.TabIndex = 56;
+            listDadesResult.UseCompatibleStateImageBehavior = false;
+            listDadesResult.View = View.Details;
             // 
             // columnHeaderNick
             // 
@@ -333,60 +317,189 @@
             columnHeaderIsMember.Text = "Encara Membre?";
             columnHeaderIsMember.Width = 143;
             // 
-            // label3
+            // labelResult
             // 
-            label3.Anchor = AnchorStyles.None;
-            label3.AutoSize = true;
-            label3.Location = new Point(968, 549);
-            label3.Name = "label3";
-            label3.Size = new Size(190, 50);
-            label3.TabIndex = 57;
-            label3.Text = "#35/36:\r\nnick, member, amount";
+            labelResult.Anchor = AnchorStyles.None;
+            labelResult.AutoSize = true;
+            labelResult.Location = new Point(188, 427);
+            labelResult.Name = "labelResult";
+            labelResult.Size = new Size(143, 25);
+            labelResult.TabIndex = 55;
+            labelResult.Text = "Dades resultants";
             // 
-            // label4
+            // numMembreTxt
             // 
-            label4.Anchor = AnchorStyles.None;
-            label4.AutoSize = true;
-            label4.Location = new Point(968, 486);
-            label4.Name = "label4";
-            label4.Size = new Size(234, 50);
-            label4.TabIndex = 58;
-            label4.Text = "#33/34:\r\nnick, amount, date, member";
+            numMembreTxt.Anchor = AnchorStyles.None;
+            numMembreTxt.BackColor = Color.FromArgb(107, 55, 35);
+            numMembreTxt.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            numMembreTxt.ForeColor = Color.Black;
+            numMembreTxt.Location = new Point(362, 298);
+            numMembreTxt.Name = "numMembreTxt";
+            numMembreTxt.Size = new Size(64, 45);
+            numMembreTxt.TabIndex = 65;
+            numMembreTxt.Visible = false;
             // 
-            // label5
+            // numGrupTxt
             // 
-            label5.Anchor = AnchorStyles.None;
-            label5.AutoSize = true;
-            label5.Location = new Point(968, 417);
-            label5.Name = "label5";
-            label5.Size = new Size(158, 50);
-            label5.TabIndex = 59;
-            label5.Text = "#31/32:\r\nnick, amount, date";
+            numGrupTxt.Anchor = AnchorStyles.None;
+            numGrupTxt.BackColor = Color.FromArgb(107, 55, 35);
+            numGrupTxt.Font = new Font("Segoe UI", 14F, FontStyle.Italic, GraphicsUnit.Point);
+            numGrupTxt.ForeColor = Color.Black;
+            numGrupTxt.Location = new Point(362, 246);
+            numGrupTxt.Name = "numGrupTxt";
+            numGrupTxt.Size = new Size(64, 45);
+            numGrupTxt.TabIndex = 64;
+            numGrupTxt.Visible = false;
             // 
-            // columnHeaderTicket
+            // comboBoxSelDades
             // 
-            columnHeaderTicket.Text = "Té Ticket?";
-            columnHeaderTicket.Width = 100;
+            comboBoxSelDades.Anchor = AnchorStyles.None;
+            comboBoxSelDades.FormattingEnabled = true;
+            comboBoxSelDades.Items.AddRange(new object[] { "Per Usuari", "Per Grup", "Totals Acumulats", "Per nickname" });
+            comboBoxSelDades.Location = new Point(955, 330);
+            comboBoxSelDades.Name = "comboBoxSelDades";
+            comboBoxSelDades.Size = new Size(182, 33);
+            comboBoxSelDades.TabIndex = 66;
+            comboBoxSelDades.SelectedIndexChanged += comboBoxSelDades_SelectedIndexChanged;
+            // 
+            // label6
+            // 
+            label6.Anchor = AnchorStyles.None;
+            label6.AutoSize = true;
+            label6.Location = new Point(956, 302);
+            label6.Name = "label6";
+            label6.Size = new Size(151, 25);
+            label6.TabIndex = 67;
+            label6.Text = "Dades a mostrar?";
+            // 
+            // nicknameTxt
+            // 
+            nicknameTxt.Anchor = AnchorStyles.None;
+            nicknameTxt.Font = new Font("Segoe UI Black", 10F, FontStyle.Bold, GraphicsUnit.Point);
+            nicknameTxt.Location = new Point(958, 417);
+            nicknameTxt.Name = "nicknameTxt";
+            nicknameTxt.Size = new Size(300, 35);
+            nicknameTxt.TabIndex = 68;
+            nicknameTxt.Visible = false;
+            // 
+            // labelNickname
+            // 
+            labelNickname.Anchor = AnchorStyles.None;
+            labelNickname.AutoSize = true;
+            labelNickname.Location = new Point(958, 389);
+            labelNickname.Name = "labelNickname";
+            labelNickname.Size = new Size(161, 25);
+            labelNickname.TabIndex = 69;
+            labelNickname.Text = "Nickname a buscar\r\n";
+            labelNickname.Visible = false;
+            // 
+            // listViewReq3
+            // 
+            listViewReq3.Anchor = AnchorStyles.None;
+            listViewReq3.Columns.AddRange(new ColumnHeader[] { columnHeadNickname, columnHeadTotalAmount, columnHeadMemberId });
+            listViewReq3.Location = new Point(186, 453);
+            listViewReq3.Name = "listViewReq3";
+            listViewReq3.Size = new Size(761, 402);
+            listViewReq3.TabIndex = 70;
+            listViewReq3.UseCompatibleStateImageBehavior = false;
+            listViewReq3.View = View.Details;
+            // 
+            // columnHeadNickname
+            // 
+            columnHeadNickname.Text = "nickname";
+            columnHeadNickname.Width = 87;
+            // 
+            // columnHeadTotalAmount
+            // 
+            columnHeadTotalAmount.Text = "TotalAmount";
+            columnHeadTotalAmount.Width = 116;
+            // 
+            // columnHeadMemberId
+            // 
+            columnHeadMemberId.Text = "MemberId";
+            columnHeadMemberId.Width = 597;
+            // 
+            // listViewReq1
+            // 
+            listViewReq1.Anchor = AnchorStyles.None;
+            listViewReq1.Columns.AddRange(new ColumnHeader[] { columnHeaderNicky, columnHeaderPDAmount, columnHeaderPDDate });
+            listViewReq1.FullRowSelect = true;
+            listViewReq1.Location = new Point(186, 453);
+            listViewReq1.MultiSelect = false;
+            listViewReq1.Name = "listViewReq1";
+            listViewReq1.Size = new Size(761, 402);
+            listViewReq1.TabIndex = 71;
+            listViewReq1.UseCompatibleStateImageBehavior = false;
+            listViewReq1.View = View.Details;
+            // 
+            // columnHeaderNicky
+            // 
+            columnHeaderNicky.Text = "Nickname";
+            columnHeaderNicky.Width = 90;
+            // 
+            // columnHeaderPDAmount
+            // 
+            columnHeaderPDAmount.Text = "PDAmount";
+            columnHeaderPDAmount.Width = 100;
+            // 
+            // columnHeaderPDDate
+            // 
+            columnHeaderPDDate.Text = "PDDate";
+            columnHeaderPDDate.Width = 560;
+            // 
+            // button1
+            // 
+            button1.Anchor = AnchorStyles.None;
+            button1.BackColor = Color.FromArgb(107, 55, 35);
+            button1.Cursor = Cursors.Hand;
+            button1.FlatStyle = FlatStyle.Popup;
+            button1.Font = new Font("Segoe UI Black", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            button1.ForeColor = Color.FromArgb(64, 0, 0);
+            button1.Location = new Point(979, 752);
+            button1.Name = "button1";
+            button1.Size = new Size(160, 62);
+            button1.TabIndex = 72;
+            button1.Text = "Gràfica";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // labelCancelEstadistiques
+            // 
+            labelCancelEstadistiques.Anchor = AnchorStyles.None;
+            labelCancelEstadistiques.AutoSize = true;
+            labelCancelEstadistiques.BackColor = Color.Transparent;
+            labelCancelEstadistiques.Cursor = Cursors.Hand;
+            labelCancelEstadistiques.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold | FontStyle.Underline, GraphicsUnit.Point);
+            labelCancelEstadistiques.ForeColor = Color.FromArgb(107, 55, 35);
+            labelCancelEstadistiques.Location = new Point(624, 874);
+            labelCancelEstadistiques.Name = "labelCancelEstadistiques";
+            labelCancelEstadistiques.Size = new Size(109, 30);
+            labelCancelEstadistiques.TabIndex = 73;
+            labelCancelEstadistiques.Text = "Cancel.lar";
+            labelCancelEstadistiques.Click += labelCancelEstadistiques_Click;
             // 
             // User_Graphs
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1360, 727);
-            Controls.Add(label5);
-            Controls.Add(label4);
-            Controls.Add(label3);
-            Controls.Add(listView3);
+            ClientSize = new Size(1360, 913);
+            Controls.Add(labelCancelEstadistiques);
+            Controls.Add(button1);
+            Controls.Add(listViewReq3);
+            Controls.Add(listViewReq1);
+            Controls.Add(labelNickname);
+            Controls.Add(nicknameTxt);
+            Controls.Add(label6);
+            Controls.Add(comboBoxSelDades);
+            Controls.Add(numMembreTxt);
+            Controls.Add(numGrupTxt);
+            Controls.Add(listDadesResult);
             Controls.Add(labelResult);
             Controls.Add(buttonOKMostraDades);
-            Controls.Add(listView2);
-            Controls.Add(listView1);
+            Controls.Add(listMembres);
+            Controls.Add(listGrupsTipus);
             Controls.Add(labelSelUser);
             Controls.Add(labelSelGrup);
-            Controls.Add(totalsBtn);
-            Controls.Add(xGrupBtn);
-            Controls.Add(xUsuariBtn);
             Controls.Add(checkBoxFiltreDates);
             Controls.Add(groupBoxFiltreDates);
             Controls.Add(menuStrip1);
@@ -396,6 +509,7 @@
             ShowIcon = false;
             Text = "Estadístiques de WPC";
             WindowState = FormWindowState.Maximized;
+            Load += User_Graphs_Load;
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             groupBoxFiltreDates.ResumeLayout(false);
@@ -412,31 +526,40 @@
         private ToolStripMenuItem iniciStripMenuItem;
         private ToolStripMenuItem logoutStripMenuItem;
         private Label pageLocation;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dataInici;
+        private DateTimePicker dataFinal;
         private Label label1;
         private Label label2;
         private GroupBox groupBoxFiltreDates;
         private CheckBox checkBoxFiltreDates;
-        private Button xUsuariBtn;
-        private Button xGrupBtn;
-        private Button totalsBtn;
         private Label labelSelGrup;
         private Label labelSelUser;
-        private ListView listView1;
-        private ListView listView2;
+        private ListView listGrupsTipus;
+        private ListView listMembres;
         private Button buttonOKMostraDades;
-        private ColumnHeader columnHeaderNomGrup;
-        private ListView listView3;
+        private ListView listDadesResult;
         private Label labelResult;
         private ColumnHeader columnHeaderNickname;
         private ColumnHeader columnHeaderNick;
         private ColumnHeader columnHeaderPAmount;
         private ColumnHeader columnHeaderDate;
         private ColumnHeader columnHeaderIsMember;
-        private Label label3;
-        private Label label4;
-        private Label label5;
-        private ColumnHeader columnHeaderTicket;
+        private ColumnHeader columnHeaderNomGrup;
+        private TextBox numMembreTxt;
+        private TextBox numGrupTxt;
+        private ComboBox comboBoxSelDades;
+        private Label label6;
+        private TextBox nicknameTxt;
+        private Label labelNickname;
+        private ListView listViewReq3;
+        private ColumnHeader columnHeadNickname;
+        private ColumnHeader columnHeadTotalAmount;
+        private ColumnHeader columnHeadMemberId;
+        private ListView listViewReq1;
+        private ColumnHeader columnHeaderNicky;
+        private ColumnHeader columnHeaderPDAmount;
+        private ColumnHeader columnHeaderPDDate;
+        private Button button1;
+        private Label labelCancelEstadistiques;
     }
 }

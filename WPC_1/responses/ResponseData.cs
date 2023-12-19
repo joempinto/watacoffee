@@ -20,6 +20,7 @@ namespace WPC_1.responses
 
         //aquesta està composada per un nickname i un 'listPaymentData'
         public static UsuariPagamentsResponse<PagamentInfoResponse>? listUserPayments = null;
+        public static List<UsuariPagamentsResponse<PagamentInfoResponse>>? listLISTtUserPayments = null;
 
     }
 }

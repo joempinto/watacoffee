@@ -11,7 +11,7 @@ namespace WPC_1.responses
         public string nickname { get; set; }
         public List<PagamentInfoResponse> paymentData { get; set; }
 
-        public UsuariPagamentsResponse(string nickname, in List<PagamentInfoResponse> paymentData)
+        public UsuariPagamentsResponse( string nickname, List<PagamentInfoResponse> paymentData)
         {
             this.nickname = nickname;
             this.paymentData = paymentData;

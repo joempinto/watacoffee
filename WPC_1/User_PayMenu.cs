@@ -294,10 +294,5 @@ namespace WPC_1
             uMenu.button1_Click(sender, e); //dologout
         }
     }
-
-    //Probar si sirve para actualizar tabla
-    /*public MasterPage()
-    {
-        IObservable.AgregarObservador(this);
-    }*/
 }
+   
